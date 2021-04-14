@@ -2,7 +2,7 @@ import "./assets/assets/css/pages/error/error-3.css";
 
 function Error() {
   return (
-    <div className="d-flex flex-column flex-root" style={{ height: "100vh"}}>
+    <div className="d-flex flex-column flex-root">
   {/*begin::Error*/}
   <div className="error error-3 d-flex flex-row-fluid bgi-size-cover bgi-position-center" style={{backgroundImage: 'url(assets/media/error/bg3.jpg)'}}>
     {/*begin::Content*/}

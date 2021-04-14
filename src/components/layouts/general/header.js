@@ -1,10 +1,10 @@
-// import flag from "./assets/assets/media/svg/flags/226-united-states.svg";
+import Languages from "../dropdown/languages"
+import Notifications from "../dropdown/notifications"
+import QuickActions from "../dropdown/quick-actions"
+import Search from "../dropdown/search"
 
 function Header() {
   return (
-    <div>
-      {/*begin::Body*/}
-      {/*begin::Header*/}
       <div id="kt_header" className="header header-fixed">
         {/*begin::Container*/}
         <div className="container-fluid d-flex align-items-stretch justify-content-between">
@@ -1114,6 +1114,7 @@ function Header() {
               {/*begin::Dropdown*/}
               <div className="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-anim-up dropdown-menu-lg">
                 {/*[html-partial:include:{"file":"partials/_extras/dropdown/search-dropdown.html"}]/*/}
+                <Search />
               </div>
               {/*end::Dropdown*/}
             </div>
@@ -1165,6 +1166,7 @@ function Header() {
               <div className="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-anim-up dropdown-menu-lg">
                 <form>
                   {/*[html-partial:include:{"file":"partials/_extras/dropdown/notifications.html"}]/*/}
+                  <Notifications />
                 </form>
               </div>
               {/*end::Dropdown*/}
@@ -1239,6 +1241,7 @@ function Header() {
               {/*begin::Dropdown*/}
               <div className="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-anim-up dropdown-menu-lg">
                 {/*[html-partial:include:{"file":"partials/_extras/dropdown/quick-actions.html"}]/*/}
+                <QuickActions />
               </div>
               {/*end::Dropdown*/}
             </div>
@@ -1375,13 +1378,14 @@ function Header() {
                 data-offset="10px,0px"
               >
                 <div className="btn btn-icon btn-clean btn-dropdown btn-lg mr-1">
-                  <img className="h-20px w-20px rounded-sm" src="flag" alt="" />
+                  <img className="h-20px w-20px rounded-sm" src="assets/media/svg/flags/226-united-states.svg" alt="" />
                 </div>
               </div>
               {/*end::Toggle*/}
               {/*begin::Dropdown*/}
               <div className="dropdown-menu p-0 m-0 dropdown-menu-anim-up dropdown-menu-sm dropdown-menu-right">
                 {/*[html-partial:include:{"file":"partials/_extras/dropdown/languages.html"}]/*/}
+                <Languages />
               </div>
               {/*end::Dropdown*/}
             </div>
@@ -1411,9 +1415,6 @@ function Header() {
         </div>
         {/*end::Container*/}
       </div>
-      {/*end::Header*/}
-      {/*end::Body*/}
-    </div>
   );
 }
 

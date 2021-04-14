@@ -1,8 +1,3 @@
-// import flag1 from "../../../assets/assets/media/svg/flags/226-united-states.svg";
-// import flag2 from "../../../assets/assets/media/svg/flags/128-spain.svg";
-// import flag3 from "../../../assets/assets/media/svg/flags/162-germany.svg";
-// import flag4 from "../../../assets/assets/media/svg/flags/063-japan.svg";
-// import flag5 from "../../../assets/assets/media/svg/flags/195-france.svg";
 function Languages() {
   return (
     <div>
@@ -12,7 +7,7 @@ function Languages() {
   <li className="navi-item">
     <a href="#" className="navi-link">
       <span className="symbol symbol-20 mr-3">
-        <img src={"flag1"} alt="" />
+        <img src="assets/media/svg/flags/226-united-states.svg" alt="" />
       </span>
       <span className="navi-text">English</span>
     </a>
@@ -22,7 +17,7 @@ function Languages() {
   <li className="navi-item active">
     <a href="#" className="navi-link">
       <span className="symbol symbol-20 mr-3">
-        <img src={"flag2"} alt="" />
+        <img src="assets/media/svg/flags/128-spain.svg" alt="" />
       </span>
       <span className="navi-text">Spanish</span>
     </a>
@@ -32,7 +27,7 @@ function Languages() {
   <li className="navi-item">
     <a href="#" className="navi-link">
       <span className="symbol symbol-20 mr-3">
-        <img src={"flag3"} alt="" />
+        <img src="assets/media/svg/flags/162-germany.svg" alt="" />
       </span>
       <span className="navi-text">German</span>
     </a>
@@ -42,7 +37,7 @@ function Languages() {
   <li className="navi-item">
     <a href="#" className="navi-link">
       <span className="symbol symbol-20 mr-3">
-        <img src={"flag4"} alt="" />
+        <img src="assets/media/svg/flags/063-japan.svg" alt="" />
       </span>
       <span className="navi-text">Japanese</span>
     </a>
@@ -52,7 +47,7 @@ function Languages() {
   <li className="navi-item">
     <a href="#" className="navi-link">
       <span className="symbol symbol-20 mr-3">
-        <img src={"flag5"} alt="" />
+        <img src="assets/media/svg/flags/195-france.svg" alt="" />
       </span>
       <span className="navi-text">French</span>
     </a>

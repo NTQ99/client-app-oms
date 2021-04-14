@@ -1,5 +1,3 @@
-// import logo from "./assets/assets/media/logos/logo-light.png";
-
 function Aside() {
   return (
 <div className="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside">
@@ -7,7 +5,7 @@ function Aside() {
   <div className="brand flex-column-auto" id="kt_brand">
     {/*begin::Logo*/}
     <a href="index.html" className="brand-logo">
-      <img alt="Logo" src="logo" />
+      <img alt="Logo" src="assets/media/logos/logo-light.png" />
     </a>
     {/*end::Logo*/}
     {/*begin::Toggle*/}
@@ -30,7 +28,7 @@ function Aside() {
   {/*begin::Aside Menu*/}
   <div className="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
     {/*begin::Menu Container*/}
-    <div id="kt_aside_menu" className="aside-menu my-4" data-menu-vertical={1} data-menu-scroll={1} data-menu-dropdown-timeout={500}>
+    <div id="kt_aside_menu" className="aside-menu my-4 scroll ps ps--active-y" data-menu-vertical={1} data-menu-scroll={1} data-menu-dropdown-timeout={500}>
       {/*begin::Menu Nav*/}
       <ul className="menu-nav">
         <li className="menu-item menu-item-active" aria-haspopup="true">

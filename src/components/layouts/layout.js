@@ -1,15 +1,13 @@
-import HeaderMobile from "./components/layouts/general/header-mobile.js";
-import Aside from "./components/layouts/general/aside.js";
-import Header from "./components/layouts/general/header.js";
-import SubHeader from "./components/layouts/subheader/subheader.js";
-import Footer from "./components/layouts/general/footer.js";
+import HeaderMobile from "./general/header-mobile.js";
+import Aside from "./general/aside.js";
+import Header from "./general/header.js";
+import SubHeader from "./subheader/subheader.js";
+import Footer from "./general/footer.js";
+import { Component } from "react";
 
-function App() {
+class Layout extends Component {
+  render() {
   return (
-    <div>
-      {/*begin::Main*/}
-      {/*[html-partial:include:{"file":"partials/_header-mobile.html"}]/*/}
-      < HeaderMobile />
       <div className="d-flex flex-column flex-root">
         {/*begin::Page*/}
         <div className="d-flex flex-row flex-column-fluid page">
@@ -23,6 +21,7 @@ function App() {
             <div className="content d-flex flex-column flex-column-fluid" id="kt_content">
               {/*[html-partial:include:{"file":"partials/_subheader/subheader-v1.html"}]/*/}
               < SubHeader />
+              {this.props.children}
               {/*Content area here*/}
             </div>
             {/*end::Content*/}
@@ -33,10 +32,8 @@ function App() {
         </div>
         {/*end::Page*/}
       </div>
-      {/*end::Main*/}
-    </div>
-
   );
 }
+}
 
-export default App;
+export default Layout;
