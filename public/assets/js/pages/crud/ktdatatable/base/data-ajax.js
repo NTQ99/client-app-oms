@@ -13,7 +13,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                 type: 'remote',
                 source: {
                     read: {
-                        url: HOST_URL + '/api/datatables/demos/default.php',
+                        url: HOST_URL + '/api/order',
                         // sample custom headers
                         // headers: {'x-my-custom-header': 'some value', 'x-test-header': 'the value'},
                         map: function(raw) {
@@ -34,12 +34,12 @@ var KTDatatableRemoteAjaxDemo = function() {
 
             // layout definition
             layout: {
-                scroll: false,
-                footer: false,
+                scroll: true,
+                footer: true,
             },
 
             // column sorting
-            sortable: true,
+            sortable: false,
 
             pagination: true,
 
@@ -58,50 +58,65 @@ var KTDatatableRemoteAjaxDemo = function() {
                 selector: false,
                 textAlign: 'center',
             }, {
-                field: 'OrderID',
-                title: 'Order ID',
+                field: 'orderCode',
+                title: 'Mã đơn hàng',
             }, {
-                field: 'Country',
-                title: 'Country',
-                template: function(row) {
-                    return row.Country + ' ' + row.ShipCountry;
-                },
+                field: 'customerName',
+                title: 'Tên khách hàng',
+                autoHide: false,
+                width: 100,
             }, {
-                field: 'ShipDate',
-                title: 'Ship Date',
+                field: 'customerPhone',
+                title: 'SĐT',
+                autoHide: false,
+                width: 80,
+            }, {
+                field: 'productName',
+                title: 'Sản phẩm',
+            }, {
+                field: 'quantity',
+                title: 'Số lượng',
+            }, {
+                field: 'createdAt',
+                title: 'Ngày tạo',
                 type: 'date',
                 format: 'MM/DD/YYYY',
             }, {
-                field: 'CompanyName',
-                title: 'Company Name',
+                field: 'deliveryUnit',
+                title: 'Vạn chuyển',
             }, {
-                field: 'Status',
-                title: 'Status',
+                field: 'shipFee',
+                title: 'Phí',
+            }, {
+                field: 'status',
+                title: 'Trạng thái',
+                width: 120,
+                autoHide: false,
                 // callback function support for column rendering
                 template: function(row) {
                     var status = {
-                        1: {
-                            'title': 'Pending',
-                            'class': ' label-light-success'
-                        },
-                        2: {
-                            'title': 'Delivered',
-                            'class': ' label-light-danger'
-                        },
-                        3: {
-                            'title': 'Canceled',
+                        "wait_confirm": {
+                            'title': 'Chờ xác nhận',
                             'class': ' label-light-primary'
                         },
-                        4: {
-                            'title': 'Success',
+                        "not_responded": {
+                            'title': 'Không phản hồi',
+                            'class': ' label-light-warning'
+                        },
+                        "canceled": {
+                            'title': 'Đã hủy',
+                            'class': ' label-light-danger'
+                        },
+                        "success": {
+                            'title': 'Giao thành công',
                             'class': ' label-light-success'
                         },
-                        5: {
-                            'title': 'Info',
+                        "await_trans": {
+                            'title': 'Chờ vận chuyển',
                             'class': ' label-light-info'
                         },
-                        6: {
-                            'title': 'Danger',
+                        "fail": {
+                            'title': 'Giao thất bại',
                             'class': ' label-light-danger'
                         },
                         7: {
@@ -109,30 +124,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                             'class': ' label-light-warning'
                         },
                     };
-                    return '<span class="label font-weight-bold label-lg ' + status[row.Status].class + ' label-inline">' + status[row.Status].title + '</span>';
-                },
-            }, {
-                field: 'Type',
-                title: 'Type',
-                autoHide: false,
-                // callback function support for column rendering
-                template: function(row) {
-                    var status = {
-                        1: {
-                            'title': 'Online',
-                            'state': 'danger'
-                        },
-                        2: {
-                            'title': 'Retail',
-                            'state': 'primary'
-                        },
-                        3: {
-                            'title': 'Direct',
-                            'state': 'success'
-                        },
-                    };
-                    return '<span class="label label-' + status[row.Type].state + ' label-dot mr-2"></span><span class="font-weight-bold text-' + status[row.Type].state + '">' +
-                        status[row.Type].title + '</span>';
+                    return '<span class="label font-weight-bold label-lg ' + status[row.status].class + ' label-inline">' + status[row.status].title + '</span>';
                 },
             }, {
                 field: 'Actions',
@@ -221,14 +213,10 @@ var KTDatatableRemoteAjaxDemo = function() {
         });
 
 		$('#kt_datatable_search_status').on('change', function() {
-            datatable.search($(this).val().toLowerCase(), 'Status');
+            datatable.search($(this).val().toLowerCase(), 'status');
         });
 
-        $('#kt_datatable_search_type').on('change', function() {
-            datatable.search($(this).val().toLowerCase(), 'Type');
-        });
-
-        $('#kt_datatable_search_status, #kt_datatable_search_type').selectpicker();
+        $('#kt_datatable_search_status').selectpicker();
     };
 
     return {

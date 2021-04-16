@@ -171,7 +171,7 @@ export default class Container extends Component {
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="Search..."
+                            placeholder="Nhập tên, SĐT"
                             id="kt_datatable_search_query"
                           />
                           <span>
@@ -181,36 +181,20 @@ export default class Container extends Component {
                       </div>
                       <div className="col-md-4 my-2 my-md-0">
                         <div className="d-flex align-items-center">
-                          <label className="mr-3 mb-0 d-none d-md-block">
-                            Status:
+                          <label className="mr-3 mb-0 d-none d-md-block" style={{width: '100px'}}>
+                            Trạng thái:
                           </label>
                           <select
                             className="form-control"
                             id="kt_datatable_search_status"
                           >
-                            <option value={""}>All</option>
-                            <option value={1}>Pending</option>
-                            <option value={2}>Delivered</option>
-                            <option value={3}>Canceled</option>
-                            <option value={4}>Success</option>
-                            <option value={5}>Info</option>
-                            <option value={6}>Danger</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div className="col-md-4 my-2 my-md-0">
-                        <div className="d-flex align-items-center">
-                          <label className="mr-3 mb-0 d-none d-md-block">
-                            Type:
-                          </label>
-                          <select
-                            className="form-control"
-                            id="kt_datatable_search_type"
-                          >
-                            <option value={""}>All</option>
-                            <option value={1}>Online</option>
-                            <option value={2}>Retail</option>
-                            <option value={3}>Direct</option>
+                            <option value={""}>Tất cả</option>
+                            <option value={"wait_confirm"}>Chờ xác nhận</option>
+                            <option value={"not_responded"}>Không phản hồi</option>
+                            <option value={"canceled"}>Đã hủy</option>
+                            <option value={"await_trans"}>Chờ vận chuyển</option>
+                            <option value={"success"}>Giao thành công</option>
+                            <option value={"fail"}>Giao thất bại</option>
                           </select>
                         </div>
                       </div>
