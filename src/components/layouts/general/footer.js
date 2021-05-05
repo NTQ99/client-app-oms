@@ -6,14 +6,14 @@ function Footer() {
       {/*begin::Copyright*/}
       <div className="text-dark order-2 order-md-1">
         <span className="text-muted font-weight-bold mr-2">2021©</span>
-        <a href="http://keenthemes.com/metronic" target="_blank" className="text-dark-75 text-hover-primary">NTQ</a>
+        <a href="http://keenthemes.com/metronic" target="_blank" rel="noreferrer" className="text-dark-75 text-hover-primary">NTQ</a>
       </div>
       {/*end::Copyright*/}
       {/*begin::Nav*/}
       <div className="nav nav-dark">
-        <a href="http://keenthemes.com/metronic" target="_blank" className="nav-link pl-0 pr-5">About</a>
-        <a href="http://keenthemes.com/metronic" target="_blank" className="nav-link pl-0 pr-5">Team</a>
-        <a href="http://keenthemes.com/metronic" target="_blank" className="nav-link pl-0 pr-0">Contact</a>
+        <a href="http://keenthemes.com/metronic" target="_blank" rel="noreferrer" className="nav-link pl-0 pr-5">About</a>
+        <a href="http://keenthemes.com/metronic" target="_blank" rel="noreferrer" className="nav-link pl-0 pr-5">Team</a>
+        <a href="http://keenthemes.com/metronic" target="_blank" rel="noreferrer" className="nav-link pl-0 pr-0">Contact</a>
       </div>
       {/*end::Nav*/}
     </div>

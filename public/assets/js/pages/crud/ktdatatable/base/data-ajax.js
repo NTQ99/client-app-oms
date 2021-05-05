@@ -7,7 +7,7 @@ var KTDatatableRemoteAjaxDemo = function() {
     // basic demo
     var demo = function() {
 
-        var datatable = $('#kt_datatable').KTDatatable({
+        var datatable = $('#order_datatable').KTDatatable({
             // datasource definition
             data: {
                 type: 'remote',
@@ -20,6 +20,10 @@ var KTDatatableRemoteAjaxDemo = function() {
                             // sample data mapping
                             var dataSet = raw;
                             if (typeof raw.data !== 'undefined') {
+                                raw.data.forEach((data, index) => {
+                                    data.createdAt = new Date(data.createdAt).toLocaleString('vi-VI');
+                                    data.recordId = index + 1;
+                                });
                                 dataSet = raw.data;
                             }
                             return dataSet;
@@ -35,7 +39,7 @@ var KTDatatableRemoteAjaxDemo = function() {
             // layout definition
             layout: {
                 scroll: true,
-                footer: true,
+                footer: false,
             },
 
             // column sorting
@@ -50,7 +54,7 @@ var KTDatatableRemoteAjaxDemo = function() {
 
             // columns definition
             columns: [{
-                field: 'RecordID',
+                field: 'recordId',
                 title: '#',
                 sortable: 'asc',
                 width: 30,
@@ -152,31 +156,31 @@ var KTDatatableRemoteAjaxDemo = function() {
                                         Choose an action:\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-print"></i></span>\
                                             <span class="navi-text">Print</span>\
                                         </a>\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-copy"></i></span>\
                                             <span class="navi-text">Copy</span>\
                                         </a>\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-file-excel-o"></i></span>\
                                             <span class="navi-text">Excel</span>\
                                         </a>\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-file-text-o"></i></span>\
                                             <span class="navi-text">CSV</span>\
                                         </a>\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-file-pdf-o"></i></span>\
                                             <span class="navi-text">PDF</span>\
                                         </a>\

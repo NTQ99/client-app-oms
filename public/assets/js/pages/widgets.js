@@ -4596,7 +4596,7 @@ var KTWidgets = function () {
                 return;
             }
 
-            KTUtil.btnWait(el, 'spinner spinner-right spinner-white pr-15', 'Please wait...', true);
+            KTUtil.btnWait(el, 'spinner spinner-right spinner-white pr-15', 'Vui lòng chờ trong giây lát...', true);
 
             setTimeout(function() {
                 KTUtil.btnRelease(el);

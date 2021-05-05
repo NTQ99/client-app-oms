@@ -462,31 +462,31 @@ var KTDatatableModal = function() {
                                         Choose an action:\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-print"></i></span>\
                                             <span class="navi-text">Print</span>\
                                         </a>\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-copy"></i></span>\
                                             <span class="navi-text">Copy</span>\
                                         </a>\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-file-excel-o"></i></span>\
                                             <span class="navi-text">Excel</span>\
                                         </a>\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-file-text-o"></i></span>\
                                             <span class="navi-text">CSV</span>\
                                         </a>\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-file-pdf-o"></i></span>\
                                             <span class="navi-text">PDF</span>\
                                         </a>\
@@ -614,7 +614,7 @@ var KTDatatableModal = function() {
                             </div>\
                             <div class="ml-2">\
                                 <div class="text-dark-75 font-weight-bold line-height-sm">' + data.CompanyAgent + '</div>\
-                                <a href="#" class="font-size-sm text-dark-50 text-hover-primary">' +
+                                <a href="/" class="font-size-sm text-dark-50 text-hover-primary">' +
                                 data.CompanyEmail + '</a>\
                             </div>\
                         </div>';
@@ -638,7 +638,7 @@ var KTDatatableModal = function() {
                             </div>\
                             <div class="ml-2">\
                                 <div class="text-dark-75 font-weight-bold line-height-sm">' + data.CompanyAgent + '</div>\
-                                <a href="#" class="font-size-sm text-dark-50 text-hover-primary">' +
+                                <a href="/" class="font-size-sm text-dark-50 text-hover-primary">' +
                                 data.CompanyEmail + '</a>\
                             </div>\
                         </div>';
@@ -743,31 +743,31 @@ var KTDatatableModal = function() {
                                         Choose an action:\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-print"></i></span>\
                                             <span class="navi-text">Print</span>\
                                         </a>\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-copy"></i></span>\
                                             <span class="navi-text">Copy</span>\
                                         </a>\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-file-excel-o"></i></span>\
                                             <span class="navi-text">Excel</span>\
                                         </a>\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-file-text-o"></i></span>\
                                             <span class="navi-text">CSV</span>\
                                         </a>\
                                     </li>\
                                     <li class="navi-item">\
-                                        <a href="#" class="navi-link">\
+                                        <a href="/" class="navi-link">\
                                             <span class="navi-icon"><i class="la la-file-pdf-o"></i></span>\
                                             <span class="navi-text">PDF</span>\
                                         </a>\

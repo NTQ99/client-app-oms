@@ -51,7 +51,7 @@ function Notifications() {
             {/*end::Symbol*/}
             {/*begin::Text*/}
             <div className="d-flex flex-column font-weight-bold">
-              <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Cool App</a>
+              <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Cool App</a>
               <span className="text-muted">Marketing campaign planning</span>
             </div>
             {/*end::Text*/}
@@ -78,7 +78,7 @@ function Notifications() {
             {/*end::Symbol*/}
             {/*begin::Text*/}
             <div className="d-flex flex-column font-weight-bold">
-              <a href="#" className="text-dark-75 text-hover-primary mb-1 font-size-lg">Awesome SAAS</a>
+              <a href="/" className="text-dark-75 text-hover-primary mb-1 font-size-lg">Awesome SAAS</a>
               <span className="text-muted">Project status update meeting</span>
             </div>
             {/*end::Text*/}
@@ -105,7 +105,7 @@ function Notifications() {
             {/*end::Symbol*/}
             {/*begin::Text*/}
             <div className="d-flex flex-column font-weight-bold">
-              <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Claudy Sys</a>
+              <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Claudy Sys</a>
               <span className="text-muted">Project Deployment &amp; Launch</span>
             </div>
             {/*end::Text*/}
@@ -134,7 +134,7 @@ function Notifications() {
             {/*end::Symbol*/}
             {/*begin::Text*/}
             <div className="d-flex flex-column font-weight-bold">
-              <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Trilo Service</a>
+              <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Trilo Service</a>
               <span className="text-muted">Analytics &amp; Requirement Study</span>
             </div>
             {/*end::Text*/}
@@ -162,7 +162,7 @@ function Notifications() {
             {/*end::Symbol*/}
             {/*begin::Text*/}
             <div className="d-flex flex-column font-weight-bold">
-              <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Bravia SAAS</a>
+              <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Bravia SAAS</a>
               <span className="text-muted">Reporting Application</span>
             </div>
             {/*end::Text*/}
@@ -189,7 +189,7 @@ function Notifications() {
             {/*end::Symbol*/}
             {/*begin::Text*/}
             <div className="d-flex flex-column font-weight-bold">
-              <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Express Wind</a>
+              <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Express Wind</a>
               <span className="text-muted">Software Analytics &amp; Design</span>
             </div>
             {/*end::Text*/}
@@ -216,7 +216,7 @@ function Notifications() {
             {/*end::Symbol*/}
             {/*begin::Text*/}
             <div className="d-flex flex-column font-weight-bold">
-              <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Bruk Fitness</a>
+              <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Bruk Fitness</a>
               <span className="text-muted">Web Design &amp; Development</span>
             </div>
             {/*end::Text*/}
@@ -226,7 +226,7 @@ function Notifications() {
         {/*end::Scroll*/}
         {/*begin::Action*/}
         <div className="d-flex flex-center pt-7">
-          <a href="#" className="btn btn-light-primary font-weight-bold text-center">See All</a>
+          <a href="/" className="btn btn-light-primary font-weight-bold text-center">See All</a>
         </div>
         {/*end::Action*/}
       </div>
@@ -236,7 +236,7 @@ function Notifications() {
         {/*begin::Nav*/}
         <div className="navi navi-hover scroll my-4" data-scroll="true" data-height={300} data-mobile-height={200}>
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon2-line-chart text-success" />
@@ -249,7 +249,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon2-paper-plane text-danger" />
@@ -262,7 +262,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon2-user flaticon2-line- text-success" />
@@ -275,7 +275,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon2-pin text-primary" />
@@ -288,7 +288,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon2-sms text-danger" />
@@ -301,7 +301,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon2-pie-chart-3 text-warning" />
@@ -314,7 +314,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon-pie-chart-1 text-info" />
@@ -327,7 +327,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon2-settings text-success" />
@@ -340,7 +340,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon-safe-shield-protection text-primary" />
@@ -353,7 +353,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon2-notification text-primary" />
@@ -366,7 +366,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon2-fax text-success" />
@@ -379,7 +379,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon-download-1 text-danger" />
@@ -392,7 +392,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon-security text-warning" />
@@ -405,7 +405,7 @@ function Notifications() {
           </a>
           {/*end::Item*/}
           {/*begin::Item*/}
-          <a href="#" className="navi-item">
+          <a href="/" className="navi-item">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon2-analytics-1 text-success" />

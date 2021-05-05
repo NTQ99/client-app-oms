@@ -40,7 +40,7 @@ class QuickPanel extends Component {
           </ul>
           <div className="offcanvas-close mt-n1 pr-5">
             <a
-              href="#"
+              href="/"
               className="btn btn-xs btn-icon btn-light btn-hover-primary"
               id="kt_quick_panel_close"
             >
@@ -74,7 +74,7 @@ class QuickPanel extends Component {
                   </div>
                   <div className="d-flex flex-column flex-grow-1 mr-2">
                     <a
-                      href="#"
+                      href="/"
                       className="font-weight-bolder text-dark-75 text-hover-primary font-size-lg mb-1"
                     >
                       Top Authors
@@ -101,7 +101,7 @@ class QuickPanel extends Component {
                   </div>
                   <div className="d-flex flex-column flex-grow-1 mr-2">
                     <a
-                      href="#"
+                      href="/"
                       className="font-weight-bolder text-dark-75 text-hover-primary font-size-lg mb-1"
                     >
                       Popular Authors
@@ -128,7 +128,7 @@ class QuickPanel extends Component {
                   </div>
                   <div className="d-flex flex-column flex-grow-1 mr-2">
                     <a
-                      href="#"
+                      href="/"
                       className="font-weight-bolder text-dark-75 text-hover-primary font-size-lg mb-1"
                     >
                       New Users
@@ -155,7 +155,7 @@ class QuickPanel extends Component {
                   </div>
                   <div className="d-flex flex-column flex-grow-1 mr-2">
                     <a
-                      href="#"
+                      href="/"
                       className="font-weight-bolder text-dark-75 text-hover-primary font-size-lg mb-1"
                     >
                       Active Customers
@@ -182,7 +182,7 @@ class QuickPanel extends Component {
                   </div>
                   <div className="d-flex flex-column flex-grow-1 mr-2">
                     <a
-                      href="#"
+                      href="/"
                       className="font-weight-bolder text-dark-75 text-hover-primary font-size-lg mb-1"
                     >
                       Bestseller Theme
@@ -242,7 +242,7 @@ class QuickPanel extends Component {
                   </span>
                   <div className="d-flex flex-column flex-grow-1 mr-2">
                     <a
-                      href="#"
+                      href="/"
                       className="font-weight-normal text-dark-75 text-hover-primary font-size-lg mb-1"
                     >
                       Another purpose persuade
@@ -295,7 +295,7 @@ class QuickPanel extends Component {
                   </span>
                   <div className="d-flex flex-column flex-grow-1 mr-2">
                     <a
-                      href="#"
+                      href="/"
                       className="font-weight-normal text-dark-75 text-hover-primary font-size-lg mb-1"
                     >
                       Would be to people
@@ -345,7 +345,7 @@ class QuickPanel extends Component {
                   </span>
                   <div className="d-flex flex-column flex-grow-1 mr-2">
                     <a
-                      href="#"
+                      href="/"
                       className="font-weight-normel text-dark-75 text-hover-primary font-size-lg mb-1"
                     >
                       Purpose would be to persuade
@@ -409,7 +409,7 @@ class QuickPanel extends Component {
                   </span>
                   <div className="d-flex flex-column flex-grow-1 mr-2">
                     <a
-                      href="#"
+                      href="/"
                       className="font-weight-normel text-dark-75 text-hover-primary font-size-lg mb-1"
                     >
                       The best product
@@ -436,7 +436,7 @@ class QuickPanel extends Component {
               {/*begin::Nav*/}
               <div className="navi navi-icon-circle navi-spacer-x-0">
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">
@@ -453,7 +453,7 @@ class QuickPanel extends Component {
                 </a>
                 {/*end::Item*/}
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">
@@ -470,7 +470,7 @@ class QuickPanel extends Component {
                 </a>
                 {/*end::Item*/}
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">
@@ -487,7 +487,7 @@ class QuickPanel extends Component {
                 </a>
                 {/*end::Item*/}
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">
@@ -504,7 +504,7 @@ class QuickPanel extends Component {
                 </a>
                 {/*end::Item*/}
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">
@@ -521,7 +521,7 @@ class QuickPanel extends Component {
                 </a>
                 {/*end::Item*/}
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">
@@ -540,7 +540,7 @@ class QuickPanel extends Component {
                 </a>
                 {/*end::Item*/}
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">
@@ -557,7 +557,7 @@ class QuickPanel extends Component {
                 </a>
                 {/*end::Item*/}
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">
@@ -576,7 +576,7 @@ class QuickPanel extends Component {
                 </a>
                 {/*end::Item*/}
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">
@@ -593,7 +593,7 @@ class QuickPanel extends Component {
                 </a>
                 {/*end::Item*/}
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">
@@ -612,7 +612,7 @@ class QuickPanel extends Component {
                 </a>
                 {/*end::Item*/}
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">
@@ -629,7 +629,7 @@ class QuickPanel extends Component {
                 </a>
                 {/*end::Item*/}
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">
@@ -646,7 +646,7 @@ class QuickPanel extends Component {
                 </a>
                 {/*end::Item*/}
                 {/*begin::Item*/}
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <div className="navi-link rounded">
                     <div className="symbol symbol-50 mr-3">
                       <div className="symbol-label">

@@ -63,7 +63,7 @@ class Chat extends Component {
                       {/*begin::Navigation*/}
                       <ul className="navi navi-hover py-5">
                         <li className="navi-item">
-                          <a href="#" className="navi-link">
+                          <a href="/" className="navi-link">
                             <span className="navi-icon">
                               <i className="flaticon2-drop" />
                             </span>
@@ -71,7 +71,7 @@ class Chat extends Component {
                           </a>
                         </li>
                         <li className="navi-item">
-                          <a href="#" className="navi-link">
+                          <a href="/" className="navi-link">
                             <span className="navi-icon">
                               <i className="flaticon2-list-3" />
                             </span>
@@ -79,7 +79,7 @@ class Chat extends Component {
                           </a>
                         </li>
                         <li className="navi-item">
-                          <a href="#" className="navi-link">
+                          <a href="/" className="navi-link">
                             <span className="navi-icon">
                               <i className="flaticon2-rocket-1" />
                             </span>
@@ -92,7 +92,7 @@ class Chat extends Component {
                           </a>
                         </li>
                         <li className="navi-item">
-                          <a href="#" className="navi-link">
+                          <a href="/" className="navi-link">
                             <span className="navi-icon">
                               <i className="flaticon2-bell-2" />
                             </span>
@@ -100,7 +100,7 @@ class Chat extends Component {
                           </a>
                         </li>
                         <li className="navi-item">
-                          <a href="#" className="navi-link">
+                          <a href="/" className="navi-link">
                             <span className="navi-icon">
                               <i className="flaticon2-gear" />
                             </span>
@@ -109,7 +109,7 @@ class Chat extends Component {
                         </li>
                         <li className="navi-separator my-3" />
                         <li className="navi-item">
-                          <a href="#" className="navi-link">
+                          <a href="/" className="navi-link">
                             <span className="navi-icon">
                               <i className="flaticon2-magnifier-tool" />
                             </span>
@@ -117,7 +117,7 @@ class Chat extends Component {
                           </a>
                         </li>
                         <li className="navi-item">
-                          <a href="#" className="navi-link">
+                          <a href="/" className="navi-link">
                             <span className="navi-icon">
                               <i className="flaticon2-bell-2" />
                             </span>
@@ -176,7 +176,7 @@ class Chat extends Component {
                         </div>
                         <div>
                           <a
-                            href="#"
+                            href="/"
                             className="text-dark-75 text-hover-primary font-weight-bold font-size-h6"
                           >
                             Matt Pears
@@ -200,7 +200,7 @@ class Chat extends Component {
                             3 minutes
                           </span>
                           <a
-                            href="#"
+                            href="/"
                             className="text-dark-75 text-hover-primary font-weight-bold font-size-h6"
                           >
                             You
@@ -224,7 +224,7 @@ class Chat extends Component {
                         </div>
                         <div>
                           <a
-                            href="#"
+                            href="/"
                             className="text-dark-75 text-hover-primary font-weight-bold font-size-h6"
                           >
                             Matt Pears
@@ -247,7 +247,7 @@ class Chat extends Component {
                             Just now
                           </span>
                           <a
-                            href="#"
+                            href="/"
                             className="text-dark-75 text-hover-primary font-weight-bold font-size-h6"
                           >
                             You
@@ -271,7 +271,7 @@ class Chat extends Component {
                         </div>
                         <div>
                           <a
-                            href="#"
+                            href="/"
                             className="text-dark-75 text-hover-primary font-weight-bold font-size-h6"
                           >
                             Matt Pears
@@ -284,7 +284,7 @@ class Chat extends Component {
                       <div className="mt-2 rounded p-5 bg-light-success text-dark-50 font-weight-bold font-size-lg text-left max-w-400px">
                         You can unwatch this repository immediately by clicking
                         here:
-                        <a href="#">https://github.com</a>
+                        <a href="/">https://github.com</a>
                       </div>
                     </div>
                     {/*end::Message In*/}
@@ -296,7 +296,7 @@ class Chat extends Component {
                             Just now
                           </span>
                           <a
-                            href="#"
+                            href="/"
                             className="text-dark-75 text-hover-primary font-weight-bold font-size-h6"
                           >
                             You
@@ -320,7 +320,7 @@ class Chat extends Component {
                         </div>
                         <div>
                           <a
-                            href="#"
+                            href="/"
                             className="text-dark-75 text-hover-primary font-weight-bold font-size-h6"
                           >
                             Matt Pears
@@ -343,7 +343,7 @@ class Chat extends Component {
                             Just now
                           </span>
                           <a
-                            href="#"
+                            href="/"
                             className="text-dark-75 text-hover-primary font-weight-bold font-size-h6"
                           >
                             You
@@ -376,10 +376,10 @@ class Chat extends Component {
                 />
                 <div className="d-flex align-items-center justify-content-between mt-5">
                   <div className="mr-3">
-                    <a href="#" className="btn btn-clean btn-icon btn-md mr-1">
+                    <a href="/" className="btn btn-clean btn-icon btn-md mr-1">
                       <i className="flaticon2-photograph icon-lg" />
                     </a>
-                    <a href="#" className="btn btn-clean btn-icon btn-md">
+                    <a href="/" className="btn btn-clean btn-icon btn-md">
                       <i className="flaticon2-photo-camera icon-lg" />
                     </a>
                   </div>

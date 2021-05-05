@@ -1,7 +1,7 @@
-import HeaderMobile from "./general/header-mobile.js";
+// import HeaderMobile from "./general/header-mobile.js";
 import Aside from "./general/aside.js";
 import Header from "./general/header.js";
-import SubHeader from "./subheader/subheader.js";
+// import SubHeader from "./subheader/subheader.js";
 import Footer from "./general/footer.js";
 import { Component } from "react";
 
@@ -14,13 +14,13 @@ class Layout extends Component {
           {/*[html-partial:include:{"file":"partials/_aside.html"}]/*/}
           < Aside />
           {/*begin::Wrapper*/}
-          <div className="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+          <div className="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper" style={{marginLeft: '25px', marginRight: '25px', overflow: 'hidden'}}>
             {/*[html-partial:include:{"file":"partials/_header.html"}]/*/}
-            < Header />
+            < Header title="Cửa hàng: NTQ" />
             {/*begin::Content*/}
             <div className="content d-flex flex-column flex-column-fluid" id="kt_content">
               {/*[html-partial:include:{"file":"partials/_subheader/subheader-v1.html"}]/*/}
-              < SubHeader />
+              {/* < SubHeader /> */}
               {this.props.children}
               {/*Content area here*/}
             </div>

@@ -14,7 +14,7 @@ class Toolbar extends Component {
         >
           <a
             className="btn btn-sm btn-icon btn-bg-light btn-icon-success btn-hover-success"
-            href="#"
+            href="/"
           >
             <i className="flaticon2-drop" />
           </a>
@@ -62,7 +62,7 @@ class Toolbar extends Component {
         >
           <a
             className="btn btn-sm btn-icon btn-bg-light btn-icon-danger btn-hover-danger"
-            href="#"
+            href="/"
             data-toggle="modal"
             data-target="#kt_chat_modal"
           >

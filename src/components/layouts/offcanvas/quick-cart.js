@@ -8,7 +8,7 @@ class QuickCart extends Component {
         <div className="offcanvas-header d-flex align-items-center justify-content-between pb-7">
           <h4 className="font-weight-bold m-0">Shopping Cart</h4>
           <a
-            href="#"
+            href="/"
             className="btn btn-xs btn-icon btn-light btn-hover-primary"
             id="kt_quick_cart_close"
           >
@@ -24,7 +24,7 @@ class QuickCart extends Component {
             <div className="d-flex align-items-center justify-content-between py-8">
               <div className="d-flex flex-column mr-2">
                 <a
-                  href="#"
+                  href="/"
                   className="font-weight-bold text-dark-75 font-size-lg text-hover-primary"
                 >
                   iBlender
@@ -41,17 +41,17 @@ class QuickCart extends Component {
                     5
                   </span>
                   <a
-                    href="#"
+                    href="/"
                     className="btn btn-xs btn-light-success btn-icon mr-2"
                   >
                     <i className="ki ki-minus icon-xs" />
                   </a>
-                  <a href="#" className="btn btn-xs btn-light-success btn-icon">
+                  <a href="/" className="btn btn-xs btn-light-success btn-icon">
                     <i className="ki ki-plus icon-xs" />
                   </a>
                 </div>
               </div>
-              <a href="#" className="symbol symbol-70 flex-shrink-0">
+              <a href="/" className="symbol symbol-70 flex-shrink-0">
                 <img src="assets/media/stock-600x400/img-1.jpg" title alt="" />
               </a>
             </div>
@@ -63,7 +63,7 @@ class QuickCart extends Component {
             <div className="d-flex align-items-center justify-content-between py-8">
               <div className="d-flex flex-column mr-2">
                 <a
-                  href="#"
+                  href="/"
                   className="font-weight-bold text-dark-75 font-size-lg text-hover-primary"
                 >
                   SmartCleaner
@@ -78,17 +78,17 @@ class QuickCart extends Component {
                     4
                   </span>
                   <a
-                    href="#"
+                    href="/"
                     className="btn btn-xs btn-light-success btn-icon mr-2"
                   >
                     <i className="ki ki-minus icon-xs" />
                   </a>
-                  <a href="#" className="btn btn-xs btn-light-success btn-icon">
+                  <a href="/" className="btn btn-xs btn-light-success btn-icon">
                     <i className="ki ki-plus icon-xs" />
                   </a>
                 </div>
               </div>
-              <a href="#" className="symbol symbol-70 flex-shrink-0">
+              <a href="/" className="symbol symbol-70 flex-shrink-0">
                 <img src="assets/media/stock-600x400/img-2.jpg" title alt="" />
               </a>
             </div>
@@ -100,7 +100,7 @@ class QuickCart extends Component {
             <div className="d-flex align-items-center justify-content-between py-8">
               <div className="d-flex flex-column mr-2">
                 <a
-                  href="#"
+                  href="/"
                   className="font-weight-bold text-dark-75 font-size-lg text-hover-primary"
                 >
                   CameraMax
@@ -117,17 +117,17 @@ class QuickCart extends Component {
                     3
                   </span>
                   <a
-                    href="#"
+                    href="/"
                     className="btn btn-xs btn-light-success btn-icon mr-2"
                   >
                     <i className="ki ki-minus icon-xs" />
                   </a>
-                  <a href="#" className="btn btn-xs btn-light-success btn-icon">
+                  <a href="/" className="btn btn-xs btn-light-success btn-icon">
                     <i className="ki ki-plus icon-xs" />
                   </a>
                 </div>
               </div>
-              <a href="#" className="symbol symbol-70 flex-shrink-0">
+              <a href="/" className="symbol symbol-70 flex-shrink-0">
                 <img src="assets/media/stock-600x400/img-3.jpg" title alt="" />
               </a>
             </div>
@@ -139,7 +139,7 @@ class QuickCart extends Component {
             <div className="d-flex align-items-center justify-content-between py-8">
               <div className="d-flex flex-column mr-2">
                 <a
-                  href="#"
+                  href="/"
                   className="font-weight-bold text-dark text-hover-primary"
                 >
                   4D Printer
@@ -154,17 +154,17 @@ class QuickCart extends Component {
                     7
                   </span>
                   <a
-                    href="#"
+                    href="/"
                     className="btn btn-xs btn-light-success btn-icon mr-2"
                   >
                     <i className="ki ki-minus icon-xs" />
                   </a>
-                  <a href="#" className="btn btn-xs btn-light-success btn-icon">
+                  <a href="/" className="btn btn-xs btn-light-success btn-icon">
                     <i className="ki ki-plus icon-xs" />
                   </a>
                 </div>
               </div>
-              <a href="#" className="symbol symbol-70 flex-shrink-0">
+              <a href="/" className="symbol symbol-70 flex-shrink-0">
                 <img src="assets/media/stock-600x400/img-4.jpg" title alt="" />
               </a>
             </div>
@@ -176,7 +176,7 @@ class QuickCart extends Component {
             <div className="d-flex align-items-center justify-content-between py-8">
               <div className="d-flex flex-column mr-2">
                 <a
-                  href="#"
+                  href="/"
                   className="font-weight-bold text-dark text-hover-primary"
                 >
                   MotionWire
@@ -191,17 +191,17 @@ class QuickCart extends Component {
                     7
                   </span>
                   <a
-                    href="#"
+                    href="/"
                     className="btn btn-xs btn-light-success btn-icon mr-2"
                   >
                     <i className="ki ki-minus icon-xs" />
                   </a>
-                  <a href="#" className="btn btn-xs btn-light-success btn-icon">
+                  <a href="/" className="btn btn-xs btn-light-success btn-icon">
                     <i className="ki ki-plus icon-xs" />
                   </a>
                 </div>
               </div>
-              <a href="#" className="symbol symbol-70 flex-shrink-0">
+              <a href="/" className="symbol symbol-70 flex-shrink-0">
                 <img src="assets/media/stock-600x400/img-8.jpg" title alt="" />
               </a>
             </div>

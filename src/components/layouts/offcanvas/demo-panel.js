@@ -8,7 +8,7 @@ class DemoPanel extends Component {
         <div className="offcanvas-header d-flex align-items-center justify-content-between pb-7">
           <h4 className="font-weight-bold m-0">Select A Demo</h4>
           <a
-            href="#"
+            href="/"
             className="btn btn-xs btn-icon btn-light btn-hover-primary"
             id="kt_demo_panel_close"
           >
@@ -369,7 +369,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -387,7 +387,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -405,7 +405,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -423,7 +423,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -441,7 +441,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -459,7 +459,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -477,7 +477,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -495,7 +495,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -513,7 +513,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -531,7 +531,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -549,7 +549,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -567,7 +567,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -585,7 +585,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -603,7 +603,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -621,7 +621,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -639,7 +639,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -657,7 +657,7 @@ class DemoPanel extends Component {
               </div>
               <div className="overlay-layer">
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-white btn-text-primary btn-hover-primary font-weight-boldest text-center min-w-75px shadow disabled opacity-90"
                 >
                   Coming soon
@@ -671,6 +671,7 @@ class DemoPanel extends Component {
             <a
               href="https://1.envato.market/EA4JP"
               target="_blank"
+              rel="noreferrer"
               className="btn btn-block btn-danger btn-shadow font-weight-bolder text-uppercase"
             >
               Buy Metronic Now!

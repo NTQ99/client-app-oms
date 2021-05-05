@@ -17,7 +17,7 @@ function Content() {
             <h3 className="card-title font-weight-bolder text-white">Sales Stat</h3>
             <div className="card-toolbar">
               <div className="dropdown dropdown-inline">
-                <a href="#" className="btn btn-transparent-white btn-sm font-weight-bolder dropdown-toggle px-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Export</a>
+                <a href="/" className="btn btn-transparent-white btn-sm font-weight-bolder dropdown-toggle px-5" data-toggle="dropdown" aria-expanded="false">Export</a>
                 <div className="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                   {/*[html-partial:begin:{"id":"demo1/dist/inc/view/partials/content/dropdowns/dropdown-2","page":"index"}]/*/}
                   {/*begin::Navigation*/}
@@ -26,7 +26,7 @@ function Content() {
                       <span className="text-primary text-uppercase font-weight-bold font-size-sm">Add new:</span>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-shopping-cart-1" />
                         </span>
@@ -34,7 +34,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-calendar-8" />
                         </span>
@@ -42,7 +42,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-graph-1" />
                         </span>
@@ -50,7 +50,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-rocket-1" />
                         </span>
@@ -58,7 +58,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-writing" />
                         </span>
@@ -96,7 +96,7 @@ function Content() {
                     </svg>
                     {/*end::Svg Icon*/}
                   </span>
-                  <a href="#" className="text-warning font-weight-bold font-size-h6">Weekly Sales</a>
+                  <a href="/" className="text-warning font-weight-bold font-size-h6">Weekly Sales</a>
                 </div>
                 <div className="col bg-light-primary px-6 py-8 rounded-xl mb-7">
                   <span className="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
@@ -110,7 +110,7 @@ function Content() {
                     </svg>
                     {/*end::Svg Icon*/}
                   </span>
-                  <a href="#" className="text-primary font-weight-bold font-size-h6 mt-2">New Users</a>
+                  <a href="/" className="text-primary font-weight-bold font-size-h6 mt-2">New Users</a>
                 </div>
               </div>
               {/*end::Row*/}
@@ -128,7 +128,7 @@ function Content() {
                     </svg>
                     {/*end::Svg Icon*/}
                   </span>
-                  <a href="#" className="text-danger font-weight-bold font-size-h6 mt-2">Item Orders</a>
+                  <a href="/" className="text-danger font-weight-bold font-size-h6 mt-2">Item Orders</a>
                 </div>
                 <div className="col bg-light-success px-6 py-8 rounded-xl">
                   <span className="svg-icon svg-icon-3x svg-icon-success d-block my-2">
@@ -142,7 +142,7 @@ function Content() {
                     </svg>
                     {/*end::Svg Icon*/}
                   </span>
-                  <a href="#" className="text-success font-weight-bold font-size-h6 mt-2">Bug Reports</a>
+                  <a href="/" className="text-success font-weight-bold font-size-h6 mt-2">Bug Reports</a>
                 </div>
               </div>
               {/*end::Row*/}
@@ -166,7 +166,7 @@ function Content() {
             </h3>
             <div className="card-toolbar">
               <div className="dropdown dropdown-inline">
-                <a href="#" className="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu dropdown-menu-md dropdown-menu-right">
@@ -179,35 +179,35 @@ function Content() {
                     </li>
                     <li className="navi-separator mb-3 opacity-70" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-success">Customer</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-danger">Partner</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-warning">Suplier</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-primary">Member</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-dark">Staff</span>
                         </span>
@@ -215,7 +215,7 @@ function Content() {
                     </li>
                     <li className="navi-separator mt-3 opacity-70" />
                     <li className="navi-footer py-4">
-                      <a className="btn btn-clean font-weight-bold btn-sm" href="#">
+                      <a className="btn btn-clean font-weight-bold btn-sm" href="/">
                         <i className="ki ki-plus icon-sm" />Add new</a>
                     </li>
                   </ul>
@@ -274,7 +274,7 @@ function Content() {
                 {/*end::Badge*/}
                 {/*begin::Desc*/}
                 <div className="timeline-content font-weight-bolder font-size-lg text-dark-75 pl-3">Make deposit
-                  <a href="#" className="text-primary">USD 700</a>. to ESL
+                  <a href="/" className="text-primary">USD 700</a>. to ESL
                 </div>
                 {/*end::Desc*/}
               </div>
@@ -306,7 +306,7 @@ function Content() {
                 {/*end::Badge*/}
                 {/*begin::Desc*/}
                 <div className="timeline-content font-weight-bolder text-dark-75 pl-3 font-size-lg">New order placed
-                  <a href="#" className="text-primary">#XF-2356</a>.
+                  <a href="/" className="text-primary">#XF-2356</a>.
                 </div>
                 {/*end::Desc*/}
               </div>
@@ -353,7 +353,7 @@ function Content() {
                 {/*end::Badge*/}
                 {/*begin::Desc*/}
                 <div className="timeline-content font-weight-bolder font-size-lg text-dark-75 pl-3">New order placed
-                  <a href="#" className="text-primary">#XF-2356</a>.
+                  <a href="/" className="text-primary">#XF-2356</a>.
                 </div>
                 {/*end::Desc*/}
               </div>
@@ -444,7 +444,7 @@ function Content() {
             </h3>
             <div className="card-toolbar">
               <div className="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                <a href="#" className="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu dropdown-menu-md dropdown-menu-right">
@@ -452,7 +452,7 @@ function Content() {
                   {/*begin::Navigation*/}
                   <ul className="navi navi-hover py-5">
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-drop" />
                         </span>
@@ -460,7 +460,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-list-3" />
                         </span>
@@ -468,7 +468,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-rocket-1" />
                         </span>
@@ -479,7 +479,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-bell-2" />
                         </span>
@@ -487,7 +487,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-gear" />
                         </span>
@@ -496,7 +496,7 @@ function Content() {
                     </li>
                     <li className="navi-separator my-3" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-magnifier-tool" />
                         </span>
@@ -504,7 +504,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-bell-2" />
                         </span>
@@ -545,7 +545,7 @@ function Content() {
               {/*end::Symbol*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column font-weight-bold">
-                <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Project Briefing</a>
+                <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Project Briefing</a>
                 <span className="text-muted">Project Manager</span>
               </div>
               {/*end::Text*/}
@@ -572,7 +572,7 @@ function Content() {
               {/*end::Symbol*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column font-weight-bold">
-                <a href="#" className="text-dark-75 text-hover-primary mb-1 font-size-lg">Concept Design</a>
+                <a href="/" className="text-dark-75 text-hover-primary mb-1 font-size-lg">Concept Design</a>
                 <span className="text-muted">Art Director</span>
               </div>
               {/*end::Text*/}
@@ -599,7 +599,7 @@ function Content() {
               {/*end::Symbol*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column font-weight-bold">
-                <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Functional Logics</a>
+                <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Functional Logics</a>
                 <span className="text-muted">Lead Developer</span>
               </div>
               {/*end::Text*/}
@@ -628,7 +628,7 @@ function Content() {
               {/*end::Symbol*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column font-weight-bold">
-                <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Development</a>
+                <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Development</a>
                 <span className="text-muted">DevOps</span>
               </div>
               {/*end::Text*/}
@@ -656,7 +656,7 @@ function Content() {
               {/*end::Symbol*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column font-weight-bold">
-                <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Testing</a>
+                <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Testing</a>
                 <span className="text-muted">QA Managers</span>
               </div>
               {/*end::Text*/}
@@ -721,10 +721,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Payrol Application</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Payrol Application</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">company@dev.com</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">company@dev.com</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -738,7 +738,7 @@ function Content() {
                           <span className="label label-lg label-light-success label-inline">Success</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -751,7 +751,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -764,7 +764,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -788,10 +788,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">HR Management System</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">HR Management System</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">hr@demo.com</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">hr@demo.com</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -805,7 +805,7 @@ function Content() {
                           <span className="label label-lg label-light-danger label-inline">Rejected</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -818,7 +818,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -831,7 +831,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -855,10 +855,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">KTR Mobile Application</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">KTR Mobile Application</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">ktr@demo.com</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">ktr@demo.com</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -872,7 +872,7 @@ function Content() {
                           <span className="label label-lg label-light-warning label-inline">In Progress</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -885,7 +885,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -898,7 +898,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -922,10 +922,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Sant Outstanding</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Sant Outstanding</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">bprow@bnc.cc</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">bprow@bnc.cc</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -939,7 +939,7 @@ function Content() {
                           <span className="label label-lg label-light-primary label-inline">Approved</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -952,7 +952,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -965,7 +965,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -989,10 +989,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Application Development</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Application Development</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">app@dev.com</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">app@dev.com</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -1006,7 +1006,7 @@ function Content() {
                           <span className="label label-lg label-light-warning label-inline">In Progress</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1019,7 +1019,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1032,7 +1032,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1078,10 +1078,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Application Development</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Application Development</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">app@dev.com</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">app@dev.com</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -1095,7 +1095,7 @@ function Content() {
                           <span className="label label-lg label-light-warning label-inline">In Progress</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1108,7 +1108,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1121,7 +1121,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1145,10 +1145,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Payrol Application</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Payrol Application</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">company@dev.com</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">company@dev.com</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -1162,7 +1162,7 @@ function Content() {
                           <span className="label label-lg label-light-success label-inline">Success</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1175,7 +1175,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1188,7 +1188,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1212,10 +1212,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">HR Management System</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">HR Management System</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">hr@demo.com</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">hr@demo.com</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -1229,7 +1229,7 @@ function Content() {
                           <span className="label label-lg label-light-danger label-inline">Rejected</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1242,7 +1242,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1255,7 +1255,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1279,10 +1279,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Sant Outstanding</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Sant Outstanding</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">bprow@bnc.cc</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">bprow@bnc.cc</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -1296,7 +1296,7 @@ function Content() {
                           <span className="label label-lg label-light-primary label-inline">Approved</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1309,7 +1309,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1322,7 +1322,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1346,10 +1346,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">KTR Mobile Application</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">KTR Mobile Application</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">ktr@demo.com</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">ktr@demo.com</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -1363,7 +1363,7 @@ function Content() {
                           <span className="label label-lg label-light-warning label-inline">In Progress</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1376,7 +1376,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1389,7 +1389,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1435,10 +1435,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Sant Outstanding</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Sant Outstanding</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">bprow@bnc.cc</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">bprow@bnc.cc</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -1452,7 +1452,7 @@ function Content() {
                           <span className="label label-lg label-light-primary label-inline">Approved</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1465,7 +1465,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1478,7 +1478,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1502,10 +1502,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Application Development</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Application Development</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">app@dev.com</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">app@dev.com</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -1519,7 +1519,7 @@ function Content() {
                           <span className="label label-lg label-light-warning label-inline">In Progress</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1532,7 +1532,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1545,7 +1545,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1569,10 +1569,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Payrol Application</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Payrol Application</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">company@dev.com</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">company@dev.com</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -1586,7 +1586,7 @@ function Content() {
                           <span className="label label-lg label-light-success label-inline">Success</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1599,7 +1599,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1612,7 +1612,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1636,10 +1636,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">HR Management System</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">HR Management System</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">hr@demo.com</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">hr@demo.com</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -1653,7 +1653,7 @@ function Content() {
                           <span className="label label-lg label-light-danger label-inline">Rejected</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1666,7 +1666,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1679,7 +1679,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1703,10 +1703,10 @@ function Content() {
                           </div>
                         </td>
                         <td className="pl-0">
-                          <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">KTR Mobile Application</a>
+                          <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">KTR Mobile Application</a>
                           <div>
                             <span className="font-weight-bolder">Email:</span>
-                            <a className="text-muted font-weight-bold text-hover-primary" href="#">ktr@demo.com</a>
+                            <a className="text-muted font-weight-bold text-hover-primary" href="/">ktr@demo.com</a>
                           </div>
                         </td>
                         <td className="text-right">
@@ -1720,7 +1720,7 @@ function Content() {
                           <span className="label label-lg label-light-warning label-inline">In Progress</span>
                         </td>
                         <td className="text-right pr-0">
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Settings-1.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1733,7 +1733,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1746,7 +1746,7 @@ function Content() {
                               {/*end::Svg Icon*/}
                             </span>
                           </a>
-                          <a href="#" className="btn btn-icon btn-light btn-hover-primary btn-sm">
+                          <a href="/" className="btn btn-icon btn-light btn-hover-primary btn-sm">
                             <span className="svg-icon svg-icon-md svg-icon-primary">
                               {/*begin::Svg Icon | path:assets/media/svg/icons/General/Trash.svg*/}
                               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -1783,7 +1783,7 @@ function Content() {
             <h3 className="card-title font-weight-bolder text-dark">Authors</h3>
             <div className="card-toolbar">
               <div className="dropdown dropdown-inline">
-                <a href="#" className="btn btn-light-primary btn-sm font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">August</a>
+                <a href="/" className="btn btn-light-primary btn-sm font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">August</a>
                 <div className="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                   {/*[html-partial:begin:{"id":"demo1/dist/inc/view/partials/content/dropdowns/dropdown-2","page":"index"}]/*/}
                   {/*begin::Navigation*/}
@@ -1792,7 +1792,7 @@ function Content() {
                       <span className="text-primary text-uppercase font-weight-bold font-size-sm">Add new:</span>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-shopping-cart-1" />
                         </span>
@@ -1800,7 +1800,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-calendar-8" />
                         </span>
@@ -1808,7 +1808,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-graph-1" />
                         </span>
@@ -1816,7 +1816,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-rocket-1" />
                         </span>
@@ -1824,7 +1824,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-writing" />
                         </span>
@@ -1852,13 +1852,13 @@ function Content() {
               {/*end::Symbol*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column flex-grow-1 font-weight-bold">
-                <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Ricky Hunt</a>
+                <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Ricky Hunt</a>
                 <span className="text-muted">PHP, SQLite, Artisan CLI</span>
               </div>
               {/*end::Text*/}
               {/*begin::Dropdown*/}
               <div className="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                <a href="#" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -1871,35 +1871,35 @@ function Content() {
                     </li>
                     <li className="navi-separator mb-3 opacity-70" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-success">Customer</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-danger">Partner</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-warning">Suplier</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-primary">Member</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-dark">Staff</span>
                         </span>
@@ -1907,7 +1907,7 @@ function Content() {
                     </li>
                     <li className="navi-separator mt-3 opacity-70" />
                     <li className="navi-footer py-4">
-                      <a className="btn btn-clean font-weight-bold btn-sm" href="#">
+                      <a className="btn btn-clean font-weight-bold btn-sm" href="/">
                         <i className="ki ki-plus icon-sm" />Add new</a>
                     </li>
                   </ul>
@@ -1929,13 +1929,13 @@ function Content() {
               {/*end::Symbol*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column flex-grow-1 font-weight-bold">
-                <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Anne Clarc</a>
+                <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Anne Clarc</a>
                 <span className="text-muted">PHP, SQLite, Artisan CLI</span>
               </div>
               {/*end::Text*/}
               {/*begin::Dropdown*/}
               <div className="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                <a href="#" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -1948,35 +1948,35 @@ function Content() {
                     </li>
                     <li className="navi-separator mb-3 opacity-70" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-success">Customer</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-danger">Partner</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-warning">Suplier</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-primary">Member</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-dark">Staff</span>
                         </span>
@@ -1984,7 +1984,7 @@ function Content() {
                     </li>
                     <li className="navi-separator mt-3 opacity-70" />
                     <li className="navi-footer py-4">
-                      <a className="btn btn-clean font-weight-bold btn-sm" href="#">
+                      <a className="btn btn-clean font-weight-bold btn-sm" href="/">
                         <i className="ki ki-plus icon-sm" />Add new</a>
                     </li>
                   </ul>
@@ -2006,13 +2006,13 @@ function Content() {
               {/*end::Symbol*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column flex-grow-1 font-weight-bold">
-                <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Kristaps Zumman</a>
+                <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Kristaps Zumman</a>
                 <span className="text-muted">PHP, SQLite, Artisan CLI</span>
               </div>
               {/*end::Text*/}
               {/*begin::Dropdown*/}
               <div className="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                <a href="#" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -2025,35 +2025,35 @@ function Content() {
                     </li>
                     <li className="navi-separator mb-3 opacity-70" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-success">Customer</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-danger">Partner</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-warning">Suplier</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-primary">Member</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-dark">Staff</span>
                         </span>
@@ -2061,7 +2061,7 @@ function Content() {
                     </li>
                     <li className="navi-separator mt-3 opacity-70" />
                     <li className="navi-footer py-4">
-                      <a className="btn btn-clean font-weight-bold btn-sm" href="#">
+                      <a className="btn btn-clean font-weight-bold btn-sm" href="/">
                         <i className="ki ki-plus icon-sm" />Add new</a>
                     </li>
                   </ul>
@@ -2083,13 +2083,13 @@ function Content() {
               {/*end::Symbol*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column flex-grow-1 font-weight-bold">
-                <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Ricky Hunt</a>
+                <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Ricky Hunt</a>
                 <span className="text-muted">PHP, SQLite, Artisan CLI</span>
               </div>
               {/*end::Text*/}
               {/*begin::Dropdown*/}
               <div className="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                <a href="#" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -2102,35 +2102,35 @@ function Content() {
                     </li>
                     <li className="navi-separator mb-3 opacity-70" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-success">Customer</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-danger">Partner</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-warning">Suplier</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-primary">Member</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-dark">Staff</span>
                         </span>
@@ -2138,7 +2138,7 @@ function Content() {
                     </li>
                     <li className="navi-separator mt-3 opacity-70" />
                     <li className="navi-footer py-4">
-                      <a className="btn btn-clean font-weight-bold btn-sm" href="#">
+                      <a className="btn btn-clean font-weight-bold btn-sm" href="/">
                         <i className="ki ki-plus icon-sm" />Add new</a>
                     </li>
                   </ul>
@@ -2160,13 +2160,13 @@ function Content() {
               {/*end::Symbol*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column flex-grow-1 font-weight-bold">
-                <a href="#" className="text-dark text-hover-primary mb-1 font-size-lg">Carles Puyol</a>
+                <a href="/" className="text-dark text-hover-primary mb-1 font-size-lg">Carles Puyol</a>
                 <span className="text-muted">PHP, SQLite, Artisan CLI</span>
               </div>
               {/*end::Text*/}
               {/*begin::Dropdown*/}
               <div className="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                <a href="#" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -2179,35 +2179,35 @@ function Content() {
                     </li>
                     <li className="navi-separator mb-3 opacity-70" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-success">Customer</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-danger">Partner</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-warning">Suplier</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-primary">Member</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-dark">Staff</span>
                         </span>
@@ -2215,7 +2215,7 @@ function Content() {
                     </li>
                     <li className="navi-separator mt-3 opacity-70" />
                     <li className="navi-footer py-4">
-                      <a className="btn btn-clean font-weight-bold btn-sm" href="#">
+                      <a className="btn btn-clean font-weight-bold btn-sm" href="/">
                         <i className="ki ki-plus icon-sm" />Add new</a>
                     </li>
                   </ul>
@@ -2241,7 +2241,7 @@ function Content() {
             <h3 className="card-title font-weight-bolder text-dark">Todo</h3>
             <div className="card-toolbar">
               <div className="dropdown dropdown-inline">
-                <a href="#" className="btn btn-light btn-sm font-size-sm font-weight-bolder dropdown-toggle text-dark-75" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create</a>
+                <a href="/" className="btn btn-light btn-sm font-size-sm font-weight-bolder dropdown-toggle text-dark-75" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create</a>
                 <div className="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                   {/*[html-partial:begin:{"id":"demo1/dist/inc/view/partials/content/dropdowns/dropdown-2","page":"index"}]/*/}
                   {/*begin::Navigation*/}
@@ -2250,7 +2250,7 @@ function Content() {
                       <span className="text-primary text-uppercase font-weight-bold font-size-sm">Add new:</span>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-shopping-cart-1" />
                         </span>
@@ -2258,7 +2258,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-calendar-8" />
                         </span>
@@ -2266,7 +2266,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-graph-1" />
                         </span>
@@ -2274,7 +2274,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-rocket-1" />
                         </span>
@@ -2282,7 +2282,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-writing" />
                         </span>
@@ -2312,13 +2312,13 @@ function Content() {
               {/*end::Checkbox*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column flex-grow-1">
-                <a href="#" className="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Create FireStone Logo</a>
+                <a href="/" className="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Create FireStone Logo</a>
                 <span className="text-muted font-weight-bold">Due in 2 Days</span>
               </div>
               {/*end::Text*/}
               {/*begin::Dropdown*/}
               <div className="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                <a href="#" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -2331,35 +2331,35 @@ function Content() {
                     </li>
                     <li className="navi-separator mb-3 opacity-70" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-success">Customer</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-danger">Partner</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-warning">Suplier</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-primary">Member</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-dark">Staff</span>
                         </span>
@@ -2367,7 +2367,7 @@ function Content() {
                     </li>
                     <li className="navi-separator mt-3 opacity-70" />
                     <li className="navi-footer py-4">
-                      <a className="btn btn-clean font-weight-bold btn-sm" href="#">
+                      <a className="btn btn-clean font-weight-bold btn-sm" href="/">
                         <i className="ki ki-plus icon-sm" />Add new</a>
                     </li>
                   </ul>
@@ -2391,13 +2391,13 @@ function Content() {
               {/*end::Checkbox*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column flex-grow-1">
-                <a href="#" className="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Stakeholder Meeting</a>
+                <a href="/" className="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Stakeholder Meeting</a>
                 <span className="text-muted font-weight-bold">Due in 3 Days</span>
               </div>
               {/*end::Text*/}
               {/*begin::Dropdown*/}
               <div className="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                <a href="#" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -2410,35 +2410,35 @@ function Content() {
                     </li>
                     <li className="navi-separator mb-3 opacity-70" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-success">Customer</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-danger">Partner</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-warning">Suplier</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-primary">Member</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-dark">Staff</span>
                         </span>
@@ -2446,7 +2446,7 @@ function Content() {
                     </li>
                     <li className="navi-separator mt-3 opacity-70" />
                     <li className="navi-footer py-4">
-                      <a className="btn btn-clean font-weight-bold btn-sm" href="#">
+                      <a className="btn btn-clean font-weight-bold btn-sm" href="/">
                         <i className="ki ki-plus icon-sm" />Add new</a>
                     </li>
                   </ul>
@@ -2470,13 +2470,13 @@ function Content() {
               {/*end::Checkbox*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column flex-grow-1">
-                <a href="#" className="text-dark-75 text-hover-primary font-size-sm font-weight-bold font-size-lg mb-1">Scoping &amp; Estimations</a>
+                <a href="/" className="text-dark-75 text-hover-primary font-size-sm font-weight-bold font-size-lg mb-1">Scoping &amp; Estimations</a>
                 <span className="text-muted font-weight-bold">Due in 5 Days</span>
               </div>
               {/*end::Text*/}
               {/*begin: Dropdown*/}
               <div className="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                <a href="#" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -2489,35 +2489,35 @@ function Content() {
                     </li>
                     <li className="navi-separator mb-3 opacity-70" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-success">Customer</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-danger">Partner</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-warning">Suplier</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-primary">Member</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-dark">Staff</span>
                         </span>
@@ -2525,7 +2525,7 @@ function Content() {
                     </li>
                     <li className="navi-separator mt-3 opacity-70" />
                     <li className="navi-footer py-4">
-                      <a className="btn btn-clean font-weight-bold btn-sm" href="#">
+                      <a className="btn btn-clean font-weight-bold btn-sm" href="/">
                         <i className="ki ki-plus icon-sm" />Add new</a>
                     </li>
                   </ul>
@@ -2549,13 +2549,13 @@ function Content() {
               {/*end::Checkbox*/}
               {/*begin::Text*/}
               <div className="d-flex flex-column flex-grow-1">
-                <a href="#" className="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Sprint Showcase</a>
+                <a href="/" className="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Sprint Showcase</a>
                 <span className="text-muted font-weight-bold">Due in 1 Day</span>
               </div>
               {/*end::Text*/}
               {/*begin::Dropdown*/}
               <div className="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                <a href="#" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -2563,7 +2563,7 @@ function Content() {
                   {/*begin::Navigation*/}
                   <ul className="navi navi-hover py-5">
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-drop" />
                         </span>
@@ -2571,7 +2571,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-list-3" />
                         </span>
@@ -2579,7 +2579,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-rocket-1" />
                         </span>
@@ -2590,7 +2590,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-bell-2" />
                         </span>
@@ -2598,7 +2598,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-gear" />
                         </span>
@@ -2607,7 +2607,7 @@ function Content() {
                     </li>
                     <li className="navi-separator my-3" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-magnifier-tool" />
                         </span>
@@ -2615,7 +2615,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-bell-2" />
                         </span>
@@ -2646,13 +2646,13 @@ function Content() {
               {/*end::Checkbox:*/}
               {/*begin::Title*/}
               <div className="d-flex flex-column flex-grow-1">
-                <a href="#" className="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Project Retro</a>
+                <a href="/" className="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">Project Retro</a>
                 <span className="text-muted font-weight-bold">Due in 12 Days</span>
               </div>
               {/*end::Text*/}
               {/*begin: Dropdown*/}
               <div className="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions" data-placement="left">
-                <a href="#" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
@@ -2665,35 +2665,35 @@ function Content() {
                     </li>
                     <li className="navi-separator mb-3 opacity-70" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-success">Customer</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-danger">Partner</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-warning">Suplier</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-primary">Member</span>
                         </span>
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-text">
                           <span className="label label-xl label-inline label-light-dark">Staff</span>
                         </span>
@@ -2701,7 +2701,7 @@ function Content() {
                     </li>
                     <li className="navi-separator mt-3 opacity-70" />
                     <li className="navi-footer py-4">
-                      <a className="btn btn-clean font-weight-bold btn-sm" href="#">
+                      <a className="btn btn-clean font-weight-bold btn-sm" href="/">
                         <i className="ki ki-plus icon-sm" />Add new</a>
                     </li>
                   </ul>
@@ -2727,7 +2727,7 @@ function Content() {
             <h3 className="card-title font-weight-bolder text-dark">Trends</h3>
             <div className="card-toolbar">
               <div className="dropdown dropdown-inline">
-                <a href="#" className="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-ver" />
                 </a>
                 <div className="dropdown-menu dropdown-menu-sm dropdown-menu-right">
@@ -2738,7 +2738,7 @@ function Content() {
                       <span className="text-primary text-uppercase font-weight-bold font-size-sm">Add new:</span>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-shopping-cart-1" />
                         </span>
@@ -2746,7 +2746,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-calendar-8" />
                         </span>
@@ -2754,7 +2754,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-graph-1" />
                         </span>
@@ -2762,7 +2762,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-rocket-1" />
                         </span>
@@ -2770,7 +2770,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-writing" />
                         </span>
@@ -2800,7 +2800,7 @@ function Content() {
                 {/*end::Symbol*/}
                 {/*begin::Text*/}
                 <div className="d-flex flex-column flex-grow-1">
-                  <a href="#" className="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Top Authors</a>
+                  <a href="/" className="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Top Authors</a>
                   <span className="text-muted font-weight-bold">5 day ago</span>
                 </div>
                 {/*end::Text*/}
@@ -2824,7 +2824,7 @@ function Content() {
                 {/*end::Symbol*/}
                 {/*begin::Text*/}
                 <div className="d-flex flex-column flex-grow-1">
-                  <a href="#" className="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Popular Authors</a>
+                  <a href="/" className="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Popular Authors</a>
                   <span className="text-muted font-weight-bold">5 day ago</span>
                 </div>
                 {/*end::Text*/}
@@ -2848,7 +2848,7 @@ function Content() {
                 {/*end::Symbol*/}
                 {/*begin::Text*/}
                 <div className="d-flex flex-column flex-grow-1">
-                  <a href="#" className="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">New Users</a>
+                  <a href="/" className="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">New Users</a>
                   <span className="text-muted font-weight-bold">5 day ago</span>
                 </div>
                 {/*end::Text*/}
@@ -2879,7 +2879,7 @@ function Content() {
             <h3 className="card-title font-weight-bolder">Action Needed</h3>
             <div className="card-toolbar">
               <div className="dropdown dropdown-inline">
-                <a href="#" className="btn btn-clean btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="/" className="btn btn-clean btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i className="ki ki-bold-more-hor" />
                 </a>
                 <div className="dropdown-menu dropdown-menu-md dropdown-menu-right">
@@ -2887,7 +2887,7 @@ function Content() {
                   {/*begin::Navigation*/}
                   <ul className="navi navi-hover py-5">
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-drop" />
                         </span>
@@ -2895,7 +2895,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-list-3" />
                         </span>
@@ -2903,7 +2903,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-rocket-1" />
                         </span>
@@ -2914,7 +2914,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-bell-2" />
                         </span>
@@ -2922,7 +2922,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-gear" />
                         </span>
@@ -2931,7 +2931,7 @@ function Content() {
                     </li>
                     <li className="navi-separator my-3" />
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-magnifier-tool" />
                         </span>
@@ -2939,7 +2939,7 @@ function Content() {
                       </a>
                     </li>
                     <li className="navi-item">
-                      <a href="#" className="navi-link">
+                      <a href="/" className="navi-link">
                         <span className="navi-icon">
                           <i className="flaticon2-bell-2" />
                         </span>
@@ -2966,7 +2966,7 @@ function Content() {
               <p className="text-center font-weight-normal font-size-lg pb-7">Notes: Current sprint requires stakeholders
                 <br />to approve newly amended policies
               </p>
-              <a href="#" className="btn btn-success btn-shadow-hover font-weight-bolder w-100 py-3">Generate Report</a>
+              <a href="/" className="btn btn-success btn-shadow-hover font-weight-bolder w-100 py-3">Generate Report</a>
             </div>
           </div>
           {/*end::Body*/}
@@ -2985,8 +2985,8 @@ function Content() {
               <span className="text-muted mt-3 font-weight-bold font-size-sm">More than 400+ new members</span>
             </h3>
             <div className="card-toolbar">
-              <a href="#" className="btn btn-info font-weight-bolder font-size-sm mr-3">New Report</a>
-              <a href="#" className="btn btn-danger font-weight-bolder font-size-sm">Create</a>
+              <a href="/" className="btn btn-info font-weight-bolder font-size-sm mr-3">New Report</a>
+              <a href="/" className="btn btn-danger font-weight-bolder font-size-sm">Create</a>
             </div>
           </div>
           {/*end::Header*/}
@@ -3018,7 +3018,7 @@ function Content() {
                             </span>
                           </div>
                           <div>
-                            <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Brad Simmons</a>
+                            <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Brad Simmons</a>
                             <span className="text-muted font-weight-bold d-block">HTML, JS, ReactJS</span>
                           </div>
                         </div>
@@ -3040,7 +3040,7 @@ function Content() {
                         <span className="text-muted font-weight-bold d-block font-size-sm">Best Rated</span>
                       </td>
                       <td className="pr-0 text-right">
-                        <a href="#" className="btn btn-light-success font-weight-bolder font-size-sm">View Offer</a>
+                        <a href="/" className="btn btn-light-success font-weight-bolder font-size-sm">View Offer</a>
                       </td>
                     </tr>
                     <tr>
@@ -3052,7 +3052,7 @@ function Content() {
                             </span>
                           </div>
                           <div>
-                            <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Jessie Clarcson</a>
+                            <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Jessie Clarcson</a>
                             <span className="text-muted font-weight-bold d-block">C#, ASP.NET, MS SQL</span>
                           </div>
                         </div>
@@ -3074,7 +3074,7 @@ function Content() {
                         <span className="text-muted font-weight-bold d-block font-size-sm">Above Avarage</span>
                       </td>
                       <td className="pr-0 text-right">
-                        <a href="#" className="btn btn-light-success font-weight-bolder font-size-sm">View Offer</a>
+                        <a href="/" className="btn btn-light-success font-weight-bolder font-size-sm">View Offer</a>
                       </td>
                     </tr>
                     <tr>
@@ -3086,7 +3086,7 @@ function Content() {
                             </span>
                           </div>
                           <div>
-                            <a href="#" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Lebron Wayde</a>
+                            <a href="/" className="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">Lebron Wayde</a>
                             <span className="text-muted font-weight-bold d-block">PHP, Laravel, VueJS</span>
                           </div>
                         </div>
@@ -3108,7 +3108,7 @@ function Content() {
                         <span className="text-muted font-weight-bold d-block font-size-sm">Best Rated</span>
                       </td>
                       <td className="pr-0 text-right">
-                        <a href="#" className="btn btn-light-success font-weight-bolder font-size-sm">View Offer</a>
+                        <a href="/" className="btn btn-light-success font-weight-bolder font-size-sm">View Offer</a>
                       </td>
                     </tr>
                     <tr>
@@ -3120,7 +3120,7 @@ function Content() {
                             </span>
                           </div>
                           <div>
-                            <a href="#" className="text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg">Natali Trump</a>
+                            <a href="/" className="text-dark font-weight-bolder text-hover-primary mb-1 font-size-lg">Natali Trump</a>
                             <span className="text-muted font-weight-bold d-block">Python, PostgreSQL, ReactJS</span>
                           </div>
                         </div>
@@ -3142,7 +3142,7 @@ function Content() {
                         <span className="text-muted font-weight-bold d-block font-size-sm">Avarage</span>
                       </td>
                       <td className="pr-0 text-right">
-                        <a href="#" className="btn btn-light-success font-weight-bolder font-size-sm" style={{width: '7rem'}}>View Offer</a>
+                        <a href="/" className="btn btn-light-success font-weight-bolder font-size-sm" style={{width: '7rem'}}>View Offer</a>
                       </td>
                     </tr>
                   </tbody>

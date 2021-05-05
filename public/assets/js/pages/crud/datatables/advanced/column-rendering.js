@@ -25,7 +25,7 @@ var KTDatatablesAdvancedColumnRendering = function() {
                                     </div>
                                     <div class="ml-3">
                                         <span class="text-dark-75 font-weight-bold line-height-sm d-block pb-2">` + full[2] + `</span>
-                                        <a href="#" class="text-muted text-hover-primary">` + full[3] + `</a>
+                                        <a href="/" class="text-muted text-hover-primary">` + full[3] + `</a>
                                     </div>
                                 </div>`;
 						}
@@ -51,7 +51,7 @@ var KTDatatablesAdvancedColumnRendering = function() {
                                     </div>
                                     <div class="ml-3">
                                         <span class="text-dark-75 font-weight-bold line-height-sm d-block pb-2">` + full[2] + `</span>
-                                        <a href="#" class="text-muted text-hover-primary">` + full[3] + `</a>
+                                        <a href="/" class="text-muted text-hover-primary">` + full[3] + `</a>
                                     </div>
                                 </div>`;
 						}
@@ -77,9 +77,9 @@ var KTDatatablesAdvancedColumnRendering = function() {
 	                            </a>\
 							  	<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">\
 									<ul class="nav nav-hoverable flex-column">\
-							    		<li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-edit"></i><span class="nav-text">Edit Details</span></a></li>\
-							    		<li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-leaf"></i><span class="nav-text">Update Status</span></a></li>\
-							    		<li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-print"></i><span class="nav-text">Print</span></a></li>\
+							    		<li class="nav-item"><a class="nav-link" href="/"><i class="nav-icon la la-edit"></i><span class="nav-text">Edit Details</span></a></li>\
+							    		<li class="nav-item"><a class="nav-link" href="/"><i class="nav-icon la la-leaf"></i><span class="nav-text">Update Status</span></a></li>\
+							    		<li class="nav-item"><a class="nav-link" href="/"><i class="nav-icon la la-print"></i><span class="nav-text">Print</span></a></li>\
 									</ul>\
 							  	</div>\
 							</div>\

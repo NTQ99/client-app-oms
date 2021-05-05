@@ -13,7 +13,7 @@ class QuickUser extends Component {
             </small>
           </h3>
           <a
-            href="#"
+            href="/"
             className="btn btn-xs btn-icon btn-light btn-hover-primary"
             id="kt_quick_user_close"
           >
@@ -36,14 +36,14 @@ class QuickUser extends Component {
             </div>
             <div className="d-flex flex-column">
               <a
-                href="#"
+                href="/"
                 className="font-weight-bold font-size-h5 text-dark-75 text-hover-primary"
               >
                 James Jones
               </a>
               <div className="text-muted mt-1">Application Developer</div>
               <div className="navi mt-2">
-                <a href="#" className="navi-item">
+                <a href="/" className="navi-item">
                   <span className="navi-link p-0 pb-2">
                     <span className="navi-icon mr-1">
                       <span className="svg-icon svg-icon-lg svg-icon-primary">
@@ -85,7 +85,7 @@ class QuickUser extends Component {
                   </span>
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5"
                 >
                   Sign Out
@@ -364,7 +364,7 @@ class QuickUser extends Component {
               </span>
               <div className="d-flex flex-column flex-grow-1 mr-2">
                 <a
-                  href="#"
+                  href="/"
                   className="font-weight-normal text-dark-75 text-hover-primary font-size-lg mb-1"
                 >
                   Another purpose persuade
@@ -415,7 +415,7 @@ class QuickUser extends Component {
               </span>
               <div className="d-flex flex-column flex-grow-1 mr-2">
                 <a
-                  href="#"
+                  href="/"
                   className="font-weight-normal text-dark-75 text-hover-primary font-size-lg mb-1"
                 >
                   Would be to people
@@ -463,7 +463,7 @@ class QuickUser extends Component {
               </span>
               <div className="d-flex flex-column flex-grow-1 mr-2">
                 <a
-                  href="#"
+                  href="/"
                   className="font-weight-normel text-dark-75 text-hover-primary font-size-lg mb-1"
                 >
                   Purpose would be to persuade
@@ -525,7 +525,7 @@ class QuickUser extends Component {
               </span>
               <div className="d-flex flex-column flex-grow-1 mr-2">
                 <a
-                  href="#"
+                  href="/"
                   className="font-weight-normel text-dark-75 text-hover-primary font-size-lg mb-1"
                 >
                   The best product

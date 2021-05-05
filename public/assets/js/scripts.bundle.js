@@ -3539,7 +3539,7 @@ var KTUtil = function() {
         },
 
         getBody: function() {
-            return document.getElementsByTagName('body')[0];
+            return document.getElementById('root').children[0];
         },
 
         /**
@@ -8795,23 +8795,23 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 		// By default the stirngs will be in the plugin source and here can override it
 		translate: {
 			records: {
-				processing: 'Please wait...',
-				noRecords: 'No records found',
+				processing: ' Vui lòng chờ trong giây lát...',
+				noRecords: 'Không tìm thấy bản ghi nào',
 			},
 			toolbar: {
 				pagination: {
 					items: {
 						default: {
-							first: 'First',
-							prev: 'Previous',
-							next: 'Next',
-							last: 'Last',
+							first: 'Đầu',
+							prev: 'Trước',
+							next: 'Tiếp',
+							last: 'Cuối',
 							more: 'More pages',
-							input: 'Page number',
-							select: 'Select page size',
-							all: 'all',
+							input: 'Số trang',
+							select: 'Chọn số bản ghi trên trang',
+							all: 'Tất cả',
 						},
-						info: 'Showing {{start}} - {{end}} of {{total}}',
+						info: 'Hiển thị {{start}} - {{end}} trong {{total}}',
 					},
 				},
 			},
@@ -10152,7 +10152,7 @@ var KTLayoutChat = function () {
 		html += '<div class="d-flex align-items-center">';
 		html += '	<div>';
 		html += '		<span class="text-muted font-size-sm">2 Hours</span>';
-		html += '		<a href="#" class="text-dark-75 text-hover-primary font-weight-bold font-size-h6">You</a>';
+		html += '		<a href="/" class="text-dark-75 text-hover-primary font-weight-bold font-size-h6">You</a>';
 		html += '	</div>';
 		html += '	<div class="symbol symbol-circle symbol-40 ml-3">';
 		html += '		<img alt="Pic" src="assets/media/users/300_12.jpg"/>';
@@ -10180,7 +10180,7 @@ var KTLayoutChat = function () {
 			html += '		<img alt="Pic" src="assets/media/users/300_12.jpg"/>';
 			html += '	</div>';
 			html += '	<div>';
-			html += '		<a href="#" class="text-dark-75 text-hover-primary font-weight-bold font-size-h6">Matt Pears</a>';
+			html += '		<a href="/" class="text-dark-75 text-hover-primary font-weight-bold font-size-h6">Matt Pears</a>';
 			html += '		<span class="text-muted font-size-sm">Just now</span>';
 			html += '	</div>';
 			html += '</div>';

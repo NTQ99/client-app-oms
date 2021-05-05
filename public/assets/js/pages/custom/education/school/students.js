@@ -83,7 +83,7 @@ var KTAppsEducationSchoolTeacher = function() {
                             </div>\
                             <div class="ml-4">\
                                 <div class="text-dark-75 font-weight-bolder font-size-lg mb-0">' + data.CompanyAgent + '</div>\
-                                <a href="#" class="text-muted font-weight-bold text-hover-primary">' + data.CompanyEmail + '</a>\
+                                <a href="/" class="text-muted font-weight-bold text-hover-primary">' + data.CompanyEmail + '</a>\
                             </div>\
                         </div>';
 
@@ -105,7 +105,7 @@ var KTAppsEducationSchoolTeacher = function() {
                             5: {'title': ', MA'},
 						};
 
-						output += '<a href="#" class="text-dark-50 text-hover-primary font-weight-bold">' + row.CompanyName + genre[genreIndex1].title + '</a>';
+						output += '<a href="/" class="text-dark-50 text-hover-primary font-weight-bold">' + row.CompanyName + genre[genreIndex1].title + '</a>';
 
 						return output;
 					}
@@ -166,31 +166,31 @@ var KTAppsEducationSchoolTeacher = function() {
 	                                        Choose an action:\
 	                                    </li>\
 	                                    <li class="navi-item">\
-	                                        <a href="#" class="navi-link">\
+	                                        <a href="/" class="navi-link">\
 	                                            <span class="navi-icon"><i class="la la-print"></i></span>\
 	                                            <span class="navi-text">Print</span>\
 	                                        </a>\
 	                                    </li>\
 	                                    <li class="navi-item">\
-	                                        <a href="#" class="navi-link">\
+	                                        <a href="/" class="navi-link">\
 	                                            <span class="navi-icon"><i class="la la-copy"></i></span>\
 	                                            <span class="navi-text">Copy</span>\
 	                                        </a>\
 	                                    </li>\
 	                                    <li class="navi-item">\
-	                                        <a href="#" class="navi-link">\
+	                                        <a href="/" class="navi-link">\
 	                                            <span class="navi-icon"><i class="la la-file-excel-o"></i></span>\
 	                                            <span class="navi-text">Excel</span>\
 	                                        </a>\
 	                                    </li>\
 	                                    <li class="navi-item">\
-	                                        <a href="#" class="navi-link">\
+	                                        <a href="/" class="navi-link">\
 	                                            <span class="navi-icon"><i class="la la-file-text-o"></i></span>\
 	                                            <span class="navi-text">CSV</span>\
 	                                        </a>\
 	                                    </li>\
 	                                    <li class="navi-item">\
-	                                        <a href="#" class="navi-link">\
+	                                        <a href="/" class="navi-link">\
 	                                            <span class="navi-icon"><i class="la la-file-pdf-o"></i></span>\
 	                                            <span class="navi-text">PDF</span>\
 	                                        </a>\

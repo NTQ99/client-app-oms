@@ -7,13 +7,24 @@ var KTDatatableChildRemoteDataDemo = function() {
 	// demo initializer
 	var demo = function() {
 
-		var datatable = $('#kt_datatable').KTDatatable({
+		var datatable = $('#customer_datatable').KTDatatable({
 			// datasource definition
 			data: {
 				type: 'remote',
 				source: {
 					read: {
-						url: HOST_URL + '/api/datatables/demos/customers.php',
+						url: HOST_URL + '/api/customer',
+						map: function(raw) {
+                            // sample data mapping
+                            var dataSet = raw;
+                            if (typeof raw.data !== 'undefined') {
+                                raw.data.forEach((data, index) => {
+                                    data.recordId = index + 1;
+                                });
+                                dataSet = raw.data;
+                            }
+                            return dataSet;
+                        },
 					},
 				},
 				pageSize: 10, // display 20 records per page
@@ -24,12 +35,12 @@ var KTDatatableChildRemoteDataDemo = function() {
 
 			// layout definition
 			layout: {
-				scroll: false,
+				scroll: true,
 				footer: false,
 			},
 
 			// column sorting
-			sortable: true,
+			sortable: false,
 
 			pagination: true,
 
@@ -46,66 +57,19 @@ var KTDatatableChildRemoteDataDemo = function() {
 			// columns definition
 			columns: [
 				{
-					field: 'RecordID',
-					title: '',
-					sortable: false,
+					field: 'recordId',
+					title: '#',
 					width: 30,
 					textAlign: 'center',
 				}, {
-					field: 'checkbox',
-					title: '',
-					template: '{{RecordID}}',
-					sortable: false,
-					width: 20,
-					textAlign: 'center',
-					selector: {class: 'kt-checkbox--solid'},
+					field: 'customerCode',
+					title: 'Mã khách hàng',
 				}, {
-					field: 'FirstName',
-					title: 'First Name',
-					sortable: 'asc',
+					field: 'customerName',
+					title: 'Tên khách hàng',
 				}, {
-					field: 'LastName',
-					title: 'Last Name',
-				}, {
-					field: 'Company',
-					title: 'Company',
-				}, {
-					field: 'Email',
-					title: 'Email',
-				}, {
-					field: 'Address',
-					title: 'Address',
-				}, {
-					field: 'Status',
-					title: 'Status',
-					// callback function support for column rendering
-					template: function(row) {
-						var status = {
-							1: {'title': 'Pending', 'class': 'label-light-primary'},
-							2: {'title': 'Delivered', 'class': ' label-light-danger'},
-							3: {'title': 'Canceled', 'class': ' label-light-primary'},
-							4: {'title': 'Success', 'class': ' label-light-success'},
-							5: {'title': 'Info', 'class': ' label-light-info'},
-							6: {'title': 'Danger', 'class': ' label-light-danger'},
-							7: {'title': 'Warning', 'class': ' label-light-warning'},
-						};
-						return '<span class="label ' + status[row.Status].class + ' label-inline font-weight-bold label-lg">' + status[row.Status].title + '</span>';
-					},
-				}, {
-					field: 'Type',
-					title: 'Type',
-					autoHide: false,
-					// callback function support for column rendering
-					template: function(row) {
-						var status = {
-							1: {'title': 'Online', 'state': 'danger'},
-							2: {'title': 'Retail', 'state': 'primary'},
-							3: {'title': 'Direct', 'state': 'success'},
-						};
-						return '<span class="label label-' + status[row.Type].state + ' label-dot mr-2"></span><span class="font-weight-bold text-' + status[row.Type].state +
-							'">' +
-							status[row.Type].title + '</span>';
-					},
+					field: 'customerPhone',
+					title: 'SĐT',
 				}, {
 					field: 'Actions',
 					width: 125,
@@ -132,31 +96,31 @@ var KTDatatableChildRemoteDataDemo = function() {
 	                                        Choose an action:\
 	                                    </li>\
 	                                    <li class="navi-item">\
-	                                        <a href="#" class="navi-link">\
+	                                        <a href="/" class="navi-link">\
 	                                            <span class="navi-icon"><i class="la la-print"></i></span>\
 	                                            <span class="navi-text">Print</span>\
 	                                        </a>\
 	                                    </li>\
 	                                    <li class="navi-item">\
-	                                        <a href="#" class="navi-link">\
+	                                        <a href="/" class="navi-link">\
 	                                            <span class="navi-icon"><i class="la la-copy"></i></span>\
 	                                            <span class="navi-text">Copy</span>\
 	                                        </a>\
 	                                    </li>\
 	                                    <li class="navi-item">\
-	                                        <a href="#" class="navi-link">\
+	                                        <a href="/" class="navi-link">\
 	                                            <span class="navi-icon"><i class="la la-file-excel-o"></i></span>\
 	                                            <span class="navi-text">Excel</span>\
 	                                        </a>\
 	                                    </li>\
 	                                    <li class="navi-item">\
-	                                        <a href="#" class="navi-link">\
+	                                        <a href="/" class="navi-link">\
 	                                            <span class="navi-icon"><i class="la la-file-text-o"></i></span>\
 	                                            <span class="navi-text">CSV</span>\
 	                                        </a>\
 	                                    </li>\
 	                                    <li class="navi-item">\
-	                                        <a href="#" class="navi-link">\
+	                                        <a href="/" class="navi-link">\
 	                                            <span class="navi-icon"><i class="la la-file-pdf-o"></i></span>\
 	                                            <span class="navi-text">PDF</span>\
 	                                        </a>\
@@ -191,30 +155,30 @@ var KTDatatableChildRemoteDataDemo = function() {
 				}],
 		});
 
-		$('#kt_datatable_search_status').on('change', function() {
-			datatable.search($(this).val().toLowerCase(), 'Status');
-		});
-
-		$('#kt_datatable_search_type').on('change', function() {
-			datatable.search($(this).val().toLowerCase(), 'Type');
-		});
-
-		$('#kt_datatable_search_status, #kt_datatable_search_type').selectpicker();
-
-
 		function subTableInit(e) {
-			$('<div/>').attr('id', 'child_data_ajax_' + e.data.RecordID).appendTo(e.detailCell).KTDatatable({
+			console.log(e.data);
+			$('<div/>').attr('id', 'child_data_ajax_' + e.data.recordId).appendTo(e.detailCell).KTDatatable({
 				data: {
 					type: 'remote',
 					source: {
 						read: {
-							url: HOST_URL + '/api/datatables/demos/orders.php',
+							url: HOST_URL + '/api/order',
 							params: {
 								// custom query params
 								query: {
-									generalSearch: '',
-									CustomerID: e.data.RecordID,
+									customerCode: e.data.customerCode,
 								},
+							},
+							map: function(raw) {
+								// sample data mapping
+								var dataSet = raw;
+								if (typeof raw.data !== 'undefined') {
+									raw.data.forEach((data, index) => {
+										data.recordId = index + 1;
+									});
+									dataSet = raw.data;
+								}
+								return dataSet;
 							},
 						},
 					},
@@ -225,8 +189,8 @@ var KTDatatableChildRemoteDataDemo = function() {
 				},
 
 				// layout definition
-			layout: {
-					scroll: false,
+				layout: {
+					scroll: true,
 					footer: false,
 
 					// enable/disable datatable spinner.
@@ -241,60 +205,57 @@ var KTDatatableChildRemoteDataDemo = function() {
 				// columns definition
 				columns: [
 					{
-						field: 'RecordID',
+						field: 'recordId',
 						title: '#',
 						sortable: false,
 						width: 30,
 					}, {
-						field: 'OrderID',
-						title: 'Order ID',
-						template: function(row) {
-							return '<span>' + row.OrderID + ' - ' + row.ShipCountry + '</span>';
-						},
+						field: 'orderCode',
+						title: 'Mã đơn hàng',
 					}, {
-						field: 'ShipCountry',
-						title: 'Country',
-						width: 100
+						field: 'productName',
+						title: 'Tên sản phẩm',
 					}, {
-						field: 'ShipAddress',
-						title: 'Ship Address',
+						field: 'quantity',
+						title: 'Số lượng',
 					}, {
-						field: 'ShipName',
-						title: 'Ship Name',
+						field: 'deliveryUnit',
+						title: 'Đơn vị vận',
 					}, {
-						field: 'TotalPayment',
-						title: 'Payment',
-						type: 'number',
-					}, {
-						field: 'Status',
-						title: 'Status',
-						// callback function support for column rendering
+						field: 'status',
+						title: 'Trạng thái',
 						template: function(row) {
 							var status = {
-								1: {'title': 'Pending', 'class': 'label-light-primary'},
-								2: {'title': 'Delivered', 'class': ' label-light-danger'},
-								3: {'title': 'Canceled', 'class': ' label-light-primary'},
-								4: {'title': 'Success', 'class': ' label-light-success'},
-								5: {'title': 'Info', 'class': ' label-light-info'},
-								6: {'title': 'Danger', 'class': ' label-light-danger'},
-								7: {'title': 'Warning', 'class': ' label-light-warning'},
+								"wait_confirm": {
+									'title': 'Chờ xác nhận',
+									'class': ' label-light-primary'
+								},
+								"not_responded": {
+									'title': 'Không phản hồi',
+									'class': ' label-light-warning'
+								},
+								"canceled": {
+									'title': 'Đã hủy',
+									'class': ' label-light-danger'
+								},
+								"success": {
+									'title': 'Giao thành công',
+									'class': ' label-light-success'
+								},
+								"await_trans": {
+									'title': 'Chờ vận chuyển',
+									'class': ' label-light-info'
+								},
+								"fail": {
+									'title': 'Giao thất bại',
+									'class': ' label-light-danger'
+								},
+								7: {
+									'title': 'Warning',
+									'class': ' label-light-warning'
+								},
 							};
-							return '<span class="label ' + status[row.Status].class + ' label-inline label-bold">' + status[row.Status].title + '</span>';
-						},
-					}, {
-						field: 'Type',
-						title: 'Type',
-						autoHide: false,
-						// callback function support for column rendering
-						template: function(row) {
-							var status = {
-								1: {'title': 'Online', 'state': 'danger'},
-								2: {'title': 'Retail', 'state': 'primary'},
-								3: {'title': 'Direct', 'state': 'success'},
-							};
-							return '<span class="label label-' + status[row.Type].state + ' label-dot mr-2"></span><span class="font-weight-bold text-' +
-								status[row.Type].state + '">' +
-								status[row.Type].title + '</span>';
+							return '<span class="label font-weight-bold label-lg ' + status[row.status].class + ' label-inline">' + status[row.status].title + '</span>';
 						},
 					}],
 			});

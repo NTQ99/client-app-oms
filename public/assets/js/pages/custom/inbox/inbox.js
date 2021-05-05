@@ -108,7 +108,7 @@ var KTAppInbox = function() {
                         html += '           <span class="symbol-label" style="background-image: url(\''+ (tagData.pic ? tagData.pic : '') + '\')">' + (tagData.initials ? tagData.initials : '') + '</span>';
                         html += '       </span>';
                         html += '       <div class="d-flex flex-column">';
-                        html += '           <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">'+ (tagData.value ? tagData.value : '') + '</a>';
+                        html += '           <a href="/" class="text-dark-75 text-hover-primary font-weight-bold">'+ (tagData.value ? tagData.value : '') + '</a>';
                         html += '           <span class="text-muted font-weight-bold">' + (tagData.email ? tagData.email : '') + '</span>';
                         html += '       </div>';
                         html += '   </div>';
@@ -195,7 +195,7 @@ var KTAppInbox = function() {
                         html += '           <span class="symbol-label">' + (tagData.initials ? tagData.initials : '') + '</span>';
                         html += '       </span>';
                         html += '       <div class="d-flex flex-column">';
-                        html += '           <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">'+ (tagData.value ? tagData.value : '') + '</a>';
+                        html += '           <a href="/" class="text-dark-75 text-hover-primary font-weight-bold">'+ (tagData.value ? tagData.value : '') + '</a>';
                         html += '           <span class="text-muted font-weight-bold">' + (tagData.email ? tagData.email : '') + '</span>';
                         html += '       </div>';
                         html += '   </div>';
@@ -282,7 +282,7 @@ var KTAppInbox = function() {
                         html += '           <span class="symbol-label">' + (tagData.initials ? tagData.initials : '') + '</span>';
                         html += '       </span>';
                         html += '       <div class="d-flex flex-column">';
-                        html += '           <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">'+ (tagData.value ? tagData.value : '') + '</a>';
+                        html += '           <a href="/" class="text-dark-75 text-hover-primary font-weight-bold">'+ (tagData.value ? tagData.value : '') + '</a>';
                         html += '           <span class="text-muted font-weight-bold">' + (tagData.email ? tagData.email : '') + '</span>';
                         html += '       </div>';
                         html += '   </div>';

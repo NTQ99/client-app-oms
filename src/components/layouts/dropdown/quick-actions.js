@@ -11,7 +11,7 @@ function QuickActions() {
     <div className="row row-paddingless">
       {/*begin:Item*/}
       <div className="col-6">
-        <a href="#" className="d-block py-10 px-5 text-center bg-hover-light border-right border-bottom">
+        <a href="/" className="d-block py-10 px-5 text-center bg-hover-light border-right border-bottom">
           <span className="svg-icon svg-icon-3x svg-icon-success">
             {/*begin::Svg Icon | path:assets/media/svg/icons/Shopping/Euro.svg*/}
             <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -30,7 +30,7 @@ function QuickActions() {
       {/*end:Item*/}
       {/*begin:Item*/}
       <div className="col-6">
-        <a href="#" className="d-block py-10 px-5 text-center bg-hover-light border-bottom">
+        <a href="/" className="d-block py-10 px-5 text-center bg-hover-light border-bottom">
           <span className="svg-icon svg-icon-3x svg-icon-success">
             {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Mail-attachment.svg*/}
             <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -49,7 +49,7 @@ function QuickActions() {
       {/*end:Item*/}
       {/*begin:Item*/}
       <div className="col-6">
-        <a href="#" className="d-block py-10 px-5 text-center bg-hover-light border-right">
+        <a href="/" className="d-block py-10 px-5 text-center bg-hover-light border-right">
           <span className="svg-icon svg-icon-3x svg-icon-success">
             {/*begin::Svg Icon | path:assets/media/svg/icons/Shopping/Box2.svg*/}
             <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -68,7 +68,7 @@ function QuickActions() {
       {/*end:Item*/}
       {/*begin:Item*/}
       <div className="col-6">
-        <a href="#" className="d-block py-10 px-5 text-center bg-hover-light">
+        <a href="/" className="d-block py-10 px-5 text-center bg-hover-light">
           <span className="svg-icon svg-icon-3x svg-icon-success">
             {/*begin::Svg Icon | path:assets/media/svg/icons/Communication/Group.svg*/}
             <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
