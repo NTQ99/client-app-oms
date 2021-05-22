@@ -7,10 +7,6 @@ import SVG from "react-inlinesvg";
 import { Component } from "react";
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div id="kt_header" className="header header-fixed">

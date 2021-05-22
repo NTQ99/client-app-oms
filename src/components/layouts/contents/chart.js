@@ -47,7 +47,7 @@ class ChartContent extends Component {
     this.state = {
       dateRange: {
         start: moment().startOf("month"),
-        end: moment().endOf("month"),
+        end: moment().endOf("date"),
       },
       chartData1: {
         ...donutChartConfig,
@@ -93,7 +93,7 @@ class ChartContent extends Component {
                       </label>
                     </div>
                     <div className="input-group-append">
-                      <span className="input-group-text">
+                      <span className="input-group-text" style={{borderRadius: '.42rem 0 0 .42rem'}}>
                         <i className="la la-calendar-check-o"></i>
                       </span>
                     </div>
@@ -114,17 +114,17 @@ class ChartContent extends Component {
                         ranges: {
                           "Tháng này": [
                             moment().startOf("month"),
-                            moment().endOf("month"),
+                            moment().endOf("date"),
                           ],
                           "Năm nay": [
                             moment().startOf("year"),
-                            moment().endOf("year"),
+                            moment().endOf("date"),
                           ],
                           "Tháng trước": [
                             moment().subtract(1, "month").startOf("month"),
                             moment().subtract(1, "month").endOf("month"),
                           ],
-                          "6 tháng gần đây": [
+                          "Nửa năm trước": [
                             moment().subtract(6, "month").startOf("month"),
                             moment().subtract(1, "month").endOf("month"),
                           ],

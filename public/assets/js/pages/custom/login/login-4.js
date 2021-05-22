@@ -6,7 +6,7 @@ var KTLogin = function() {
 
 	var _handleFormSignin = function() {
 		var form = KTUtil.getById('kt_login_singin_form');
-		var formSubmitUrl = KTUtil.attr(form, 'action');
+		var formSubmitUrl = "http://localhost:8080/api/auth/login";
 		var formSubmitButton = KTUtil.getById('kt_login_singin_form_submit_button');
 
 		if (!form) {
@@ -21,14 +21,14 @@ var KTLogin = function() {
 						username: {
 							validators: {
 								notEmpty: {
-									message: 'Username is required'
+									message: 'Bạn chưa nhập tên tài khoản'
 								}
 							}
 						},
 						password: {
 							validators: {
 								notEmpty: {
-									message: 'Password is required'
+									message: 'Bạn chưa nhập mật khẩu'
 								}
 							}
 						}
@@ -46,60 +46,62 @@ var KTLogin = function() {
 		    )
 		    .on('core.form.valid', function() {
 				// Show loading state on button
-				KTUtil.btnWait(formSubmitButton, _buttonSpinnerClasses, "Please wait");
+				KTUtil.btnWait(formSubmitButton, _buttonSpinnerClasses, "Vui lòng chờ");
 
 				// Simulate Ajax request
-				setTimeout(function() {
-					KTUtil.btnRelease(formSubmitButton);
-				}, 2000);
+				// setTimeout(function() {
+				// 	KTUtil.btnRelease(formSubmitButton);
+				// }, 2000);
 
 				// Form Validation & Ajax Submission: https://formvalidation.io/guide/examples/using-ajax-to-submit-the-form
-				/**
-		        FormValidation.utils.fetch(formSubmitUrl, {
-		            method: 'POST',
+		        $.ajax({
+					url: formSubmitUrl,
+		            type: 'POST',
 					dataType: 'json',
-		            params: {
-		                name: form.querySelector('[name="username"]').value,
-		                email: form.querySelector('[name="password"]').value,
-		            },
-		        }).then(function(response) { // Return valid JSON
-					// Release button
-					KTUtil.btnRelease(formSubmitButton);
-
-					if (response && typeof response === 'object' && response.status && response.status == 'success') {
+					contentType: 'application/json',
+		            data: JSON.stringify({
+		                username: form.querySelector('[name="username"]').value,
+		                password: form.querySelector('[name="password"]').value,
+		            }),
+					success: function(response) { // Return valid JSON
+						// Release button
+						KTUtil.btnRelease(formSubmitButton);
 						Swal.fire({
-			                text: "All is cool! Now you submit this form",
-			                icon: "success",
-			                buttonsStyling: false,
+							text: "All is cool! Now you submit this form",
+							icon: "success",
+							buttonsStyling: false,
 							confirmButtonText: "Ok, got it!",
 							customClass: {
 								confirmButton: "btn font-weight-bold btn-light-primary"
 							}
-			            }).then(function() {
+						}).then(function() {
 							KTUtil.scrollTop();
 						});
-					} else {
-						Swal.fire({
-			                text: "Sorry, something went wrong, please try again.",
-			                icon: "error",
-			                buttonsStyling: false,
-							confirmButtonText: "Ok, got it!",
-							customClass: {
-								confirmButton: "btn font-weight-bold btn-light-primary"
-							}
-			            }).then(function() {
-							KTUtil.scrollTop();
-						});
+					},
+					error: function(response) {
+						KTUtil.btnRelease(formSubmitButton);
+						if (response.status == 404) {
+							Swal.fire({
+								text: "Tên đăng nhập hoặc mật khẩu không đúng!",
+								icon: "error",
+								buttonsStyling: false,
+								confirmButtonText: "Quay lại",
+								customClass: {
+									confirmButton: "btn font-weight-bold btn-light-primary"
+								}
+							}).then(function() {
+								KTUtil.scrollTop();
+							});
+						}
 					}
 		        });
-				**/
 		    })
 			.on('core.form.invalid', function() {
 				Swal.fire({
-					text: "Sorry, looks like there are some errors detected, please try again.",
+					text: "Có lỗi xảy ra!",
 					icon: "error",
 					buttonsStyling: false,
-					confirmButtonText: "Ok, got it!",
+					confirmButtonText: "Quay lại",
 					customClass: {
 						confirmButton: "btn font-weight-bold btn-light-primary"
 					}
@@ -111,7 +113,7 @@ var KTLogin = function() {
 
 	var _handleFormForgot = function() {
 		var form = KTUtil.getById('kt_login_forgot_form');
-		var formSubmitUrl = KTUtil.attr(form, 'action');
+		var formSubmitUrl = "KTUtil.attr(form, 'action');"
 		var formSubmitButton = KTUtil.getById('kt_login_forgot_form_submit_button');
 
 		if (!form) {

@@ -15,7 +15,7 @@ var KTDatatableRemoteAjaxDemo = function() {
                     read: {
                         url: HOST_URL + '/api/order',
                         // sample custom headers
-                        // headers: {'x-my-custom-header': 'some value', 'x-test-header': 'the value'},
+                        headers: {Authorization: `Bearer ${JSON.parse(localStorage.getItem("user")).accessToken}`},
                         map: function(raw) {
                             // sample data mapping
                             var dataSet = raw;

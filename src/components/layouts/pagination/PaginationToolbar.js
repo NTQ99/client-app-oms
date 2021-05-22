@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import {PaginationTotalStandalone} from "react-bootstrap-table2-paginator";
+import { getResultFrom, getResultTo } from "./TablePaginationHelpers";
 
 export function PaginationToolbar(props) {
   const { isLoading, paginationProps } = props;
@@ -8,6 +8,7 @@ export function PaginationToolbar(props) {
     sizePerPageList,
     sizePerPage,
     totalSize,
+    page,
     onSizePerPageChange = [
       { text: "3", value: 3 },
       { text: "5", value: 5 },
@@ -20,7 +21,7 @@ export function PaginationToolbar(props) {
 
   const onSizeChange = event => {
     const newSize = +event.target.value;
-    onSizePerPageChange(newSize);
+    onSizePerPageChange(newSize, 1);
   };
 
   return (
@@ -52,7 +53,9 @@ export function PaginationToolbar(props) {
           );
         })}
       </select>
-      <PaginationTotalStandalone className="text-muted" {...paginationProps} />
+      <span class="datatable-pager-detail">
+        {`Hiển thị ${getResultFrom(page, sizePerPage)} - ${getResultTo(page, sizePerPage, totalSize)} trong ${totalSize} kết quả`}
+      </span>
     </div>
   );
 }

@@ -77,3 +77,7 @@ export const getPages = (page, pagesCount, paginationSize) => {
 
   return result;
 };
+
+export const getResultFrom = (page, sizePerPage) => {return (page-1) * sizePerPage + 1};
+
+export const getResultTo = (page, sizePerPage, totalSize) => {return (page * sizePerPage > totalSize) ? totalSize: page * sizePerPage};

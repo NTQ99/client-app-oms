@@ -4,10 +4,7 @@ import { Card, Form, Col, Row, Dropdown, InputGroup, Button } from "react-bootst
 import { orderProductColumns } from "../../../config/configTable";
 import { addressData } from "../../../config/dvhcvn";
 import BootstrapTable from "react-bootstrap-table-next";
-import cellEditFactory from "react-bootstrap-table2-editor";
 import ToolkitProvider, { CSVExport } from "react-bootstrap-table2-toolkit";
-
-import SVG from "react-inlinesvg";
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
   <div
@@ -117,6 +114,7 @@ class CreateOrderContent extends Component {
           wardId: e.target.value,
         });
         break;
+      default: break;
     }
   }
 

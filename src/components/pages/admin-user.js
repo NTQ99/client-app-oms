@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import AdminContainer from "../containers/admin-container";
 import AdminUserContent from "../layouts/contents/admin-user";
-import SubHeader from "../layouts/subheader/subheader";
 
 class AdminUserPage extends Component {
   render() {

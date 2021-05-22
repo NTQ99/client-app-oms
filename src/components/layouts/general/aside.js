@@ -25,7 +25,7 @@ function AdminAside() {
     <div id="kt_aside_menu" className="aside-menu my-4 scroll ps ps--active-y" data-menu-vertical={1} data-menu-scroll={1} data-menu-dropdown-timeout={500}>
       {/*begin::Menu Nav*/}
       <ul className="menu-nav">
-        <li className="menu-item" aria-haspopup="true" id="aside_dashboard">
+        <li className="menu-item" id="aside_dashboard">
           <a className="menu-link" href="/dashboard">
             <span className="svg-icon menu-icon">
               <SVG src="assets/media/svg/icons/Design/Layers.svg" />
@@ -38,7 +38,7 @@ function AdminAside() {
           <h4 className="menu-text">Quản lý</h4>
           <i className="menu-icon ki ki-bold-more-hor icon-md" />
         </li>
-        <li className="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover" id="aside_order">
+        <li className="menu-item menu-item-submenu" data-menu-toggle="hover" id="aside_order">
           <a className="menu-link menu-toggle" href="/order">
             <span className="svg-icon menu-icon">
               <SVG src="assets/media/svg/icons/Shopping/Cart1.svg" />
@@ -49,7 +49,7 @@ function AdminAside() {
           <div className="menu-submenu">
             <i className="menu-arrow" />
             <ul className="menu-subnav">
-              <li className="menu-item menu-item-submenu" aria-haspopup="true" id="aside_list_order">
+              <li className="menu-item menu-item-submenu" id="aside_list_order">
                 <a className="menu-link" href="/order">
                   <i className="menu-bullet menu-bullet-dot">
                     <span />
@@ -57,7 +57,7 @@ function AdminAside() {
                   <span className="menu-text">Danh sách đơn hàng</span>
                 </a>
               </li>
-              <li className="menu-item menu-item-submenu" aria-haspopup="true" id="aside_create_order">
+              <li className="menu-item menu-item-submenu" id="aside_create_order">
                 <a className="menu-link" href="/create-order">
                   <i className="menu-bullet menu-bullet-dot">
                     <span />
@@ -68,7 +68,7 @@ function AdminAside() {
             </ul>
           </div>
         </li>
-        <li className="menu-item" aria-haspopup="true" id="aside_customer">
+        <li className="menu-item" id="aside_customer">
           <a href="/customer" className="menu-link">
             <span className="svg-icon menu-icon">
             <SVG src="assets/media/svg/icons/Shopping/Customer.svg" />
@@ -76,7 +76,7 @@ function AdminAside() {
             <span className="menu-text">Khách hàng</span>
           </a>
         </li>
-        <li className="menu-item" aria-haspopup="true">
+        <li className="menu-item">
           <a className="menu-link" href="/product">
             <span className="svg-icon menu-icon">
               <SVG src="assets/media/svg/icons/Shopping/Box2.svg" />
@@ -90,7 +90,7 @@ function AdminAside() {
           <h4 className="menu-text">Vận chuyển</h4>
           <i className="menu-icon ki ki-bold-more-hor icon-md" />
         </li>
-        <li className="menu-item" aria-haspopup="true">
+        <li className="menu-item">
           <a className="menu-link" href="/delivery">
             <span className="svg-icon menu-icon">
               <SVG src="assets/media/svg/icons/Shopping/Delivery.svg" />
@@ -104,7 +104,7 @@ function AdminAside() {
           <h4 className="menu-text">Thống kê</h4>
           <i className="menu-icon ki ki-bold-more-hor icon-md" />
         </li>
-        <li className="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover" id="aside_chart">
+        <li className="menu-item menu-item-submenu" data-menu-toggle="hover" id="aside_chart">
           <a className="menu-link menu-toggle" href="/chart">
             <span className="svg-icon menu-icon">
               <SVG src="assets/media/svg/icons/Media/Equalizer.svg" />
@@ -115,7 +115,7 @@ function AdminAside() {
           <div className="menu-submenu">
             <i className="menu-arrow" />
             <ul className="menu-subnav">
-              <li className="menu-item menu-item-submenu" aria-haspopup="true" id="aside_chart_child">
+              <li className="menu-item menu-item-submenu" id="aside_chart_child">
                 <a className="menu-link" href="/chart">
                   <i className="menu-bullet menu-bullet-dot">
                     <span />
@@ -123,7 +123,7 @@ function AdminAside() {
                   <span className="menu-text">Biểu đồ</span>
                 </a>
               </li>
-              <li className="menu-item menu-item-submenu" aria-haspopup="true" id="aside_export_chart">
+              <li className="menu-item menu-item-submenu" id="aside_export_chart">
                 <a className="menu-link" href="/">
                   <i className="menu-bullet menu-bullet-dot">
                     <span />
@@ -140,7 +140,7 @@ function AdminAside() {
           <h4 className="menu-text">Kết nối</h4>
           <i className="menu-icon ki ki-bold-more-hor icon-md" />
         </li>
-        <li className="menu-item" aria-haspopup="true">
+        <li className="menu-item">
           <a className="menu-link" href="/chart">
             <span className="svg-icon menu-icon">
               <SVG src="assets/media/svg/icons/Shopping/Connect.svg" />
@@ -148,7 +148,7 @@ function AdminAside() {
             <span className="menu-text">Quản lý kết nối</span>
           </a>
         </li>
-        <li className="menu-item" aria-haspopup="true">
+        <li className="menu-item">
           <a className="menu-link" href="/chart">
             <span className="svg-icon menu-icon">
             <SVG src="assets/media/svg/icons/Shopping/Docs.svg" />

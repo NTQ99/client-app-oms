@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom';
+
+import AuthService from '../../../service/auth.service';
 
 class QuickUser extends Component {
+
   render() {
     return (
       <div id="kt_quick_user" className="offcanvas offcanvas-right p-10">
@@ -84,12 +88,12 @@ class QuickUser extends Component {
                     </span>
                   </span>
                 </a>
-                <a
-                  href="/"
+                <div
+                  onClick={() => AuthService.logout(() => this.props.history.push('/login'))}
                   className="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5"
                 >
                   Sign Out
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -546,4 +550,4 @@ class QuickUser extends Component {
   }
 }
 
-export default QuickUser;
+export default withRouter(QuickUser);

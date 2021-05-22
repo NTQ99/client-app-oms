@@ -31,6 +31,7 @@ class Toolbar extends Component {
             className="btn btn-sm btn-icon btn-bg-light btn-icon-primary btn-hover-primary"
             href="https://preview.keenthemes.com/metronic/demo1/builder.html"
             target="_blank"
+            rel="noreferrer"
           >
             <i className="flaticon2-gear" />
           </a>
@@ -47,6 +48,7 @@ class Toolbar extends Component {
             className="btn btn-sm btn-icon btn-bg-light btn-icon-warning btn-hover-warning"
             href="https://keenthemes.com/metronic/?page=docs"
             target="_blank"
+            rel="noreferrer"
           >
             <i className="flaticon2-telegram-logo" />
           </a>

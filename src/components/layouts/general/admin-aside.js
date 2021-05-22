@@ -25,7 +25,7 @@ function Aside() {
     <div id="kt_aside_menu" className="aside-menu my-4 scroll ps ps--active-y" data-menu-vertical={1} data-menu-scroll={1} data-menu-dropdown-timeout={500}>
       {/*begin::Menu Nav*/}
       <ul className="menu-nav">
-        <li className="menu-item" aria-haspopup="true" id="aside_dashboard">
+        <li className="menu-item" id="aside_dashboard">
           <a className="menu-link" href="/dashboard">
             <span className="svg-icon menu-icon">
               <SVG src="assets/media/svg/icons/Design/Layers.svg" />
@@ -38,7 +38,7 @@ function Aside() {
           <h4 className="menu-text">Quản lý</h4>
           <i className="menu-icon ki ki-bold-more-hor icon-md" />
         </li>
-        <li className="menu-item" aria-haspopup="true">
+        <li className="menu-item">
           <a className="menu-link" href="/admin-user">
             <span className="svg-icon menu-icon">
               <SVG src="assets/media/svg/icons/General/User.svg" />

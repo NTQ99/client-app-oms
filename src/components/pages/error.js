@@ -3,7 +3,7 @@ import { Component } from "react";
 class ErrorPage extends Component {
   render() {
     return (
-      <div className="d-flex flex-column flex-root">
+      <div className="d-flex flex-column flex-root" style={{height: '100vh'}}>
         {/*begin::Error*/}
         <div
           className="error error-3 d-flex flex-row-fluid bgi-size-cover bgi-position-center"
