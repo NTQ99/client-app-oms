@@ -1,5 +1,6 @@
 {
   "name": "client-app",
+  "homepage": "https://oms-2021.web.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
