@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from 'universal-cookie';
  
 const cookies = new Cookies();
-const BASE_URL = "http://localhost:8080/api";
+const BASE_URL = "https://oms-2021.herokuapp.com/api";
 
 class AuthService {
   login(username, password) {
@@ -11,10 +11,10 @@ class AuthService {
         username,
         password
       })
-      .then(res => {
+      .then(async res => {
         let body = res.data;
         if (body && body.error.statusCode === 200) {
-          axios({
+          await axios({
             method: "post",
             url: BASE_URL + "/user/get/info",
             headers: {

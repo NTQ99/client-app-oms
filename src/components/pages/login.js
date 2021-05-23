@@ -29,7 +29,7 @@ class LoginPage extends Component {
       locale: "vi",
       element: (message) => (
         <div className="fv-plugins-bootstrap fv-plugins-message-container">
-          <div class="fv-help-block">{message}</div>
+          <div className="fv-help-block">{message}</div>
         </div>
       ),
     });
@@ -71,6 +71,7 @@ class LoginPage extends Component {
               showConfirmButton: false,
               timer: 1000,
             }).then(() => {
+              console.log(AuthService.getRoles())
               if (AuthService.getRoles().includes("ROLE_ADMIN")) {
                 this.props.history.push("/admin-user");
               } else {
