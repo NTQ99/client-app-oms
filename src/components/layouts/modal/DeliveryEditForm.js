@@ -108,7 +108,7 @@ class DeliveryEditForm extends Component {
               </div>
             </div>
             {/*end::Select Input*/}
-            {selectedRow.deliveryUnitName && (
+            {selectedRow.deliveryUnitName==="GHN" && (
               <>
                 <div className="row align-items-center justify-content-end">
                   <div className="text-muted">

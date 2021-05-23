@@ -216,7 +216,7 @@ class DeliveryContent extends Component {
                 </div>
               </div>
               {/*end::Select Input*/}
-              {deliveryUnitName && (<>
+              {deliveryUnitName==="GHN" && (<>
                 <div className="row align-items-center justify-content-end">
                   <div className="text-muted">
                     Bạn chưa có mã?&nbsp;

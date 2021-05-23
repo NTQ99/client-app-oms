@@ -6,7 +6,7 @@ var KTLogin = function() {
 
 	var _handleFormSignin = function() {
 		var form = KTUtil.getById('kt_login_singin_form');
-		var formSubmitUrl = "http://localhost:8080/api/auth/login";
+		var formSubmitUrl = "https://oms-2021.herokuapp.com/api/auth/login";
 		var formSubmitButton = KTUtil.getById('kt_login_singin_form_submit_button');
 
 		if (!form) {
