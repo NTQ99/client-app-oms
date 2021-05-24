@@ -3,7 +3,7 @@ import { Card, Table, ButtonGroup, Dropdown } from "react-bootstrap";
 import moment from "moment";
 import DateRangePicker from "react-bootstrap-daterangepicker";
 
-import { orderColumns } from "../../../config/configTable";
+import { getPaginationOptions, orderColumns } from "../../../config/configTable";
 import orderService from "../../../service/order.service";
 
 import CustomTable from "../table/CustomTable";
@@ -34,7 +34,6 @@ const SearchInput = (props) => {
     start: moment().startOf("month"),
     end: moment().endOf("date"),
   };
-  console.log(dateRange)
   const handleDateRangeChange = (start, end) => {
     onFilter.onDateRangeFilter({
       start: start.valueOf(),
@@ -351,6 +350,7 @@ class OrderContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: false,
       action: {
         id: null,
         type: null,
@@ -363,14 +363,16 @@ class OrderContent extends Component {
   onStatusFilter = null;
   onDateRangeFilter = null;
 
-  componentDidMount() {
-    orderService.getOrderBoard()
+  async componentDidMount() {
+    this.setState({isLoading: true});
+    await orderService.getOrderBoard()
       .then((res) => {
         if (res.data.error && res.data.error.statusCode === 100) {
           this.setState({ entities: [...res.data.data] });
         }
       })
       .catch((error) => console.log(error));
+    this.setState({isLoading: false});
     this.onDateRangeFilter({
       start: moment().startOf("month").valueOf(),
       end: moment().endOf("date").valueOf()
@@ -416,22 +418,12 @@ class OrderContent extends Component {
   render() {
     const entities = this.state.entities;
     const columns = orderColumns(this);
-    const options = {
-      custom: true,
-      totalSize: this.state.entities.length,
-      sizePerPage: 10,
-      page: 1,
-      sizePerPageList: [
-        { text: "5", value: 5 },
-        { text: "10", value: 10 },
-        { text: "20", value: 20 },
-      ],
-    };
-    console.log(this);
+    const options = getPaginationOptions(this.state.entities.length);
 
     return (
       <CustomTable
         title="Quản lý đơn hàng"
+        loading={this.state.isLoading}
         options={options}
         entities={entities}
         columns={columns}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-import { adminUserColumns } from "../../../config/configTable";
+import { adminUserColumns, getPaginationOptions } from "../../../config/configTable";
 import { CSVExport } from "react-bootstrap-table2-toolkit";
 import SVG from 'react-inlinesvg';
 
@@ -125,17 +125,7 @@ class AdminUserContent extends Component {
   render() {
     const entities = this.state.entities;
     const columns = adminUserColumns(this);
-    const options = {
-      custom: true,
-      totalSize: this.state.entities.length,
-      sizePerPage: 10,
-      page: 1,
-      sizePerPageList: [
-        { text: "5", value: 5 },
-        { text: "10", value: 10 },
-        { text: "20", value: 20 },
-      ],
-    };
+    const options = getPaginationOptions(this.state.entities.length);
 
     return (
       <CustomTable

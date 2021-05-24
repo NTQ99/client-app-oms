@@ -2,6 +2,20 @@ import SVG from "react-inlinesvg";
 import { Form } from "react-bootstrap";
 import { customFilter, FILTER_TYPES } from 'react-bootstrap-table2-filter';
 
+export const getPaginationOptions = (totalSize) => {
+  return {
+    custom: true,
+    totalSize: totalSize,
+    sizePerPage: 10,
+    page: 1,
+    sizePerPageList: [
+      { text: "5", value: 5 },
+      { text: "10", value: 10 },
+      { text: "20", value: 20 },
+    ],
+  };
+}
+
 export const deliveryColumns = (obj) => [
   {
     dataField: "recordId",
@@ -368,7 +382,6 @@ export function orderColumns(obj) {
       },
       formatter: (cell) => {
         let dateObj = cell;
-        console.log(cell + "cell");
         if (typeof cell !== "object") {
           dateObj = new Date(cell);
         }
