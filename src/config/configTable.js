@@ -1,6 +1,7 @@
 import SVG from "react-inlinesvg";
 import { Form } from "react-bootstrap";
 import { customFilter, FILTER_TYPES } from 'react-bootstrap-table2-filter';
+import { getTimeFormat } from "../service/helper";
 
 export const getPaginationOptions = (totalSize) => {
   return {
@@ -385,15 +386,7 @@ export function orderColumns(obj) {
         if (typeof cell !== "object") {
           dateObj = new Date(cell);
         }
-        return (
-          ("0" + dateObj.getDate()).slice(-2) +
-          "/" +
-          ("0" + (dateObj.getMonth() + 1)).slice(-2) +
-          ", " +
-          ("0" + dateObj.getHours()).slice(-2) +
-          ":" +
-          ("0" + dateObj.getMinutes()).slice(-2)
-        );
+        return getTimeFormat(dateObj, "dd/mm, HH:MM");
       },
     },
     {
@@ -502,6 +495,105 @@ export function orderColumns(obj) {
           }
         },
       },
+    },
+  ];
+}
+
+export function productColumns(obj) {
+  return [
+    {
+      dataField: "recordId",
+      text: "#",
+      headerTitle: () => "Số thứ tự",
+      headerStyle: { width: "50px" },
+      formatter: (cellContent, row, rowIndex) => rowIndex + 1
+    },
+    {
+      dataField: "id",
+      text: "ID sản phẩm",
+      hidden: true,
+    },
+    {
+      dataField: "productCode",
+      text: "Mã sản phẩm",
+      headerStyle: { width: "100px" },
+    },
+    {
+      dataField: "productName",
+      text: "Tên sản phẩm",
+      headerStyle: { width: "200px" },
+    },
+    {
+      dataField: "stock",
+      text: "SL tồn kho",
+      sort: true,
+      headerTitle: () => "Số lượng tồn kho",
+      headerStyle: { width: "100px" },
+      formatter: (cell) => {
+        if (cell === 0) return <span className="text-danger">{cell}</span>
+        else return cell
+      }
+    },
+    {
+      dataField: "price",
+      text: "Giá nhập",
+      sort: true,
+      headerStyle: { width: "100px" },
+      formatter: (cell, row) =>
+        row.price[0].toLocaleString("it-IT", { style: "currency", currency: "VND" }),
+    },
+    {
+      dataField: "promotion",
+      text: "Giảm giá",
+      headerStyle: { width: "100px" },
+      formatter: (cell) => cell + " %"
+    },
+    {
+      dataField: "Actions",
+      text: "Hành động",
+      headerStyle: { width: "130px" },
+      formatter: (cellContent, row, rowIndex) => (
+        <>
+          {row.status === "await_trans" && (<>
+            <div
+              className="btn btn-sm btn-clean btn-icon mr-2"
+              title={`In vận đơn | ${row.isPinted? "Đã in": "Chưa in"}`}
+            >
+              <span className="svg-icon svg-icon-md">
+              <div className="symbol symbol-20">
+                <i className="la la-print" />
+                <i className={`symbol-badge bg-${row.isPinted? "success": "danger"}`} style={{width: '10px', height: '10px', top: '-5px', right: '-5px'}}></i>
+              </div>
+              </span>
+            </div>
+            <div className="btn btn-sm btn-clean btn-icon mr-2" title="Hủy">
+              <span className="svg-icon svg-icon-md">
+                <i className="las la-ban"></i>
+              </span>
+            </div>
+          </>)}
+          {row.status !== "await_trans" && (<>
+            <div
+              className="btn btn-sm btn-clean btn-icon mr-2"
+              title="Gửi vận đơn"
+            >
+              <span className="svg-icon svg-icon-md">
+                <i className="las la-truck"></i>
+              </span>
+            </div>
+            <div className="btn btn-sm btn-clean btn-icon mr-2" title="Sửa">
+              <span className="svg-icon svg-icon-md">
+                <i className="las la-edit"></i>
+              </span>
+            </div>
+          </>)}
+          <div className="btn btn-sm btn-clean btn-icon" title="Xóa">
+            <span className="svg-icon svg-icon-md">
+              <i className="las la-trash-alt"></i>
+            </span>
+          </div>
+        </>
+      ),
     },
   ];
 }

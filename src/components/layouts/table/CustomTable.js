@@ -15,7 +15,7 @@ import { Pagination } from "../pagination/Pagination";
 
 class CustomTable extends Component {
   render() {
-    const {loading, options, entities, columns, Search, Toolbar, expandRow, defaultSorted, rowStyle, title, children, onFilter} = this.props;
+    const {reloadTime, reloadData, loading, options, entities, columns, Search, Toolbar, expandRow, defaultSorted, rowStyle, title, children, onFilter} = this.props;
     return (
       <PaginationProvider pagination={paginationFactory(options)}>
         {({ paginationProps, paginationTableProps }) => (
@@ -42,7 +42,7 @@ class CustomTable extends Component {
                     <div className="mb-7">
                       {/* <div className="row align-items-center">
                         <div className="col-lg-9 col-xl-6"> */}
-                          <Search {...props.searchProps} onFilter={onFilter} />
+                          <Search {...props.searchProps} onFilter={onFilter} reloadTime={reloadTime} reloadData={reloadData} />
                         {/* </div>
                       </div> */}
                     </div>

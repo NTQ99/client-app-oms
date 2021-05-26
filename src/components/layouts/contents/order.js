@@ -13,6 +13,8 @@ import SVG from 'react-inlinesvg';
 import * as FileSaver from "file-saver";
 import * as XLSX from "xlsx";
 
+import {getTimeFormat, Timer} from '../../../service/helper';
+
 const orderStatus = {
   wait_confirm: "Chờ xác nhận",
   not_responded: "Không phản hồi",
@@ -23,7 +25,7 @@ const orderStatus = {
 };
 
 const SearchInput = (props) => {
-  const {onSearch, onFilter} = props;
+  const {onSearch, onFilter, reloadTime, reloadData} = props;
   const handleSearchChange = (e) => {
     onSearch(e.target.value);
   };
@@ -39,6 +41,11 @@ const SearchInput = (props) => {
       start: start.valueOf(),
       end: end.valueOf()
     })
+  }
+  const handleReload = (e) => {
+    let el = e.currentTarget.querySelector("i");
+    el.classList.add("fa-spin");
+    reloadData(() => el.classList.remove("fa-spin"));
   }
   return (
     <div className="row align-items-center">
@@ -126,6 +133,12 @@ const SearchInput = (props) => {
         <small className="form-text text-muted">
           Tìm theo <b>Trạng thái</b>
         </small>
+      </div>
+      <div className="col-md-4 my-2 my-md-0 d-flex align-items-center justify-content-end">
+        <span className="text-muted font-italic" style={{fontSize: '11.7px'}}>Đã cập nhật {getTimeFormat(reloadTime, "dd/mm HH:MM")}</span>
+        <span className="btn btn-sm btn-clean btn-icon ml-2 mb-1" style={{width: '20px', height: '20px'}} onClick={handleReload}>
+          <i className="bi bi-arrow-repeat"></i>
+        </span>
       </div>
     </div>
   );
@@ -350,6 +363,7 @@ class OrderContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      reloadTime: new Date().toUTCString(),
       isLoading: false,
       action: {
         id: null,
@@ -364,6 +378,26 @@ class OrderContent extends Component {
   onDateRangeFilter = null;
 
   async componentDidMount() {
+    await this.fetchData();
+    this.onDateRangeFilter({
+      start: moment().startOf("month").valueOf(),
+      end: moment().endOf("date").valueOf()
+    });
+    this.timer = new Timer(async () => {
+      await orderService.getOrderBoard()
+      .then((res) => {
+        if (res.data.error && res.data.error.statusCode === 100) {
+          this.setState({ 
+            entities: [...res.data.data],
+            reloadTime: new Date().toUTCString()
+          });
+        }
+      })
+      .catch((error) => console.log(error));
+    }, 600000);
+  }
+
+  async fetchData() {
     this.setState({isLoading: true});
     await orderService.getOrderBoard()
       .then((res) => {
@@ -373,10 +407,11 @@ class OrderContent extends Component {
       })
       .catch((error) => console.log(error));
     this.setState({isLoading: false});
-    this.onDateRangeFilter({
-      start: moment().startOf("month").valueOf(),
-      end: moment().endOf("date").valueOf()
-    });
+  }
+
+  handleReload = async (cb) => {
+    await this.timer.reset();
+    cb();
   }
     
   handleOkModal = () => {
@@ -435,7 +470,9 @@ class OrderContent extends Component {
         onFilter={{
           onStatusFilter: this.onStatusFilter,
           onDateRangeFilter: this.onDateRangeFilter}}
-      ></CustomTable>
+        reloadTime={this.state.reloadTime}
+        reloadData={this.handleReload}
+      />
     );
   }
 }
