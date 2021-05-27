@@ -14,6 +14,17 @@ class ProductService {
       },
     });
   }
+
+  deleteProduct(id) {
+    return axios({
+      method: "post",
+      url: BASE_URL + "/product/delete/" + id,
+      headers: {
+        Authorization: authHeader(),
+      },
+    })
+  }
+
 }
 
 export default new ProductService();

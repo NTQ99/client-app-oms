@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import { Card, Table, ButtonGroup, Dropdown } from "react-bootstrap";
 
-import { getPaginationOptions, productColumns } from "../../../config/configTable";
+import {
+  getPaginationOptions,
+  productColumns,
+} from "../../../config/configTable";
 
 import CustomTable from "../table/CustomTable";
 
-import SVG from 'react-inlinesvg';
+import SVG from "react-inlinesvg";
 
 import * as FileSaver from "file-saver";
 import * as XLSX from "xlsx";
 import productService from "../../../service/product.service";
+import ProductDialog from "../modal/ProductDialog";
 
 const orderStatus = {
   wait_confirm: "Chờ xác nhận",
@@ -17,11 +21,11 @@ const orderStatus = {
   canceled: "Đã hủy",
   success: "Giao thành công",
   await_trans: "Chờ vận chuyển",
-  fail: "Giao thất bại"
+  fail: "Giao thất bại",
 };
 
 const SearchInput = (props) => {
-  const {onSearch} = props;
+  const { onSearch } = props;
   const handleSearchChange = (e) => {
     onSearch(e.target.value);
   };
@@ -66,30 +70,32 @@ const OrderToolbar = (props) => {
       deliveryTo: "Địa chỉ",
       status: "Trạng thái",
       createdAt: "Thời gian tạo",
-      note: "Ghi chú"
-    }
-    
+      note: "Ghi chú",
+    };
+
     jsonData = jsonData.map((el, index) => {
       let newJson = new Object();
       Object.keys(headers).forEach((header) => {
-        switch(header) {
+        switch (header) {
           case "recordId":
             newJson[header] = index + 1;
             break;
           case "priceType":
-            newJson[header] = (el[header] === 1)? "Đơn lẻ": "Đơn sỉ";
+            newJson[header] = el[header] === 1 ? "Đơn lẻ" : "Đơn sỉ";
             break;
           case "status":
             newJson[header] = orderStatus[el[header]];
             break;
           case "deliveryTo":
-            newJson[header] = `${el.deliveryTo.detail}; ${el.deliveryTo.ward}, ${el.deliveryTo.district}, ${el.deliveryTo.province}`;
+            newJson[
+              header
+            ] = `${el.deliveryTo.detail}; ${el.deliveryTo.ward}, ${el.deliveryTo.district}, ${el.deliveryTo.province}`;
             break;
           case "createdAt":
             newJson[header] = new Date(el[header]);
             break;
           default:
-            newJson[header] = el[header]
+            newJson[header] = el[header];
             break;
         }
       });
@@ -97,85 +103,72 @@ const OrderToolbar = (props) => {
     });
 
     jsonData.unshift(headers);
-    
-    const ws = XLSX.utils.json_to_sheet(jsonData, {skipHeader: true});
-    
+
+    const ws = XLSX.utils.json_to_sheet(jsonData, { skipHeader: true });
+
     const wb = { Sheets: { data: ws }, SheetNames: ["data"] };
     const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
     const data = new Blob([excelBuffer], { type: fileType });
     FileSaver.saveAs(data, "DS_Đơn_hàng" + fileExtension);
   };
-  return (<>
-    <div
-      className="btn btn-light-primary font-weight-bolder mr-2"
-      onClick={handleExportClick}
-    >
-      <span class="svg-icon svg-icon-md">
-        <SVG src="assets/media/svg/icons/Files/ExportFile.svg" />
-      </span>
-      Xuất file
-    </div>
-    {/*begin::Button*/}
-    <a
-    href="/create-order"
-    className="btn btn-primary font-weight-bolder"
-  >
-    <span className="svg-icon svg-icon-md">
-      <SVG src="assets/media/svg/icons/Design/Flatten.svg" />
-    </span>
-    Tạo mới
-  </a>
-  {/*end::Button*/}</>
+  return (
+    <>
+      <div
+        className="btn btn-light-primary font-weight-bolder mr-2"
+        onClick={handleExportClick}
+      >
+        <span class="svg-icon svg-icon-md">
+          <SVG src="assets/media/svg/icons/Files/ExportFile.svg" />
+        </span>
+        Xuất file
+      </div>
+      {/*begin::Button*/}
+      <a href="/create-order" className="btn btn-primary font-weight-bolder">
+        <span className="svg-icon svg-icon-md">
+          <SVG src="assets/media/svg/icons/Design/Flatten.svg" />
+        </span>
+        Tạo mới
+      </a>
+      {/*end::Button*/}
+    </>
   );
-}
+};
 
 const expandRow = {
   renderer: (row) => (
     <Card>
       <Card.Body>
-      <Table className="mb-0" style={{borderBottom: '1px solid #ebedf3'}}>
-      <tbody>
-    <tr>
-      <td className="title-style">Phân loại</td>
-      <td>{(row.priceType === 1)? "Đơn lẻ": "Đơn sỉ"}</td>
-      <td colSpan="2">
-        <span className="title-style" style={{display: 'inline-block', width: '100px'}}>Tiền COD</span>
-        <span>{row.codAmount.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</span>
-      </td>
-    </tr>
-    {row.products.map((product, index) => (
-      <tr>
-        <td className="title-style">{(index===0)? "Sản phẩm": ""}</td>
-        <td>{product.productName}</td>
-        <td colSpan="2">{`Số lượng: ${product.quantity}`}</td>
-    </tr>
-    ))}
-    <tr>
-      <td className="title-style">Địa chỉ</td>
-      <td colSpan="3">{`${row.deliveryTo.detail}; ${row.deliveryTo.ward}, ${row.deliveryTo.district}, ${row.deliveryTo.province}`}</td>
-    </tr>
-    {row.note && row.note !== "" && (
-      <tr>
-        <td className="title-style">Ghi chú</td>
-        <td colSpan="3">{row.note}</td>
-      </tr>
-    )}
-    {row.deliveryUnitName && row.deliveryUnitName !== "" && (
-      <tr>
-        <td className="title-style">Vận chuyển</td>
-        <td colSpan="3">
-          <a
-          href={`https://donhang.ghn.vn/?order_code=${row.deliveryCode}`}
-          target="_blank"
-          rel="noreferrer"
-          className="text-primary">
-            {row.deliveryUnitName}
-          </a>
-        </td>
-      </tr>
-    )}
-  </tbody>
-      </Table>
+        <Table className="mb-0" style={{ borderBottom: "1px solid #ebedf3" }}>
+          <tbody>
+            <tr>
+              <td className="title-style">Giá lẻ</td>
+              <td>{row.price[1]}</td>
+              <td colSpan="2">
+                <span
+                  className="title-style"
+                  style={{ display: "inline-block", width: "100px" }}
+                >
+                  Giá sỉ
+                </span>
+                <span>{row.price[1]}</span>
+              </td>
+            </tr>
+            <tr>
+              <td className="title-style">Cân nặng</td>
+              <td colSpan="3">{`${row.weight} gram`}</td>
+            </tr>
+            <tr>
+              <td className="title-style">Chi tiết</td>
+              <td>
+                <img src={row.productPhotos[0]} width="250" />
+              </td>
+              {console.log(row.productDetail.split("\n"))}
+              <td colSpan="2" className="align-top">
+                {row.productDetail.split("\n").map(v => <p>{v}</p>)}
+              </td>
+            </tr>
+          </tbody>
+        </Table>
       </Card.Body>
     </Card>
   ),
@@ -189,7 +182,7 @@ const expandRow = {
           style={{ width: "20px", height: "20px" }}
         >
           <span className="svg-icon svg-icon-md">
-          <i className="las la-minus-square"></i>
+            <i className="las la-minus-square"></i>
           </span>
         </div>
       );
@@ -200,7 +193,7 @@ const expandRow = {
         style={{ width: "20px", height: "20px" }}
       >
         <span className="svg-icon svg-icon-md">
-        <i class="lar la-plus-square"></i>
+          <i class="lar la-plus-square"></i>
         </span>
       </div>
     );
@@ -213,7 +206,7 @@ const expandRow = {
           style={{ width: "20px", height: "20px" }}
         >
           <span className="svg-icon svg-icon-md">
-          <i className="las la-caret-down"></i>
+            <i className="las la-caret-down"></i>
           </span>
         </div>
       );
@@ -224,46 +217,81 @@ const expandRow = {
         style={{ width: "20px", height: "20px" }}
       >
         <span className="svg-icon svg-icon-md">
-        <i className="las la-caret-right"></i>
+          <i className="las la-caret-right"></i>
         </span>
       </div>
     );
   },
 };
 
+const defaultSorted = [
+  {
+    dataField: "createdAt",
+    order: "desc",
+  },
+];
+
 class CustomerContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reloadTime: new Date().toISOString(),
       isLoading: false,
       action: {
         id: null,
         type: null,
       },
-      showModal: false,
+      modal: {
+        show: false,
+      },
       entities: [],
     };
   }
 
   onStatusFilter = null;
-  componentDidMount() {
-    this.fetchData()
+  async componentDidMount() {
+    await this.fetchData();
   }
 
   async fetchData() {
-    this.setState({isLoading: true});
-    await productService.getProductBoard().then(res => {
-      this.setState({entities: res.data.data});
-    })
-    this.setState({isLoading: false});
+    this.setState({ isLoading: true });
+    await productService.getProductBoard().then(async (res) => {
+      this.setState({ entities: res.data.data });
+    });
+    this.setState({ isLoading: false });
   }
-  
+
+  deleteProduct = async (id) => {
+    await productService.deleteProduct(id).then(res => {
+      this.fetchData();
+      this.setState({
+        action: null,
+        modal: {
+          show: true,
+          handleOk: () => this.setState({modal:{show: false}}),
+          variant: "success",
+          message: res.data.error.message
+        }
+      })
+    }).catch(error => this.setState({
+      action: null,
+      modal: {
+        show: true,
+        handleOk: () => this.setState({modal:{show: false}}),
+        variant: "error",
+        message: error.message
+      }
+    }))
+  }
+
   render() {
     const entities = this.state.entities;
     const columns = productColumns(this);
     const options = getPaginationOptions(this.state.entities.length);
-    return (
+    const { modal } = this.state;
+    return (<>
+      <ProductDialog
+        { ...modal }
+      />
       <CustomTable
         title="Danh sách sản phẩm"
         loading={this.state.isLoading}
@@ -273,9 +301,10 @@ class CustomerContent extends Component {
         Search={SearchInput}
         Toolbar={OrderToolbar}
         expandRow={expandRow}
+        defaultSorted={defaultSorted}
         rowStyle={{ cursor: "pointer" }}
       />
-    );
+    </>);
   }
 }
 

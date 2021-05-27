@@ -521,7 +521,7 @@ export function productColumns(obj) {
     {
       dataField: "productName",
       text: "Tên sản phẩm",
-      headerStyle: { width: "200px" },
+      headerStyle: { width: "250px" },
     },
     {
       dataField: "stock",
@@ -549,51 +549,41 @@ export function productColumns(obj) {
       formatter: (cell) => cell + " %"
     },
     {
+      dataField: "createdAt",
+      text: "Thời gian tạo",
+      sort: true,
+      hidden: true,
+    },
+    {
       dataField: "Actions",
       text: "Hành động",
-      headerStyle: { width: "130px" },
+      headerStyle: { width: "100px" },
       formatter: (cellContent, row, rowIndex) => (
         <>
-          {row.status === "await_trans" && (<>
-            <div
-              className="btn btn-sm btn-clean btn-icon mr-2"
-              title={`In vận đơn | ${row.isPinted? "Đã in": "Chưa in"}`}
-            >
-              <span className="svg-icon svg-icon-md">
-              <div className="symbol symbol-20">
-                <i className="la la-print" />
-                <i className={`symbol-badge bg-${row.isPinted? "success": "danger"}`} style={{width: '10px', height: '10px', top: '-5px', right: '-5px'}}></i>
-              </div>
-              </span>
-            </div>
-            <div className="btn btn-sm btn-clean btn-icon mr-2" title="Hủy">
-              <span className="svg-icon svg-icon-md">
-                <i className="las la-ban"></i>
-              </span>
-            </div>
-          </>)}
-          {row.status !== "await_trans" && (<>
-            <div
-              className="btn btn-sm btn-clean btn-icon mr-2"
-              title="Gửi vận đơn"
-            >
-              <span className="svg-icon svg-icon-md">
-                <i className="las la-truck"></i>
-              </span>
-            </div>
-            <div className="btn btn-sm btn-clean btn-icon mr-2" title="Sửa">
-              <span className="svg-icon svg-icon-md">
-                <i className="las la-edit"></i>
-              </span>
-            </div>
-          </>)}
-          <div className="btn btn-sm btn-clean btn-icon" title="Xóa">
+          <div className="btn btn-sm btn-clean btn-icon mr-2" title="Sửa">
+            <span className="svg-icon svg-icon-md">
+              <i className="las la-edit"></i>
+            </span>
+          </div>
+          <div className="btn btn-sm btn-clean btn-icon" title="Xóa" onClick={() => obj.setState({
+            action: {
+              id: row.id,
+              type: "delete"
+            },
+            modal: {
+              show: true,
+              handleClose: () => obj.setState({modal:{show: false}}),
+              handleOk: () => obj.deleteProduct(row.id),
+              variant: "danger",
+              message: "Bạn có chắc chắn muốn xóa sản phẩm này?"
+            }
+          })}>
             <span className="svg-icon svg-icon-md">
               <i className="las la-trash-alt"></i>
             </span>
           </div>
         </>
-      ),
+      )
     },
   ];
 }

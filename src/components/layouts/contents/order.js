@@ -233,7 +233,7 @@ const OrderToolbar = (props) => {
       className="btn btn-light-primary font-weight-bolder mr-2"
       onClick={handleExportClick}
     >
-      <span class="svg-icon svg-icon-md">
+      <span className="svg-icon svg-icon-md">
         <SVG src="assets/media/svg/icons/Files/ExportFile.svg" />
       </span>
       Xuất file

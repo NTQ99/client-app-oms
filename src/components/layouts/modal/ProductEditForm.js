@@ -179,10 +179,10 @@ class DeliveryEditForm extends Component {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button autoFocus variant="secondary" onClick={this.props.handleClose}>
+          <Button variant="secondary" onClick={this.props.handleClose}>
             Hủy bỏ
           </Button>
-          {selectedRow.token && shops && selectedRow.shopId && <Button variant="primary" disabled={this.props.btnLoading? true: false} onClick={() => this.props.updateDelivery(selectedRow)}>
+          {selectedRow.token && shops && selectedRow.shopId && <Button autofocus variant="primary" disabled={this.props.btnLoading? true: false} onClick={() => this.props.updateDelivery(selectedRow)}>
             {this.props.btnLoading && (
               <span className="spinner-border spinner-border-sm"></span>
               )}
