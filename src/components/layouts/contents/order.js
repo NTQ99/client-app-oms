@@ -3,7 +3,7 @@ import { Card, Table, ButtonGroup, Dropdown } from "react-bootstrap";
 import moment from "moment";
 import DateRangePicker from "react-bootstrap-daterangepicker";
 
-import { orderColumns } from "../../../config/configTable";
+import { getPaginationOptions, orderColumns } from "../../../config/configTable";
 import orderService from "../../../service/order.service";
 
 import CustomTable from "../table/CustomTable";
@@ -12,6 +12,8 @@ import SVG from 'react-inlinesvg';
 
 import * as FileSaver from "file-saver";
 import * as XLSX from "xlsx";
+
+import {getTimeFormat, Timer} from '../../../service/helper';
 
 const orderStatus = {
   wait_confirm: "Chờ xác nhận",
@@ -23,7 +25,7 @@ const orderStatus = {
 };
 
 const SearchInput = (props) => {
-  const {onSearch, onFilter} = props;
+  const {onSearch, onFilter, reloadTime, reloadData} = props;
   const handleSearchChange = (e) => {
     onSearch(e.target.value);
   };
@@ -34,12 +36,16 @@ const SearchInput = (props) => {
     start: moment().startOf("month"),
     end: moment().endOf("date"),
   };
-  console.log(dateRange)
   const handleDateRangeChange = (start, end) => {
     onFilter.onDateRangeFilter({
       start: start.valueOf(),
       end: end.valueOf()
     })
+  }
+  const handleReload = (e) => {
+    let el = e.currentTarget.querySelector("i");
+    el.classList.add("fa-spin");
+    reloadData(() => el.classList.remove("fa-spin"));
   }
   return (
     <div className="row align-items-center">
@@ -127,6 +133,12 @@ const SearchInput = (props) => {
         <small className="form-text text-muted">
           Tìm theo <b>Trạng thái</b>
         </small>
+      </div>
+      <div className="col-md-4 my-2 my-md-0 d-flex align-items-center justify-content-end">
+        <span className="text-muted font-italic" style={{fontSize: '11.7px'}}>Đã cập nhật {getTimeFormat(reloadTime, "dd/mm HH:MM")}</span>
+        <span className="btn btn-sm btn-clean btn-icon ml-2 mb-1" style={{width: '20px', height: '20px'}} onClick={handleReload}>
+          <i className="bi bi-arrow-repeat"></i>
+        </span>
       </div>
     </div>
   );
@@ -221,7 +233,7 @@ const OrderToolbar = (props) => {
       className="btn btn-light-primary font-weight-bolder mr-2"
       onClick={handleExportClick}
     >
-      <span class="svg-icon svg-icon-md">
+      <span className="svg-icon svg-icon-md">
         <SVG src="assets/media/svg/icons/Files/ExportFile.svg" />
       </span>
       Xuất file
@@ -351,6 +363,8 @@ class OrderContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      reloadTime: new Date().toUTCString(),
+      isLoading: false,
       action: {
         id: null,
         type: null,
@@ -363,18 +377,41 @@ class OrderContent extends Component {
   onStatusFilter = null;
   onDateRangeFilter = null;
 
-  componentDidMount() {
-    orderService.getOrderBoard()
+  async componentDidMount() {
+    await this.fetchData();
+    this.onDateRangeFilter({
+      start: moment().startOf("month").valueOf(),
+      end: moment().endOf("date").valueOf()
+    });
+    this.timer = new Timer(async () => {
+      await orderService.getOrderBoard()
+      .then((res) => {
+        if (res.data.error && res.data.error.statusCode === 100) {
+          this.setState({ 
+            entities: [...res.data.data],
+            reloadTime: new Date().toUTCString()
+          });
+        }
+      })
+      .catch((error) => console.log(error));
+    }, 600000);
+  }
+
+  async fetchData() {
+    this.setState({isLoading: true});
+    await orderService.getOrderBoard()
       .then((res) => {
         if (res.data.error && res.data.error.statusCode === 100) {
           this.setState({ entities: [...res.data.data] });
         }
       })
       .catch((error) => console.log(error));
-    this.onDateRangeFilter({
-      start: moment().startOf("month").valueOf(),
-      end: moment().endOf("date").valueOf()
-    });
+    this.setState({isLoading: false});
+  }
+
+  handleReload = async (cb) => {
+    await this.timer.reset();
+    cb();
   }
     
   handleOkModal = () => {
@@ -416,22 +453,12 @@ class OrderContent extends Component {
   render() {
     const entities = this.state.entities;
     const columns = orderColumns(this);
-    const options = {
-      custom: true,
-      totalSize: this.state.entities.length,
-      sizePerPage: 10,
-      page: 1,
-      sizePerPageList: [
-        { text: "5", value: 5 },
-        { text: "10", value: 10 },
-        { text: "20", value: 20 },
-      ],
-    };
-    console.log(this);
+    const options = getPaginationOptions(this.state.entities.length);
 
     return (
       <CustomTable
         title="Quản lý đơn hàng"
+        loading={this.state.isLoading}
         options={options}
         entities={entities}
         columns={columns}
@@ -443,7 +470,9 @@ class OrderContent extends Component {
         onFilter={{
           onStatusFilter: this.onStatusFilter,
           onDateRangeFilter: this.onDateRangeFilter}}
-      ></CustomTable>
+        reloadTime={this.state.reloadTime}
+        reloadData={this.handleReload}
+      />
     );
   }
 }

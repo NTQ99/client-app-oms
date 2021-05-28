@@ -6,6 +6,8 @@ import axios from 'axios';
 import DeliveryService from '../../../service/delivery.service';
 import DeliveryDialog from "../modal/DeliveryDialog";
 import DeliveryEditForm from "../modal/DeliveryEditForm";
+import overlayFactory from 'react-bootstrap-table2-overlay';
+import TableLoading from "../extra/table-loading";
 
 const BASE_DELIVERY_URL="https://dev-online-gateway.ghn.vn";
 
@@ -14,24 +16,30 @@ class DeliveryContent extends Component {
     super(props);
     this.state = {
       isLoading: false,
+      isBtnLoading: false,
+      isBtnEditLoading: false,
+      isValidating: false,
       showEdit: false,
       entities: []
     };
   }
 
   componentDidMount() {
-    this.initDeliveryBoard();
+    this.fetchData();
   }
 
-  initDeliveryBoard() {
-    DeliveryService.getDeliveryBoard().then(res => {
+  async fetchData() {
+    this.setState({isLoading: true});
+    await DeliveryService.getDeliveryBoard().then(res => {
       this.setState({entities: res.data.data});
     })
+    this.setState({isLoading: false});
   }
   
   showDelivery = (e) => {
     this.setState({
       deliveryUnitName: e.target.value,
+      shops: null
     });
   };
 
@@ -49,21 +57,21 @@ class DeliveryContent extends Component {
 
   getShops = (e) => {
     const el = e.currentTarget;
-    this.setState({isLoading: true});
+    this.setState({isValidating: true});
     axios.get(BASE_DELIVERY_URL + "/shiip/public-api/v2/shop/all",{
       headers: {
         token: this.state.token
       }
     }).then(res => {
       this.setState({
-        isLoading: false,
+        isValidating: false,
         shops: res.data.data.shops,
         shopId: res.data.data.shops[0]._id
       });
       el.classList.remove('btn-secondary');
       el.classList.add('btn-success', 'disabled');
     }).catch(() => {
-      this.setState({isLoading: false});
+      this.setState({isValidating: false});
       el.classList.remove('btn-secondary');
       el.classList.add('btn-danger', 'disabled');
     })
@@ -73,8 +81,9 @@ class DeliveryContent extends Component {
     this.setState({shopId: e.target.value});
   }
   
-  createDelivery = () => {
-    DeliveryService.createDelivery({
+  createDelivery = async () => {
+    this.setState({isBtnLoading: true});
+    await DeliveryService.createDelivery({
       deliveryUnitName: this.state.deliveryUnitName,
       token: this.state.token,
       shopId: this.state.shopId
@@ -93,15 +102,17 @@ class DeliveryContent extends Component {
       })
       if (res.data.error.statusCode === 102) {
         this.setState({modalVariant: "success"})
-        this.initDeliveryBoard();
+        this.fetchData();
       } else {
         this.setState({modalVariant: "danger"})
       }
-    })
+    });
+    this.setState({isBtnLoading: false});
   }
 
-  updateDelivery = (row) => {
-    DeliveryService.updateDelivery(row).then(res => {
+  updateDelivery = async (row) => {
+    this.setState({isBtnEditLoading: true});
+    await DeliveryService.updateDelivery(row).then(res => {
       this.setState({
         showModal: true,
         modalMessage: res.data.error.message,
@@ -112,11 +123,12 @@ class DeliveryContent extends Component {
           showEdit: false,
           modalVariant: "success"
         })
-        this.initDeliveryBoard();
+        this.fetchData();
       } else {
         this.setState({modalVariant: "danger"})
       }
-    })
+    });
+    this.setState({isBtnEditLoading: false});
   }
 
   showDeleteDeliveryDialog = (row) => {
@@ -129,7 +141,7 @@ class DeliveryContent extends Component {
           modalVariant: "success",
           modalMessage: res.data.error.message,
           handleOkModal: () => {
-            this.initDeliveryBoard();
+            this.fetchData();
             this.setState({showModal: false});
           },
           handleCloseModal: null
@@ -155,10 +167,10 @@ class DeliveryContent extends Component {
   }
 
   render() {
-    const {selectedRow, showEdit,  deliveryUnitName, shops, isLoading, entities, showModal, handleOkModal, handleCloseModal, modalVariant, modalMessage} = this.state;
+    const {selectedRow, showEdit,  deliveryUnitName, shops, isLoading, isBtnLoading, isBtnEditLoading, isValidating, entities, showModal, handleOkModal, handleCloseModal, modalVariant, modalMessage} = this.state;
     return (
       <div className="row">
-        {showEdit && <DeliveryEditForm row={selectedRow} show={showEdit} handleClose={this.closeEditDeliveryDialog} updateDelivery={this.updateDelivery} />}
+        {showEdit && <DeliveryEditForm btnLoading={isBtnEditLoading} row={selectedRow} show={showEdit} handleClose={this.closeEditDeliveryDialog} updateDelivery={this.updateDelivery} />}
         <DeliveryDialog
           show={showModal}
           handleOk={handleOkModal}
@@ -175,6 +187,7 @@ class DeliveryContent extends Component {
             </div>
             <div className="card-body">
               <BootstrapTable
+                loading={ isLoading }
                 wrapperClasses="table-responsive"
                 bordered={false}
                 classes="table table-head-custom table-vertical-center overflow-scroll"
@@ -183,7 +196,9 @@ class DeliveryContent extends Component {
                 data={entities}
                 columns={deliveryColumns(this)}
                 noDataIndication="Không tìm thấy bản ghi nào"
-              />
+                overlay={ overlayFactory({ spinner: TableLoading(), styles: { overlay: (base) => ({...base, background: '#fff', fontSize: '13px'}) }}) }
+              >
+              </BootstrapTable>
             </div>
           </div>
         </div>
@@ -243,10 +258,10 @@ class DeliveryContent extends Component {
                     />
                     <div className="input-group-append">
                       <a className="btn btn-secondary btn-icon" id="validate_token" onClick={this.getShops}>
-                        {!isLoading && <span className="svg-icon svg-icon-md">
+                        {!isValidating && <span className="svg-icon svg-icon-md">
                           <i className="bi bi-patch-check"></i>
                         </span>}
-                        {isLoading && <div className="spinner-border spinner-border-sm" role="status"></div>}
+                        {isValidating && <div className="spinner spinner-dark spinner-center spinner-sm"></div>}
                       </a>
                     </div>
                   </div>
@@ -264,8 +279,11 @@ class DeliveryContent extends Component {
                       </select>
                     </div>
                     <div className="col-2 pr-0">
-                      <button className="btn btn-primary w-100" type="button" onClick={this.createDelivery}>
-                          Lưu
+                      <button className="btn btn-primary w-100" disabled={isBtnLoading? true: false} type="button" onClick={this.createDelivery}>
+                          {isBtnLoading && (
+                            <span className="spinner-border spinner-border-sm"></span>
+                            )}
+                          {!isBtnLoading && "Lưu"}
                       </button>
                     </div>
                   </div>

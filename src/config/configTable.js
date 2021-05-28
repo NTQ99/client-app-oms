@@ -1,6 +1,21 @@
 import SVG from "react-inlinesvg";
 import { Form } from "react-bootstrap";
 import { customFilter, FILTER_TYPES } from 'react-bootstrap-table2-filter';
+import { getTimeFormat } from "../service/helper";
+
+export const getPaginationOptions = (totalSize) => {
+  return {
+    custom: true,
+    totalSize: totalSize,
+    sizePerPage: 10,
+    page: 1,
+    sizePerPageList: [
+      { text: "5", value: 5 },
+      { text: "10", value: 10 },
+      { text: "20", value: 20 },
+    ],
+  };
+}
 
 export const deliveryColumns = (obj) => [
   {
@@ -368,19 +383,10 @@ export function orderColumns(obj) {
       },
       formatter: (cell) => {
         let dateObj = cell;
-        console.log(cell + "cell");
         if (typeof cell !== "object") {
           dateObj = new Date(cell);
         }
-        return (
-          ("0" + dateObj.getDate()).slice(-2) +
-          "/" +
-          ("0" + (dateObj.getMonth() + 1)).slice(-2) +
-          ", " +
-          ("0" + dateObj.getHours()).slice(-2) +
-          ":" +
-          ("0" + dateObj.getMinutes()).slice(-2)
-        );
+        return getTimeFormat(dateObj, "dd/mm, HH:MM");
       },
     },
     {
@@ -489,6 +495,95 @@ export function orderColumns(obj) {
           }
         },
       },
+    },
+  ];
+}
+
+export function productColumns(obj) {
+  return [
+    {
+      dataField: "recordId",
+      text: "#",
+      headerTitle: () => "Số thứ tự",
+      headerStyle: { width: "50px" },
+      formatter: (cellContent, row, rowIndex) => rowIndex + 1
+    },
+    {
+      dataField: "id",
+      text: "ID sản phẩm",
+      hidden: true,
+    },
+    {
+      dataField: "productCode",
+      text: "Mã sản phẩm",
+      headerStyle: { width: "100px" },
+    },
+    {
+      dataField: "productName",
+      text: "Tên sản phẩm",
+      headerStyle: { width: "250px" },
+    },
+    {
+      dataField: "stock",
+      text: "SL tồn kho",
+      sort: true,
+      headerTitle: () => "Số lượng tồn kho",
+      headerStyle: { width: "100px" },
+      formatter: (cell) => {
+        if (cell === 0) return <span className="text-danger">{cell}</span>
+        else return cell
+      }
+    },
+    {
+      dataField: "price",
+      text: "Giá nhập",
+      sort: true,
+      headerStyle: { width: "100px" },
+      formatter: (cell, row) =>
+        row.price[0].toLocaleString("it-IT", { style: "currency", currency: "VND" }),
+    },
+    {
+      dataField: "promotion",
+      text: "Giảm giá",
+      headerStyle: { width: "100px" },
+      formatter: (cell) => cell + " %"
+    },
+    {
+      dataField: "createdAt",
+      text: "Thời gian tạo",
+      sort: true,
+      hidden: true,
+    },
+    {
+      dataField: "Actions",
+      text: "Hành động",
+      headerStyle: { width: "100px" },
+      formatter: (cellContent, row, rowIndex) => (
+        <>
+          <div className="btn btn-sm btn-clean btn-icon mr-2" title="Sửa">
+            <span className="svg-icon svg-icon-md">
+              <i className="las la-edit"></i>
+            </span>
+          </div>
+          <div className="btn btn-sm btn-clean btn-icon" title="Xóa" onClick={() => obj.setState({
+            action: {
+              id: row.id,
+              type: "delete"
+            },
+            modal: {
+              show: true,
+              handleClose: () => obj.setState({modal:{show: false}}),
+              handleOk: () => obj.deleteProduct(row.id),
+              variant: "danger",
+              message: "Bạn có chắc chắn muốn xóa sản phẩm này?"
+            }
+          })}>
+            <span className="svg-icon svg-icon-md">
+              <i className="las la-trash-alt"></i>
+            </span>
+          </div>
+        </>
+      )
     },
   ];
 }

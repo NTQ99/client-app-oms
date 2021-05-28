@@ -7,13 +7,15 @@ import paginationFactory, {
 } from "react-bootstrap-table2-paginator";
 import ToolkitProvider from "react-bootstrap-table2-toolkit";
 import filterFactory from 'react-bootstrap-table2-filter';
+import overlayFactory from 'react-bootstrap-table2-overlay';
 
+import TableLoading from "../extra/table-loading";
 import { Pagination } from "../pagination/Pagination";
 
 
 class CustomTable extends Component {
   render() {
-    const {options, entities, columns, Search, Toolbar, expandRow, defaultSorted, rowStyle, title, children, onFilter} = this.props;
+    const {reloadTime, reloadData, loading, options, entities, columns, Search, Toolbar, expandRow, defaultSorted, rowStyle, title, children, onFilter} = this.props;
     return (
       <PaginationProvider pagination={paginationFactory(options)}>
         {({ paginationProps, paginationTableProps }) => (
@@ -40,7 +42,7 @@ class CustomTable extends Component {
                     <div className="mb-7">
                       {/* <div className="row align-items-center">
                         <div className="col-lg-9 col-xl-6"> */}
-                          <Search {...props.searchProps} onFilter={onFilter} />
+                          <Search {...props.searchProps} onFilter={onFilter} reloadTime={reloadTime} reloadData={reloadData} />
                         {/* </div>
                       </div> */}
                     </div>
@@ -50,6 +52,7 @@ class CustomTable extends Component {
                     <BootstrapTable
                       {...props.baseProps}
                       {...paginationTableProps}
+                      loading={loading}
                       onDataSizeChange={(e) => (options.totalSize = e.dataSize)}
                       wrapperClasses="table-responsive"
                       bordered={false}
@@ -60,7 +63,7 @@ class CustomTable extends Component {
                       rowStyle={rowStyle}
                       filter={ filterFactory() }
                       noDataIndication="Không tìm thấy bản ghi nào"
-                      // remote
+                      overlay={ overlayFactory({ spinner: TableLoading(), styles: { overlay: (base) => ({...base, background: '#fff', fontSize: '13px'}) }}) }
                     />
                     {/* end:: Table */}
                   </Pagination>
