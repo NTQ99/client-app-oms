@@ -3,22 +3,22 @@ import authHeader from './auth-header';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL_API;
 
-class DeliveryService {
+class CustomerService {
 
-  getDeliveryBoard() {
+  getCustomerBoard() {
     return axios({
       method: "post",
-      url: BASE_URL + "/delivery/get",
+      url: BASE_URL + "/customer/get",
       headers: {
         Authorization: authHeader(),
-      }
+      },
     });
   }
 
-  createDelivery(data) {
+  createCustomer(data) {
     return axios({
       method: "post",
-      url: BASE_URL + "/delivery/create",
+      url: BASE_URL + "/customer/create",
       headers: {
         Authorization: authHeader(),
       },
@@ -26,10 +26,10 @@ class DeliveryService {
     });
   }
 
-  updateDelivery(data) {
+  updateCustomer(data) {
     return axios({
       method: "post",
-      url: BASE_URL + "/delivery/update/" + data.id,
+      url: BASE_URL + "/customer/update/" + data.id,
       headers: {
         Authorization: authHeader(),
       },
@@ -37,15 +37,16 @@ class DeliveryService {
     });
   }
 
-  deleteDelivery(id) {
+  deleteCustomer(id) {
     return axios({
       method: "post",
-      url: BASE_URL + "/delivery/delete/" + id,
+      url: BASE_URL + "/customer/delete/" + id,
       headers: {
         Authorization: authHeader(),
-      }
-    });
+      },
+    })
   }
+
 }
 
-export default new DeliveryService();
+export default new CustomerService();
