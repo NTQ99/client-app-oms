@@ -58,7 +58,7 @@ export const deliveryColumns = (obj) => [
   {
     dataField: "action",
     text: "Hành động",
-    headerStyle: { width: "120px" },
+    headerStyle: { textAlign: 'center', width: "120px" },
     formatter: function (
       cellContent,
       row,
@@ -66,14 +66,14 @@ export const deliveryColumns = (obj) => [
       { showEditDeliveryDialog, showDeleteDeliveryDialog }
     ) {
       return (
-        <>
+        <div className="d-flex justify-content-center">
           <div
             title="Sửa"
             className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3"
             onClick={()=>showEditDeliveryDialog(row)}
           >
-            <span className="svg-icon svg-icon-md svg-icon-primary">
-              <SVG src="assets/media/svg/icons/Communication/Write.svg" />
+            <span className="svg-icon svg-icon-md">
+              <i className="las la-edit"></i>
             </span>
           </div>
           <> </>
@@ -83,11 +83,11 @@ export const deliveryColumns = (obj) => [
             className="btn btn-icon btn-light btn-hover-danger btn-sm"
             onClick={()=>showDeleteDeliveryDialog(row)}
           >
-            <span className="svg-icon svg-icon-md svg-icon-danger">
-              <SVG src="assets/media/svg/icons/General/Trash.svg" />
+            <span className="svg-icon svg-icon-md">
+              <i className="las la-trash-alt"></i>
             </span>
           </div>
-        </>
+        </div>
       );
     },
     formatExtraData: {
@@ -102,24 +102,23 @@ export function orderProductColumns(obj) {
     {
       dataField: "recordId",
       text: "#",
-      editable: false,
+      headerStyle: { width: "50px" },
       formatter: (cellContent, row, rowIndex) => rowIndex + 1
     },
     {
       dataField: "id",
       text: "productId",
       hidden: true,
-      editable: false,
     },
     {
       dataField: "productName",
       text: "Tên sản phẩm",
-      editable: false,
     },
     {
       dataField: obj.state.priceType,
       text: "Đơn giá",
-      editable: false,
+      formatter: (cell) =>
+        cell.toLocaleString("it-IT", { style: "currency", currency: "VND" }),
     },
     {
       dataField: "_quantity",
@@ -141,20 +140,20 @@ export function orderProductColumns(obj) {
           />
         );
       },
-      style: { maxWidth: "50px", padding: "0" },
     },
     {
       dataField: "totalMoney",
       text: "Thành tiền",
-      editable: false,
+      formatter: (cell) =>
+        (cell || 0).toLocaleString("it-IT", { style: "currency", currency: "VND" }),
     },
     {
       dataField: "action",
       text: "Hành động",
-      editable: false,
+      headerStyle: { textAlign: 'center', width: "120px" },
       formatter: (_, row) => {
         return (
-          <>
+          <div className="d-flex justify-content-center">
             <div
               title="Delete customer"
               className="btn btn-icon btn-light btn-hover-danger btn-sm"
@@ -165,11 +164,11 @@ export function orderProductColumns(obj) {
                 })
               }
             >
-              <span className="svg-icon svg-icon-md svg-icon-danger">
-                <SVG src="assets/media/svg/icons/General/Trash.svg" />
+              <span className="svg-icon svg-icon-md">
+                <i className="las la-trash-alt"></i>
               </span>
             </div>
-          </>
+          </div>
         );
       },
       formatExtraData: {
@@ -252,9 +251,9 @@ export function adminUserColumns(obj) {
       dataField: "action",
       text: "Hành động",
       csvExport: false,
-      headerStyle: { width: "120px" },
+      headerStyle: { textAlign: 'center', width: "120px" },
       formatter: (cellContent, row, rowIndex) => (
-        <>
+        <div className="d-flex justify-content-center">
           {row.status === "locked" && (
             <div
               title="Mở khóa"
@@ -315,7 +314,7 @@ export function adminUserColumns(obj) {
               <SVG src="assets/media/svg/icons/Code/Minus.svg" />
             </span>
           </div>
-        </>
+        </div>
       ),
       formatExtraData: {
         deleteProductRow: (id) => alert(id),
@@ -440,9 +439,9 @@ export function orderColumns(obj) {
     {
       dataField: "Actions",
       text: "Hành động",
-      headerStyle: { width: "130px" },
+      headerStyle: { textAlign: 'center', width: "130px" },
       formatter: (cellContent, row, rowIndex, {getDisabled}) => (
-        <>
+        <div className="d-flex justify-content-center">
           {row.status === "await_trans" && (<>
             <div
               className="btn btn-sm btn-clean btn-icon mr-2"
@@ -481,7 +480,7 @@ export function orderColumns(obj) {
               <i className="las la-trash-alt"></i>
             </span>
           </div>
-        </>
+        </div>
       ),
       formatExtraData: {
         getDisabled: (status) => {
@@ -557,22 +556,18 @@ export function productColumns(obj) {
     {
       dataField: "Actions",
       text: "Hành động",
-      headerStyle: { width: "100px" },
+      headerStyle: { textAlign: 'center', width: "100px" },
       formatter: (cellContent, row, rowIndex) => (
-        <>
-          <div className="btn btn-sm btn-clean btn-icon mr-2" title="Sửa">
+        <div className="d-flex justify-content-center">
+          <div className="btn btn-sm btn-clean btn-icon mr-2" title="Sửa" onClick={() => obj.openEditProductForm(row)}>
             <span className="svg-icon svg-icon-md">
               <i className="las la-edit"></i>
             </span>
           </div>
           <div className="btn btn-sm btn-clean btn-icon" title="Xóa" onClick={() => obj.setState({
-            action: {
-              id: row.id,
-              type: "delete"
-            },
-            modal: {
+            dialogProps: {
               show: true,
-              handleClose: () => obj.setState({modal:{show: false}}),
+              handleClose: () => obj.setState({dialogProps:{...obj.state.dialogProps, show: false}}),
               handleOk: () => obj.deleteProduct(row.id),
               variant: "danger",
               message: "Bạn có chắc chắn muốn xóa sản phẩm này?"
@@ -582,8 +577,175 @@ export function productColumns(obj) {
               <i className="las la-trash-alt"></i>
             </span>
           </div>
-        </>
+        </div>
       )
     },
   ];
 }
+
+export function customerColumns(obj) {
+  return [
+    {
+      dataField: "recordId",
+      text: "#",
+      headerTitle: () => "Số thứ tự",
+      headerStyle: { width: "50px" },
+      formatter: (cellContent, row, rowIndex) => rowIndex + 1
+    },
+    {
+      dataField: "id",
+      text: "ID khách hàng",
+      hidden: true,
+    },
+    {
+      dataField: "customerCode",
+      text: "Mã KH",
+      headerStyle: { width: "100px" },
+      headerTitle: () => "Tên khách hàng"
+    },
+    {
+      dataField: "customerName",
+      text: "Tên khách hàng",
+      headerStyle: { width: "200px" },
+    },
+    {
+      dataField: "customerPhone",
+      text: "Số điện thoại",
+      headerStyle: { width: "150px" },
+    },
+    {
+      dataField: "customerAddresses",
+      text: "Địa chỉ",
+      headerStyle: { width: "400px" },
+      formatter: cell => Array.isArray(cell) && cell.length > 0 && cell[0].ward + ", " + cell[0].district + ", " + cell[0].province
+    },
+    {
+      dataField: "createdAt",
+      text: "Thời gian tạo",
+      sort: true,
+      hidden: true,
+    },
+    {
+      dataField: "Actions",
+      text: "Hành động",
+      headerStyle: { textAlign: 'center', width: "140px" },
+      formatter: (cellContent, row, rowIndex) => (
+        <div className="d-flex justify-content-center">
+          <div className="btn btn-sm btn-clean btn-icon mr-2" title="Sửa">
+            <span className="svg-icon svg-icon-md">
+              <i className="las la-address-book"></i>
+            </span>
+          </div>
+          <div className="btn btn-sm btn-clean btn-icon mr-2" title="Sửa">
+            <span className="svg-icon svg-icon-md">
+              <i className="las la-edit"></i>
+            </span>
+          </div>
+          <div className="btn btn-sm btn-clean btn-icon" title="Xóa">
+            <span className="svg-icon svg-icon-md">
+              <i className="las la-trash-alt"></i>
+            </span>
+          </div>
+        </div>
+      )
+    },
+  ];
+}
+
+export const orderHistoryColumns = [
+  {
+    dataField: "recordId",
+    text: "#",
+    headerTitle: () => "Số thứ tự",
+    headerStyle: { width: "50px" },
+    formatter: (cellContent, row, rowIndex) => rowIndex + 1
+  },
+  {
+    dataField: "id",
+    text: "ID đơn hàng",
+    hidden: true,
+  },
+  {
+    dataField: "orderCode",
+    text: "Mã ĐH",
+    headerTitle: () => "Mã đơn hàng",
+    headerStyle: { width: "80px" },
+  },
+  {
+    dataField: "totalPrice",
+    text: "Tổng giá",
+    sort: true,
+    headerTitle: () => "Tổng giá trị đơn hàng",
+    headerStyle: { width: "150px" },
+    formatter: (cell) =>
+      cell.toLocaleString("it-IT", { style: "currency", currency: "VND" }),
+  },
+  {
+    dataField: "productsName",
+    text: "Sản phẩm",
+    headerStyle: { width: "300px" },
+    formatter: (cell, row) => row.products.map(product => <>{product.productName}<br/></>)
+  },
+  {
+    dataField: "productsQuantity",
+    text: "số lượng",
+    headerStyle: { width: "100px" },
+    formatter: (cell, row) => row.products.map(product => <p>{product.quantity}</p>)
+  },
+  {
+    dataField: "createdAt",
+    text: "Thời gian",
+    headerStyle: { width: "150px" },
+    sort: true,
+    formatter: (cell) => {
+      let dateObj = cell;
+      if (typeof cell !== "object") {
+        dateObj = new Date(cell);
+      }
+      return getTimeFormat(dateObj, "dd/mm, HH:MM");
+    },
+  },
+  {
+    dataField: "status",
+    text: "Trạng thái",
+    sort: true,
+    headerTitle: () => "Trạng thái đơn hàng",
+    headerStyle: { width: "150px" },
+    // callback function support for column rendering
+    formatter: (cellContent, row, rowIndex) => {
+      var status = {
+        wait_confirm: {
+          text: "Chờ xác nhận",
+          class: " label-light-primary",
+        },
+        not_responded: {
+          text: "Không phản hồi",
+          class: " label-light-warning",
+        },
+        canceled: {
+          text: "Đã hủy",
+          class: " label-light-danger",
+        },
+        success: {
+          text: "Giao thành công",
+          class: " label-light-success",
+        },
+        await_trans: {
+          text: "Chờ vận chuyển",
+          class: " label-light-info",
+        },
+        fail: {
+          text: "Giao thất bại",
+          class: " label-light-danger",
+        },
+      };
+      return (
+        <span
+          className={`label font-weight-bold label-lg ${status[row.status].class} label-inline`}
+        >
+          {status[row.status].text}
+        </span>
+      );
+    },
+  }
+];

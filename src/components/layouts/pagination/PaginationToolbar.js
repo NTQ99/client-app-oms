@@ -53,7 +53,7 @@ export function PaginationToolbar(props) {
           );
         })}
       </select>
-      <span class="datatable-pager-detail">
+      <span className="datatable-pager-detail">
         {`Hiển thị ${getResultFrom(page, sizePerPage)} - ${getResultTo(page, sizePerPage, totalSize)} trong ${totalSize} kết quả`}
       </span>
     </div>

@@ -15,7 +15,8 @@ import { Pagination } from "../pagination/Pagination";
 
 class CustomTable extends Component {
   render() {
-    const {reloadTime, reloadData, loading, options, entities, columns, Search, Toolbar, expandRow, defaultSorted, rowStyle, title, children, onFilter} = this.props;
+    const {loading, options, entities, columns, Search, Toolbar, expandRow, defaultSorted, rowStyle, title, children} = this.props;
+    const customStyle = this.props.customStyle? this.props.customStyle: {};
     return (
       <PaginationProvider pagination={paginationFactory(options)}>
         {({ paginationProps, paginationTableProps }) => (
@@ -27,25 +28,21 @@ class CustomTable extends Component {
             exportCSV
           >
             {(props) => (
-              <Card className="card-custom gutter-b">
-                <div className="card-header flex-wrap border-0 pt-6 pb-0">
+              <Card className="card-custom gutter-b" style={customStyle.container}>
+                <div className="card-header flex-wrap border-0 pb-0" style={{paddingTop: '1.5rem', ...customStyle.header}}>
                   <div className="card-title">
                     <h3 className="card-label">{title}</h3>
                   </div>
-                  <div className="card-toolbar">
+                  {Toolbar && <div className="card-toolbar" style={customStyle.toolbar}>
                       <Toolbar {...props} />
-                  </div>
+                  </div>}
                 </div>
-                <Card.Body>
+                <Card.Body style={customStyle.body}>
                   {children}
                   {/* begin:: Toolbar */}
-                    <div className="mb-7">
-                      {/* <div className="row align-items-center">
-                        <div className="col-lg-9 col-xl-6"> */}
-                          <Search {...props.searchProps} onFilter={onFilter} reloadTime={reloadTime} reloadData={reloadData} />
-                        {/* </div>
-                      </div> */}
-                    </div>
+                  {Search && <div className="mb-7" style={customStyle.filter}>
+                    <Search {...props.searchProps} />
+                  </div>}
                   {/* end:: Toolbar */}
                   <Pagination paginationProps={paginationProps}>
                     {/* begin:: Table */}

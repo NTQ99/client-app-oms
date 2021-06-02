@@ -25,123 +25,121 @@ const orderStatus = {
 };
 
 const SearchInput = (props) => {
-  const {onSearch, onFilter, reloadTime, reloadData} = props;
-  const handleSearchChange = (e) => {
-    onSearch(e.target.value);
-  };
-  const handleFilterChange = (e) => {
-    onFilter.onStatusFilter(e.target.value);
-  };
-  const dateRange = {
-    start: moment().startOf("month"),
-    end: moment().endOf("date"),
-  };
-  const handleDateRangeChange = (start, end) => {
-    onFilter.onDateRangeFilter({
-      start: start.valueOf(),
-      end: end.valueOf()
-    })
-  }
-  const handleReload = (e) => {
-    let el = e.currentTarget.querySelector("i");
-    el.classList.add("fa-spin");
-    reloadData(() => el.classList.remove("fa-spin"));
-  }
-  return (
-    <div className="row align-items-center">
-      <div className="col-md-3 my-2 my-md-0">
-        <div className="input-group">
-          <div className="input-group-append">
-            <span className="input-group-text" style={{borderRadius: '.42rem 0 0 .42rem'}}>
-              <i className="la la-calendar-check-o"></i>
-            </span>
+  const {onFilter, reloadTime, reloadData, isTableLoading} = props;
+  return (props) => {
+    const {onSearch} = props;
+    const handleSearchChange = (e) => {
+      onSearch(e.target.value);
+    };
+    const handleFilterChange = (e) => {
+      onFilter.onStatusFilter(e.target.value);
+    };
+    const dateRange = {
+      start: moment().startOf("month"),
+      end: moment().endOf("date"),
+    };
+    const handleDateRangeChange = (start, end) => {
+      onFilter.onDateRangeFilter({
+        start: start.valueOf(),
+        end: end.valueOf()
+      })
+    }
+    return (
+      <div className="row align-items-center">
+        <div className="col-md-3 my-2 my-md-0">
+          <div className="input-group">
+            <div className="input-group-append">
+              <span className="input-group-text" style={{borderRadius: '.42rem 0 0 .42rem'}}>
+                <i className="la la-calendar-check-o"></i>
+              </span>
+            </div>
+            {/* begin::DateRangePicker */}
+            <DateRangePicker
+              initialSettings={{
+                autoApply: true,
+                startDate: dateRange.start,
+                endDate: dateRange.end,
+                locale: {
+                  direction: "ltr",
+                  format: "DD/MM/YYYY",
+                  separator: " - ",
+                  applyLabel: "Đồng ý",
+                  cancelLabel: "Hủy bỏ",
+                  customRangeLabel: "Tùy chọn",
+                },
+                ranges: {
+                  "Tháng này": [
+                    moment().startOf("month"),
+                    moment().endOf("date"),
+                  ],
+                  "Năm nay": [
+                    moment().startOf("year"),
+                    moment().endOf("date"),
+                  ],
+                  "Tháng trước": [
+                    moment().subtract(1, "month").startOf("month"),
+                    moment().subtract(1, "month").endOf("month"),
+                  ],
+                  "Nửa năm trước": [
+                    moment().subtract(6, "month").startOf("month"),
+                    moment().subtract(1, "month").endOf("month"),
+                  ],
+                },
+              }}
+              onCallback={handleDateRangeChange}
+            >
+              <input
+                type="text"
+                className="form-control"
+                readonly
+                placeholder="Chọn khoảng ngày"
+              />
+            </DateRangePicker>
+            {/* end::DateRangePicker */}
           </div>
-          {/* begin::DateRangePicker */}
-          <DateRangePicker
-            initialSettings={{
-              autoApply: true,
-              startDate: dateRange.start,
-              endDate: dateRange.end,
-              locale: {
-                direction: "ltr",
-                format: "DD/MM/YYYY",
-                separator: " - ",
-                applyLabel: "Đồng ý",
-                cancelLabel: "Hủy bỏ",
-                customRangeLabel: "Tùy chọn",
-              },
-              ranges: {
-                "Tháng này": [
-                  moment().startOf("month"),
-                  moment().endOf("date"),
-                ],
-                "Năm nay": [
-                  moment().startOf("year"),
-                  moment().endOf("date"),
-                ],
-                "Tháng trước": [
-                  moment().subtract(1, "month").startOf("month"),
-                  moment().subtract(1, "month").endOf("month"),
-                ],
-                "Nửa năm trước": [
-                  moment().subtract(6, "month").startOf("month"),
-                  moment().subtract(1, "month").endOf("month"),
-                ],
-              },
-            }}
-            onCallback={handleDateRangeChange}
-          >
+          <small className="form-text text-muted">
+            Tìm theo <b>Thời gian tạo</b>
+          </small>
+        </div>
+        <div className="col-md-3 my-2 my-md-0">
+          <div className="input-icon">
             <input
               type="text"
               className="form-control"
-              readonly
-              placeholder="Chọn khoảng ngày"
+              placeholder="Nhập họ tên, SĐT,..."
+              autoComplete="nope"
+              onChange={handleSearchChange}
             />
-          </DateRangePicker>
-          {/* end::DateRangePicker */}
+            <span>
+              <i className="flaticon2-search-1 text-muted" />
+            </span>
+          </div>
+          <small className="form-text text-muted">
+            Tìm theo <b>Tất cả cột</b>
+          </small>
         </div>
-        <small className="form-text text-muted">
-          Tìm theo <b>Thời gian tạo</b>
-        </small>
-      </div>
-      <div className="col-md-3 my-2 my-md-0">
-        <div className="input-icon">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Nhập họ tên, SĐT,..."
-            autoComplete="nope"
-            onChange={handleSearchChange}
-          />
-          <span>
-            <i className="flaticon2-search-1 text-muted" />
+        <div className="col-md-2 my-2 my-md-0">
+          <div className="d-flex align-items-center">
+            <select className="form-control" onChange={handleFilterChange}>
+              <option value={""}>Tất cả</option>
+              {Object.keys(orderStatus).map((status) => (
+                <option value={status}>{orderStatus[status]}</option>
+              ))}
+            </select>
+          </div>
+          <small className="form-text text-muted">
+            Tìm theo <b>Trạng thái</b>
+          </small>
+        </div>
+        <div className="col-md-4 my-2 my-md-0 d-flex align-items-center justify-content-end">
+          <span className="text-muted font-italic" style={{fontSize: '11.7px'}}>Đã cập nhật {getTimeFormat(reloadTime, "dd/mm HH:MM")}</span>
+          <span className="btn btn-sm btn-clean btn-icon ml-2 mb-1" style={{width: '20px', height: '20px'}} onClick={reloadData}>
+            <i className={`bi bi-arrow-repeat${isTableLoading? " fa-spin": ""}`}></i>
           </span>
         </div>
-        <small className="form-text text-muted">
-          Tìm theo <b>Tất cả cột</b>
-        </small>
       </div>
-      <div className="col-md-2 my-2 my-md-0">
-        <div className="d-flex align-items-center">
-          <select className="form-control" onChange={handleFilterChange}>
-            <option value={""}>Tất cả</option>
-            {Object.keys(orderStatus).map((status) => (
-              <option value={status}>{orderStatus[status]}</option>
-            ))}
-          </select>
-        </div>
-        <small className="form-text text-muted">
-          Tìm theo <b>Trạng thái</b>
-        </small>
-      </div>
-      <div className="col-md-4 my-2 my-md-0 d-flex align-items-center justify-content-end">
-        <span className="text-muted font-italic" style={{fontSize: '11.7px'}}>Đã cập nhật {getTimeFormat(reloadTime, "dd/mm HH:MM")}</span>
-        <span className="btn btn-sm btn-clean btn-icon ml-2 mb-1" style={{width: '20px', height: '20px'}} onClick={handleReload}>
-          <i className="bi bi-arrow-repeat"></i>
-        </span>
-      </div>
-    </div>
-  );
+    );
+  }
 };
 
 const OrderToolbar = (props) => {
@@ -262,7 +260,7 @@ const expandRow = {
       <td className="title-style">Phân loại</td>
       <td>{(row.priceType === 1)? "Đơn lẻ": "Đơn sỉ"}</td>
       <td colSpan="2">
-        <span className="title-style" style={{display: 'inline-block', width: '100px'}}>Tiền COD</span>
+        <span className="title-style" style={{display: 'inline-block', width: '120px'}}>Tiền COD</span>
         <span>{row.codAmount.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}</span>
       </td>
     </tr>
@@ -323,7 +321,7 @@ const expandRow = {
         style={{ width: "20px", height: "20px" }}
       >
         <span className="svg-icon svg-icon-md">
-        <i class="lar la-plus-square"></i>
+        <i className="lar la-plus-square"></i>
         </span>
       </div>
     );
@@ -384,6 +382,7 @@ class OrderContent extends Component {
       end: moment().endOf("date").valueOf()
     });
     this.timer = new Timer(async () => {
+      this.setState({isLoading: true});
       await orderService.getOrderBoard()
       .then((res) => {
         if (res.data.error && res.data.error.statusCode === 100) {
@@ -394,6 +393,7 @@ class OrderContent extends Component {
         }
       })
       .catch((error) => console.log(error));
+      this.setState({isLoading: false});
     }, 600000);
   }
 
@@ -409,9 +409,8 @@ class OrderContent extends Component {
     this.setState({isLoading: false});
   }
 
-  handleReload = async (cb) => {
-    await this.timer.reset();
-    cb();
+  handleReload = () => {
+    this.timer.reset();
   }
     
   handleOkModal = () => {
@@ -451,27 +450,30 @@ class OrderContent extends Component {
   };
 
   render() {
-    const entities = this.state.entities;
+    const {entities, isLoading, reloadTime} = this.state;
     const columns = orderColumns(this);
-    const options = getPaginationOptions(this.state.entities.length);
+    const options = getPaginationOptions(entities.length);
 
     return (
       <CustomTable
         title="Quản lý đơn hàng"
-        loading={this.state.isLoading}
+        loading={isLoading}
         options={options}
         entities={entities}
         columns={columns}
-        Search={SearchInput}
+        Search={SearchInput({
+          onFilter: {
+            onStatusFilter: this.onStatusFilter,
+            onDateRangeFilter: this.onDateRangeFilter
+          },
+          reloadTime: reloadTime,
+          reloadData: this.handleReload,
+          isTableLoading: isLoading
+        })}
         Toolbar={OrderToolbar}
         expandRow={expandRow}
         defaultSorted={defaultSorted}
         rowStyle={{ cursor: "pointer" }}
-        onFilter={{
-          onStatusFilter: this.onStatusFilter,
-          onDateRangeFilter: this.onDateRangeFilter}}
-        reloadTime={this.state.reloadTime}
-        reloadData={this.handleReload}
       />
     );
   }

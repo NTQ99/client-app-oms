@@ -12,7 +12,6 @@ class ProductDialog extends Component {
   handleOk = async () => {
     this.setState({btnLoading: true});
     await this.props.handleOk();
-    console.log(this.props.handleOk);
     this.setState({btnLoading: false});
   }
   render() {
@@ -25,27 +24,28 @@ class ProductDialog extends Component {
           <Modal.Title>Thông báo</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <span className="mr-3">
-            {props.variant === "success" && (
-              <i className={`bi bi-check-circle-fill text-${props.variant}`}></i>
-            )}
-            {props.variant === "error" && (
-              <i className={`bi bi-x-circle-fill text-danger`}></i>
-            )}
-            {props.variant === "danger" && (
-              <i className={`bi bi-exclamation-circle-fill text-${props.variant}`}></i>
-            )}
-          </span>
+          {(() => {
+            switch (props.variant) {
+              case "success": 
+                return (<i className="bi bi-check-circle-fill text-success mr-3"></i>);
+              case "error":
+                return (<i className="bi bi-x-circle-fill text-danger mr-3"></i>);
+              case "danger":
+                return (<i className="bi bi-exclamation-circle-fill text-danger mr-3"></i>);
+              default:
+                return;
+            }
+          })()}
           {props.message}
         </Modal.Body>
         <Modal.Footer>
           {props.handleClose && (<>
-            <Button variant="secondary" onClick={props.handleClose}>
+            <Button variant="secondary" onClick={props.handleClose} disabled={btnLoading ? true : false}>
               Hủy bỏ
             </Button>
             <Button
               autoFocus
-              variant={props.variant}
+              variant={props.variant==="error"? "danger": props.variant}
               disabled={btnLoading ? true : false}
               onClick={handleOk}
             >

@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from 'universal-cookie';
  
 const cookies = new Cookies();
-const BASE_URL = "https://oms-2021.herokuapp.com/api";
+const BASE_URL = process.env.REACT_APP_BASE_URL_API;
 
 class AuthService {
   login(username, password) {
