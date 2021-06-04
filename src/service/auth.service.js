@@ -41,7 +41,6 @@ class AuthService {
   register(username, email, password) {
     return axios.post(BASE_URL + "/auth/register", {
       username,
-      email,
       password
     });
   }

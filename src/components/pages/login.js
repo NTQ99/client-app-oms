@@ -22,6 +22,7 @@ class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: false,
       username: "",
       password: "",
     };
@@ -42,7 +43,6 @@ class LoginPage extends Component {
       } else {
         this.props.history.push("/order");
       }
-      window.location.reload();
     }
   }
 
@@ -60,10 +60,11 @@ class LoginPage extends Component {
 
   submitForm = (e) => {
     e.preventDefault();
+    this.setState({isLoading: true});
     if (this.validator.allValid()) {
       AuthService.login(this.state.username, this.state.password).then(
         (response) => {
-          console.log(response);
+          this.setState({isLoading: false})
           if (response && response.error && response.error.statusCode === 200) {
             MySwal.fire({
               title: "Đăng nhập thành công",
@@ -71,7 +72,6 @@ class LoginPage extends Component {
               showConfirmButton: false,
               timer: 1000,
             }).then(() => {
-              console.log(AuthService.getRoles())
               if (AuthService.getRoles().includes("ROLE_ADMIN")) {
                 this.props.history.push("/admin-user");
               } else {
@@ -212,7 +212,10 @@ class LoginPage extends Component {
                           id="kt_login_singin_form_submit_button"
                           className="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3"
                         >
-                          Đăng nhập
+                          {!this.state.isLoading && "Đăng nhập"}
+                          {this.state.isLoading && (
+                            <span className="spinner-border spinner-border-sm"></span>
+                          )}
                         </button>
                         <button
                           type="button"
