@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Modal, Button } from "react-bootstrap";
 
-class ProductDialog extends Component {
+class GeneralDialog extends Component {
   constructor(props) {
     super(props);
     this.state = ({
@@ -66,4 +66,4 @@ class ProductDialog extends Component {
   }
 }
 
-export default ProductDialog;
+export default GeneralDialog;
