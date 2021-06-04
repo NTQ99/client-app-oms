@@ -312,7 +312,7 @@ class CustomerForm extends Component {
                     <Col>
                       <Form.Check
                         custom type="radio" label="Nữ" name="customerGender" id="customerGender2"
-                        checked = {this.state.form.customerGender === 2? true: false}
+                        checked = {this.state.form.customerGender === 2}
                         onChange={()=> this.setState({
                           form: {
                             ...this.state.form,
@@ -324,7 +324,7 @@ class CustomerForm extends Component {
                     <Col>
                       <Form.Check
                         custom type="radio" label="Khác" name="customerGender" id="customerGender0"
-                        checked = {(this.state.form.customerGender === 0 || !this.state.form.customerGender)? true: false}
+                        checked = {this.state.form.customerGender === 0 || !this.state.form.customerGender}
                         defaultChecked
                         onChange={()=> this.setState({
                           form: {

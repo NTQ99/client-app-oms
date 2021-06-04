@@ -14,6 +14,8 @@ import * as FileSaver from "file-saver";
 import * as XLSX from "xlsx";
 
 import {getTimeFormat, Timer} from '../../../service/helper';
+import GeneralDialog from "../modal/GeneralDialog";
+import SendOrderForm from "../modal/SendOrderForm";
 
 const orderStatus = {
   wait_confirm: "Chờ xác nhận",
@@ -286,7 +288,7 @@ const expandRow = {
         <td className="title-style">Vận chuyển</td>
         <td colSpan="3">
           <a
-          href={`https://donhang.ghn.vn/?order_code=${row.deliveryCode}`}
+          href={`https://tracking.ghn.dev/?order_code=${row.deliveryCode}`}
           target="_blank"
           rel="noreferrer"
           className="text-primary">
@@ -368,6 +370,12 @@ class OrderContent extends Component {
         type: null,
       },
       showModal: false,
+      dialogProps: {
+        show: false,
+      },
+      formProps: {
+        show: false,
+      },
       entities: [],
     };
   }
@@ -407,6 +415,112 @@ class OrderContent extends Component {
       })
       .catch((error) => console.log(error));
     this.setState({isLoading: false});
+  }
+
+  openResponseDialog = async (cb) => {
+    await cb.then(res => {
+      this.fetchData();
+      this.setState({
+        dialogProps: {
+          show: true,
+          handleOk: () => this.setState({dialogProps:{...this.state.dialogProps, show: false}}),
+          variant: "success",
+          message: res.data.error.message
+        }
+      });
+    }).catch(error => this.setState({
+      dialogProps: {
+        show: true,
+        handleOk: () => this.setState({dialogProps:{...this.state.dialogProps, show: false}}),
+        variant: "error",
+        message: error.message
+      }
+    })) 
+  }
+
+  printOrder = async (id) => {
+    await orderService.printOrder(id).then(async res => {
+      await this.fetchData();
+      window.open(res.data.data, '_blank');
+      this.setState({
+        dialogProps: {
+          show: true,
+          handleOk: () => this.setState({dialogProps:{...this.state.dialogProps, show: false}}),
+          variant: "success",
+          message: res.data.error.message
+        }
+      });
+    }).catch(error => this.setState({
+      dialogProps: {
+        show: true,
+        handleOk: () => this.setState({dialogProps:{...this.state.dialogProps, show: false}}),
+        variant: "error",
+        message: error.message
+      }
+    })) 
+  }
+  printAllOrder = async (type) => {
+    await orderService.printOrder(type).then(async res => {
+      await this.fetchData();
+      window.open(res.data.data, '_blank');
+      this.setState({
+        dialogProps: {
+          show: true,
+          handleOk: () => this.setState({dialogProps:{...this.state.dialogProps, show: false}}),
+          variant: "success",
+          message: res.data.error.message
+        }
+      });
+    }).catch(error => this.setState({
+      dialogProps: {
+        show: true,
+        handleOk: () => this.setState({dialogProps:{...this.state.dialogProps, show: false}}),
+        variant: "error",
+        message: error.message
+      }
+    }))
+  }
+  sendOrder = async (data, id) => {
+    await this.openResponseDialog(orderService.sendOrder(data, id));
+  }
+  deleteOrder = async (id) => {
+    await this.openResponseDialog(orderService.deleteOrder(id));
+  }
+  updateOrder = async (data) => {
+    await this.openResponseDialog(orderService.updateOrder(data));
+    this.setState({formProps:{...this.state.formProps, show: false}});
+  }
+
+  openSendOrderForm = (id) => {
+    this.setState({
+      formProps: {
+        show: true,
+        orderId: id,
+        handleOk: this.sendOrder,
+        handleClose: () => this.setState({formProps:{show: false}}),
+      },
+    })
+  }
+  openEditOrderForm = (data) => {
+    this.setState({
+      formProps: {
+        show: true,
+        formData: data,
+        handleOk: this.updateOrder,
+        handleClose: () => this.setState({formProps:{show: false}}),
+      },
+    })
+  }
+  openDeleteOrderDialog = (id) => {
+    this.setState({
+      dialogProps: {
+        show: true,
+        handleClose: () => this.setState({dialogProps:{...this.state.dialogProps, show: false}}),
+        handleOk: () => this.deleteOrder(id),
+        variant: "danger",
+        message: "Bạn có chắc chắn muốn xóa dữ liệu đơn hàng này?"
+      }
+    })
   }
 
   handleReload = () => {
@@ -450,7 +564,7 @@ class OrderContent extends Component {
   };
 
   render() {
-    const {entities, isLoading, reloadTime} = this.state;
+    const {entities, isLoading, reloadTime, dialogProps, formProps} = this.state;
     const columns = orderColumns(this);
     const options = getPaginationOptions(entities.length);
 
@@ -474,7 +588,10 @@ class OrderContent extends Component {
         expandRow={expandRow}
         defaultSorted={defaultSorted}
         rowStyle={{ cursor: "pointer" }}
-      />
+      >
+        <GeneralDialog { ...dialogProps } />
+        <SendOrderForm { ...formProps } />
+      </CustomTable>
     );
   }
 }
