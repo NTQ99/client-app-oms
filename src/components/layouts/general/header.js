@@ -84,7 +84,7 @@ class Header extends Component {
               <div className="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-anim-up dropdown-menu-lg">
                 <form>
                   {/*[html-partial:include:{"file":"partials/_extras/dropdown/notifications.html"}]/*/}
-                  <Notifications />
+                  {/* <Notifications /> */}
                 </form>
               </div>
               {/*end::Dropdown*/}
@@ -94,7 +94,7 @@ class Header extends Component {
             <div className="topbar-item">
               <div
                 className="btn btn-icon btn-clean btn-lg mr-1"
-                id="kt_quick_panel_toggle"
+                // id="kt_quick_panel_toggle"
               >
                 <span className="svg-icon svg-icon-xl svg-icon-primary">
                   <SVG src="assets/media/svg/icons/Layout/Layout-4-blocks.svg" />
