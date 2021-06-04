@@ -17,7 +17,7 @@ const SearchInput = (props) => {
   };
   return (
     <div className="row align-items-center">
-      <div className="col-md-6 my-2 my-md-0">
+      <div className="col-md-3 my-2 my-md-0">
         <div className="input-icon">
           <input
             type="text"
@@ -34,7 +34,7 @@ const SearchInput = (props) => {
           Tìm theo <b>Tất cả cột</b>
         </small>
       </div>
-      <div className="col-md-4 my-2 my-md-0">
+      <div className="col-md-2 my-2 my-md-0">
         <div className="d-flex align-items-center">
           <select className="form-control" onChange={handleChange}>
             <option value={""}>Tất cả</option>
@@ -67,6 +67,7 @@ class AdminUserContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: false,
       action: {
         id: null,
         type: null,
@@ -76,14 +77,16 @@ class AdminUserContent extends Component {
     };
   }
 
-  componentDidMount() {
-    UserService.getUserBoard()
+  async componentDidMount() {
+    this.setState({ isLoading: true });
+    await UserService.getUserBoard()
       .then((res) => {
         if (res.data.error && res.data.error.statusCode === 100) {
           this.setState({ entities: [...res.data.data] });
         }
       })
       .catch((error) => console.log(error));
+    this.setState({ isLoading: false });
   }
 
   handleOkModal = () => {
@@ -130,6 +133,7 @@ class AdminUserContent extends Component {
     return (
       <CustomTable
         title="Quản lý tài khoản"
+        loading={this.state.isLoading}
         options={options}
         entities={entities}
         columns={columns}
