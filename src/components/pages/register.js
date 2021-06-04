@@ -45,23 +45,39 @@ class RegisterPage extends Component {
     }
   }
 
+  showPopup = (message, icon) => {
+    return MySwal.fire({
+      title: message,
+      icon: icon,
+      buttonsStyling: false,
+      confirmButtonText: "Quay lại",
+      customClass: {
+        confirmButton: "btn font-weight-bold btn-light-primary",
+      },
+    });
+  };
+
   submitForm = (e) => {
     e.preventDefault();
     this.setState({isLoading: true});
     if (this.validator.allValid()) {
       AuthService.register(this.state.username, this.state.password).then(
         (response) => {
+          console.log(response)
           this.setState({isLoading: false});
-          if (response && response.error && response.error.statusCode === 200) {
-            MySwal.fire({
-              title: "Đăng ký thành công",
-              icon: "success",
-              showConfirmButton: false,
-              timer: 1000,
-            }).then(() => {
-                this.props.history.push("/login");
-              window.location.reload();
-            });
+          if (response && response.data && response.data.error) {
+            if (response.data.error.statusCode === 206) {
+              MySwal.fire({
+                title: "Đăng ký thành công",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 1000,
+              }).then(() => {
+                  this.props.history.push("/login");
+              });
+            } else {
+              this.showPopup(response.data.error.message, "error");
+            }
           } else {
             this.showPopup(response.error.message, "error");
           }
@@ -207,13 +223,20 @@ class RegisterPage extends Component {
                             Tên tài khoản
                           </label>
                           <input
+                            className="form-control form-control-solid h-auto py-7 px-6 rounded-lg border-0"
+                            tabIndex="1"
                             type="text"
-                            className="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6"
-                            name="name"
-                            placeholder="Nhập tên tài khoản"
-                            defaultValue=""
+                            onChange={(e) => {
+                              this.setState({ username: e.target.value });
+                              this.validator.showMessageFor("Tên tài khoản");
+                            }}
                           />
-                        </div>
+                          {this.validator.message(
+                            "Tên tài khoản",
+                            this.state.username,
+                            "required|min:4|max:20"
+                          )}
+                          </div>
                         {/*end::Form Group*/}
                         {/*begin::Form Group*/}
                         <div className="form-group">
@@ -221,12 +244,19 @@ class RegisterPage extends Component {
                             Mật khẩu
                           </label>
                           <input
+                            className="form-control form-control-solid h-auto py-7 px-6 rounded-lg border-0"
+                            tabIndex="2"
                             type="password"
-                            className="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6"
-                            name="password"
-                            placeholder="Nhập mật khẩu"
-                            defaultValue=""
+                            onChange={(e) => {
+                              this.setState({ password: e.target.value });
+                              this.validator.showMessageFor("Mật khẩu");
+                            }}
                           />
+                          {this.validator.message(
+                            "Mật khẩu",
+                            this.state.password,
+                            "required|min:6|max:40"
+                          )}
                         </div>
                         {/*end::Form Group*/}
                       </div>

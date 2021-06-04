@@ -38,7 +38,7 @@ class AuthService {
     setTimeout(cb, 500);
   }
 
-  register(username, email, password) {
+  register(username, password) {
     return axios.post(BASE_URL + "/auth/register", {
       username,
       password

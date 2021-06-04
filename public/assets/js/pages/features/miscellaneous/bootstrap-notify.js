@@ -23,7 +23,7 @@ var KTBootstrapNotifyDemo = function () {
                 content.icon = 'icon ' + $('#kt_notify_icon').val();
             }
             if ($('#kt_notify_url').prop('checked')) {
-                content.url = 'www.keenthemes.com';
+                content.url = '#';
                 content.target = '_blank';
             }
 
