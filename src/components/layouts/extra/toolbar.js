@@ -29,7 +29,7 @@ class Toolbar extends Component {
         >
           <a
             className="btn btn-sm btn-icon btn-bg-light btn-icon-primary btn-hover-primary"
-            href="https://preview.keenthemes.com/metronic/demo1/builder.html"
+            href="#"
             target="_blank"
             rel="noreferrer"
           >
@@ -46,7 +46,7 @@ class Toolbar extends Component {
         >
           <a
             className="btn btn-sm btn-icon btn-bg-light btn-icon-warning btn-hover-warning"
-            href="https://keenthemes.com/metronic/?page=docs"
+            href="#"
             target="_blank"
             rel="noreferrer"
           >
