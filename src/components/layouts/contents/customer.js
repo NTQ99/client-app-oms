@@ -16,8 +16,8 @@ import * as XLSX from "xlsx";
 
 import customerService from "../../../service/customer.service";
 import RowExpandTable from "../table/RowExpandTable";
-// import CustomerDialog from "../modal/CustomerDialog";
-// import CustomerForm from "../modal/CustomerForm";
+import GeneralDialog from "../modal/GeneralDialog";
+import CustomerForm from "../modal/CustomerForm";
 
 const SearchInput = (props) => {
   const { onSearch } = props;
@@ -106,49 +106,6 @@ const OrderToolbar = (onCreateHandle) => {
     };
     return (
       <>
-        <Dropdown as={ButtonGroup} className="mr-2">
-          <Dropdown.Toggle variant="light" className="font-weight-bolder">
-            <span className="svg-icon svg-icon-md">
-              <SVG src="assets/media/svg/icons/Devices/Printer.svg" />
-            </span>
-            In
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.ItemText className="font-weight-bolder text-uppercase font-size-sm text-primary pb-2">
-              Tùy chọn:
-            </Dropdown.ItemText>
-            <Dropdown.Item>
-              <div className="symbol symbol-20 mr-5">
-                <i className="la la-print" />
-                <i
-                  className="symbol-badge bg-success"
-                  style={{
-                    width: "10px",
-                    height: "10px",
-                    top: "-5px",
-                    right: "-5px",
-                  }}
-                ></i>
-              </div>
-              Toàn bộ
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <div className="symbol symbol-20 mr-5">
-                <i className="la la-print" />
-                <i
-                  className="symbol-badge bg-danger"
-                  style={{
-                    width: "10px",
-                    height: "10px",
-                    top: "-5px",
-                    right: "-5px",
-                  }}
-                ></i>
-              </div>
-              Đơn mới
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
         <div
           className="btn btn-light-primary font-weight-bolder mr-2"
           onClick={handleExportClick}
@@ -265,16 +222,75 @@ class CustomerContent extends Component {
     });
     this.setState({ isLoading: false });
   }
-  
-  setExpandData = (data) => {
-    this.setState({expandData: data})
+
+  openResponseDialog = async (cb) => {
+    await cb.then(res => {
+      this.fetchData();
+      this.setState({
+        dialogProps: {
+          show: true,
+          handleOk: () => this.setState({dialogProps:{...this.state.dialogProps, show: false}}),
+          variant: "success",
+          message: res.data.error.message
+        }
+      })
+    }).catch(error => this.setState({
+      dialogProps: {
+        show: true,
+        handleOk: () => this.setState({dialogProps:{...this.state.dialogProps, show: false}}),
+        variant: "error",
+        message: error.message
+      }
+    })) 
+  }
+
+  deleteCustomer = async (id) => {
+    await this.openResponseDialog(customerService.deleteCustomer(id));
+  }
+  createCustomer = async (data) => {
+    await this.openResponseDialog(customerService.createCustomer(data));
+    this.setState({formProps:{...this.state.formProps, show: false}});
+  }
+  updateCustomer = async (data) => {
+    await this.openResponseDialog(customerService.updateCustomer(data));
+    this.setState({formProps:{...this.state.formProps, show: false}});
+  }
+
+  openCreateCustomerForm = () => {
+    this.setState({
+      formProps: {
+        show: true,
+        handleOk: this.createCustomer,
+        handleClose: () => this.setState({formProps:{show: false}}),
+      },
+    })
+  }
+  openEditCustomerForm = (data) => {
+    this.setState({
+      formProps: {
+        show: true,
+        formData: data,
+        handleOk: this.updateCustomer,
+        handleClose: () => this.setState({formProps:{show: false}}),
+      },
+    })
+  }
+  openDeleteCustomerDialog = (id) => {
+    this.setState({
+      dialogProps: {
+        show: true,
+        handleClose: () => this.setState({dialogProps:{...this.state.dialogProps, show: false}}),
+        handleOk: () => this.deleteCustomer(id),
+        variant: "danger",
+        message: "Dữ liệu các đơn hàng liên quan đến khách hàng này có thể sẽ bị ảnh hưởng. Bạn có chắc chắn muốn xóa khách hàng này?"
+      }
+    })
   }
 
   render() {
-    const {entities, isLoading} = this.state;
+    const {entities, isLoading, dialogProps, formProps} = this.state;
     const columns = customerColumns(this);
     const options = getPaginationOptions(entities.length);
-    // const { dialogProps, formProps } = this.state;
     return (
       <CustomTable
         title="Danh sách khách hàng"
@@ -288,8 +304,8 @@ class CustomerContent extends Component {
         defaultSorted={defaultSorted}
         rowStyle={{ cursor: "pointer" }}
       >
-        {/* <CustomerForm { ...formProps } /> */}
-        {/* <CustomerDialog { ...dialogProps } /> */}
+        <CustomerForm { ...formProps } />
+        <GeneralDialog { ...dialogProps } />
       </CustomTable>
     );
   }

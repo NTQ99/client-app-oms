@@ -56,3 +56,6 @@ left: 110%!important;
   content:"*";
   color:red;
 }
+input::placeholder {
+  font-size: .9rem;
+}

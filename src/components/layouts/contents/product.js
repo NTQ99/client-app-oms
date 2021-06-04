@@ -11,7 +11,7 @@ import CustomTable from "../table/CustomTable";
 import SVG from "react-inlinesvg";
 
 import productService from "../../../service/product.service";
-import ProductDialog from "../modal/ProductDialog";
+import GeneralDialog from "../modal/GeneralDialog";
 import ProductForm from "../modal/ProductForm";
 
 const SearchInput = (props) => {
@@ -200,13 +200,11 @@ class CustomerContent extends Component {
   deleteProduct = async (id) => {
     await this.openResponseDialog(productService.deleteProduct(id));
   }
-
   createProduct = async (data) => {
     await this.openResponseDialog(productService.createProduct(data));
     this.setState({formProps:{...this.state.formProps, show: false}});
   }
   updateProduct = async (data) => {
-    console.log(data);
     await this.openResponseDialog(productService.updateProduct(data));
     this.setState({formProps:{...this.state.formProps, show: false}});
   }
@@ -220,7 +218,6 @@ class CustomerContent extends Component {
       },
     })
   }
-
   openEditProductForm = (data) => {
     this.setState({
       formProps: {
@@ -229,6 +226,17 @@ class CustomerContent extends Component {
         handleOk: this.updateProduct,
         handleClose: () => this.setState({formProps:{show: false}}),
       },
+    })
+  }
+  openDeleteProductDialog = (id) => {
+    this.setState({
+      dialogProps: {
+        show: true,
+        handleClose: () => this.setState({dialogProps:{...this.state.dialogProps, show: false}}),
+        handleOk: () => this.deleteProduct(id),
+        variant: "danger",
+        message: "Dữ liệu các đơn hàng liên quan đến sản phẩm này có thể sẽ bị ảnh hưởng. Bạn có chắc chắn muốn xóa sản phẩm này?"
+      }
     })
   }
 
@@ -250,7 +258,7 @@ class CustomerContent extends Component {
         rowStyle={{ cursor: "pointer" }}
       >
         <ProductForm { ...formProps } />
-        <ProductDialog { ...dialogProps } />
+        <GeneralDialog { ...dialogProps } />
       </CustomTable>
     );
   }

@@ -60,20 +60,18 @@ class ProductForm extends Component {
         productPhotos: (form.productPhotos || "").replace(' ', '').split(','),
         productDetail: form.productDetail || ""
       })
-      this.validator.visibleFields.length = 0;
-      this.setState({
-        btnLoading: false,
-        form: {}
-      });
+      this.handleClose();
     } else {
       this.validator.showMessages();
     }
   }
 
   handleClose = () => {
+    this.validator.hideMessages();
     this.validator.visibleFields.length = 0;
     this.props.handleClose();
     this.setState({
+      btnLoading: false,
       form: {}
     })
   }
@@ -119,7 +117,7 @@ class ProductForm extends Component {
                 <Form.Group as={Col} className="mb-3" controlId="capitalPrice">
                   <Form.Label className="required">Giá nhập</Form.Label>
                   <InputGroup>
-                    <Form.Control autoComplete="none" type="number" defaultValue={form.capitalPrice} onChange={this.handleInputChange} placeholder="0" />
+                    <Form.Control autoComplete="none" type="number" min={0} defaultValue={form.capitalPrice} onChange={this.handleInputChange} placeholder="0" />
                     <div className="input-group-append">
                       <span className="input-group-text bg-transparent p-1">đ</span>
                     </div>
@@ -133,7 +131,7 @@ class ProductForm extends Component {
                 <Form.Group as={Col} className="mb-3" controlId="retailPrice">
                   <Form.Label className="required">Giá lẻ</Form.Label>
                   <InputGroup>
-                    <Form.Control autoComplete="none" type="number" defaultValue={form.retailPrice} onChange={this.handleInputChange} placeholder="0" />
+                    <Form.Control autoComplete="none" type="number" min={0} defaultValue={form.retailPrice} onChange={this.handleInputChange} placeholder="0" />
                     <div className="input-group-append">
                       <span className="input-group-text bg-transparent p-1">đ</span>
                     </div>
@@ -147,7 +145,7 @@ class ProductForm extends Component {
                 <Form.Group as={Col} className="mb-3" controlId="wholesalePrice">
                   <Form.Label className="required">Giá sỉ</Form.Label>
                   <InputGroup>
-                    <Form.Control autoComplete="none" type="number" defaultValue={form.wholesalePrice} onChange={this.handleInputChange} placeholder="0" />
+                    <Form.Control autoComplete="none" type="number" min={0} defaultValue={form.wholesalePrice} onChange={this.handleInputChange} placeholder="0" />
                     <div className="input-group-append bg-white">
                       <span className="input-group-text bg-transparent p-1">đ</span>
                     </div>
@@ -164,7 +162,7 @@ class ProductForm extends Component {
                   <Row>
                     <Form.Group as={Col} className="mb-3" controlId="stock">
                       <Form.Label className="required">Số lượng sẵn có</Form.Label>
-                      <Form.Control autoComplete="none" type="number" defaultValue={form.stock} onChange={this.handleInputChange} placeholder="0" />
+                      <Form.Control autoComplete="none" type="number" min={0} defaultValue={form.stock} onChange={this.handleInputChange} placeholder="0" />
                       {this.validator.message(
                         "stock",
                         this.state.form.stock,
@@ -174,7 +172,7 @@ class ProductForm extends Component {
                     <Form.Group as={Col} className="mb-3" controlId="weight">
                       <Form.Label className="required">Trọng lượng</Form.Label>
                       <InputGroup>
-                        <Form.Control autoComplete="none" type="number" defaultValue={form.weight} onChange={this.handleInputChange} placeholder="0" />
+                        <Form.Control autoComplete="none" type="number" min={0} defaultValue={form.weight} onChange={this.handleInputChange} placeholder="0" />
                         <div className="input-group-append">
                           <span className="input-group-text bg-transparent p-1">gram</span>
                         </div>
@@ -192,7 +190,7 @@ class ProductForm extends Component {
                   <Row>
                     <Form.Group as={Col} className="mb-3" controlId="length">
                       <InputGroup>
-                        <Form.Control autoComplete="none" type="number" defaultValue={form.length} onChange={this.handleInputChange} placeholder="Chiều dài" />
+                        <Form.Control autoComplete="none" type="number" min={0} defaultValue={form.length} onChange={this.handleInputChange} placeholder="Chiều dài" />
                         <div className="input-group-append">
                           <span className="input-group-text bg-transparent p-1">cm</span>
                         </div>
@@ -201,7 +199,7 @@ class ProductForm extends Component {
                     </Form.Group>
                     <Form.Group as={Col} className="mb-3" controlId="width">
                       <InputGroup>
-                        <Form.Control autoComplete="none" type="number" defaultValue={form.width} onChange={this.handleInputChange} placeholder="Chiều rộng" />
+                        <Form.Control autoComplete="none" type="number" min={0} defaultValue={form.width} onChange={this.handleInputChange} placeholder="Chiều rộng" />
                         <div className="input-group-append">
                           <span className="input-group-text bg-transparent p-1">cm</span>
                         </div>
@@ -210,7 +208,7 @@ class ProductForm extends Component {
                     </Form.Group>
                     <Form.Group as={Col} className="mb-3" controlId="height">
                       <InputGroup>
-                        <Form.Control autoComplete="none" type="number" defaultValue={form.height} onChange={this.handleInputChange} placeholder="Chiều cao" />
+                        <Form.Control autoComplete="none" type="number" min={0} defaultValue={form.height} onChange={this.handleInputChange} placeholder="Chiều cao" />
                         <div className="input-group-append bg-white">
                           <span className="input-group-text bg-transparent p-1">cm</span>
                         </div>
