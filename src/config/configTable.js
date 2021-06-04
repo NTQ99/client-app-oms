@@ -128,7 +128,6 @@ export function orderProductColumns(obj) {
           <Form.Control
             defaultValue={1}
             min={1}
-            max={10}
             onChange={(e) =>
               obj.prices({
                 actionType: "changeRow",
@@ -564,15 +563,7 @@ export function productColumns(obj) {
               <i className="las la-edit"></i>
             </span>
           </div>
-          <div className="btn btn-sm btn-clean btn-icon" title="Xóa" onClick={() => obj.setState({
-            dialogProps: {
-              show: true,
-              handleClose: () => obj.setState({dialogProps:{...obj.state.dialogProps, show: false}}),
-              handleOk: () => obj.deleteProduct(row.id),
-              variant: "danger",
-              message: "Bạn có chắc chắn muốn xóa sản phẩm này?"
-            }
-          })}>
+          <div className="btn btn-sm btn-clean btn-icon" title="Xóa" onClick={() => obj.openDeleteProductDialog(row.id)}>
             <span className="svg-icon svg-icon-md">
               <i className="las la-trash-alt"></i>
             </span>
@@ -617,7 +608,7 @@ export function customerColumns(obj) {
       dataField: "customerAddresses",
       text: "Địa chỉ",
       headerStyle: { width: "400px" },
-      formatter: cell => Array.isArray(cell) && cell.length > 0 && cell[0].ward + ", " + cell[0].district + ", " + cell[0].province
+      formatter: (cell, row) => Array.isArray(cell) && cell.length > 0 && cell[row.defaultAddressId].ward + ", " + cell[row.defaultAddressId].district + ", " + cell[row.defaultAddressId].province
     },
     {
       dataField: "createdAt",
@@ -631,17 +622,12 @@ export function customerColumns(obj) {
       headerStyle: { textAlign: 'center', width: "140px" },
       formatter: (cellContent, row, rowIndex) => (
         <div className="d-flex justify-content-center">
-          <div className="btn btn-sm btn-clean btn-icon mr-2" title="Sửa">
-            <span className="svg-icon svg-icon-md">
-              <i className="las la-address-book"></i>
-            </span>
-          </div>
-          <div className="btn btn-sm btn-clean btn-icon mr-2" title="Sửa">
+          <div className="btn btn-sm btn-clean btn-icon mr-2" title="Sửa" onClick={() => obj.openEditCustomerForm(row)}>
             <span className="svg-icon svg-icon-md">
               <i className="las la-edit"></i>
             </span>
           </div>
-          <div className="btn btn-sm btn-clean btn-icon" title="Xóa">
+          <div className="btn btn-sm btn-clean btn-icon" title="Xóa" onClick={() => obj.openDeleteCustomerDialog(row.id)}>
             <span className="svg-icon svg-icon-md">
               <i className="las la-trash-alt"></i>
             </span>

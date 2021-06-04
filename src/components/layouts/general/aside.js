@@ -68,20 +68,20 @@ function AdminAside() {
             </ul>
           </div>
         </li>
-        <li className="menu-item" id="aside_customer">
-          <a href="/customer" className="menu-link">
-            <span className="svg-icon menu-icon">
-            <SVG src="assets/media/svg/icons/Shopping/Customer.svg" />
-            </span>
-            <span className="menu-text">Khách hàng</span>
-          </a>
-        </li>
         <li className="menu-item">
           <a className="menu-link" href="/product">
             <span className="svg-icon menu-icon">
               <SVG src="assets/media/svg/icons/Shopping/Box2.svg" />
             </span>
             <span className="menu-text">Sản phẩm</span>
+          </a>
+        </li>
+        <li className="menu-item" id="aside_customer">
+          <a href="/customer" className="menu-link">
+            <span className="svg-icon menu-icon">
+            <SVG src="assets/media/svg/icons/Shopping/Customer.svg" />
+            </span>
+            <span className="menu-text">Khách hàng</span>
           </a>
         </li>
         {/* end::Quản lý */}

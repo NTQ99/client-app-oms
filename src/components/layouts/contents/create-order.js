@@ -270,7 +270,7 @@ class CreateOrderContent extends Component {
                     className="mb-2"
                     onChange={this.handleAddress}
                   >
-                    <Form.Label>Phường/Xã</Form.Label>
+                    <Form.Label>Xã/Phường</Form.Label>
                     <Form.Control as="select">
                       <option value={"-1"}>Chọn</option>
                       {this.state.districtId !== null &&
