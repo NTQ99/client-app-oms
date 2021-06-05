@@ -490,7 +490,7 @@ class CreateOrderContent extends Component {
                     <InputGroup.Text className="w-100">%</InputGroup.Text>
                   </InputGroup.Append>
                 </Form.Group>
-                <Form.Group className="mb-2">
+                {/* <Form.Group className="mb-2">
                   <select
                     className="form-control"
                     id="deliveryUnitName"
@@ -513,7 +513,7 @@ class CreateOrderContent extends Component {
                       <InputGroup.Text className="w-100">đ</InputGroup.Text>
                     </InputGroup.Append>
                   </Form.Group>
-                </>)}
+                </>)} */}
                 <Form.Group as={InputGroup} className="mb-5" controlId="paid" onChange={(e) => this.setState({paid: e.target.value})}>
                 <InputGroup.Prepend style={{ width: "30%" }}>
                     <InputGroup.Text className="w-100">
