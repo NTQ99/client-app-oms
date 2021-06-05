@@ -59,3 +59,45 @@ left: 110%!important;
 input::placeholder {
   font-size: .9rem;
 }
+.input__control {
+  width: 100%;
+  cursor: text;
+  color: #3f4254;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #e4e6ef;
+  border-radius: .42rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+}
+.input__control:hover {
+  border: 1px solid #e4e6ef;
+}
+.input__control:focus-within {
+  border: 1px solid #3699ff;
+}
+.input__placeholder {
+  color: #b5b5c3;
+}
+.input__option {
+  cursor: pointer;
+}
+.input__multi-value__remove {
+  cursor: pointer;
+}
+.input-prefix-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: calc(1.5em + 1.3rem + 2px);
+}
