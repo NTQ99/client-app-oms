@@ -60,44 +60,44 @@ input::placeholder {
   font-size: .9rem;
 }
 .input__control {
-  width: 100%;
-  cursor: text;
-  color: #3f4254;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #e4e6ef;
-  border-radius: .42rem;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  width: 100% !important;
+  cursor: text !important;
+  color: #3f4254 !important;
+  background-color: #fff !important;
+  background-clip: padding-box !important;
+  border: 1px solid #e4e6ef !important;
+  border-radius: .42rem !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
   -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
   transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
 }
 .input__control:hover {
-  border: 1px solid #e4e6ef;
+  border: 1px solid #e4e6ef !important;
 }
 .input__control:focus-within {
-  border: 1px solid #3699ff;
+  border: 1px solid #3699ff !important;
 }
 .input__placeholder {
-  color: #b5b5c3;
+  color: #b5b5c3 !important;
 }
 .input__option {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 .input__multi-value__remove {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 .input-prefix-icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: calc(1.5em + 1.3rem + 2px);
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  width: calc(1.5em + 1.3rem + 2px) !important;
 }
