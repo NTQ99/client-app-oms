@@ -113,6 +113,7 @@ export function orderProductColumns(obj) {
     {
       dataField: "productName",
       text: "Tên sản phẩm",
+      headerStyle: { width: "300px" },
     },
     {
       dataField: obj.state.priceType,
@@ -128,10 +129,10 @@ export function orderProductColumns(obj) {
           <Form.Control
             defaultValue={1}
             min={1}
+            max={row.stock}
             onChange={(e) =>
-              obj.prices({
-                actionType: "changeRow",
-                row: row.id,
+              obj.calcPrice({
+                id: row.id,
                 quantity: e.target.value,
               })
             }
@@ -145,34 +146,6 @@ export function orderProductColumns(obj) {
       text: "Thành tiền",
       formatter: (cell) =>
         (cell || 0).toLocaleString("it-IT", { style: "currency", currency: "VND" }),
-    },
-    {
-      dataField: "action",
-      text: "Hành động",
-      headerStyle: { textAlign: 'center', width: "120px" },
-      formatter: (_, row) => {
-        return (
-          <div className="d-flex justify-content-center">
-            <div
-              title="Delete customer"
-              className="btn btn-icon btn-light btn-hover-danger btn-sm"
-              onClick={() =>
-                obj.prices({
-                  actionType: "deleteRow",
-                  row: row.id,
-                })
-              }
-            >
-              <span className="svg-icon svg-icon-md">
-                <i className="las la-trash-alt"></i>
-              </span>
-            </div>
-          </div>
-        );
-      },
-      formatExtraData: {
-        deleteProductRow: (id) => alert(id),
-      },
     },
   ];
 }
