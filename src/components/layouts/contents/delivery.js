@@ -9,7 +9,7 @@ import DeliveryEditForm from "../modal/DeliveryEditForm";
 import overlayFactory from 'react-bootstrap-table2-overlay';
 import TableLoading from "../extra/table-loading";
 
-const BASE_DELIVERY_URL="https://dev-online-gateway.ghn.vn";
+const BASE_DELIVERY_URL=process.env.REACT_APP_BASE_GHN_URL;
 
 class DeliveryContent extends Component {
   constructor(props) {

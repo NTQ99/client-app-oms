@@ -1,17 +1,23 @@
+import axios from "axios";
 import { Component } from "react";
 import { Row, Col, Form, Modal, Button } from "react-bootstrap";
 import SimpleReactValidator from "simple-react-validator";
+import deliveryService from "../../../service/delivery.service";
+
+const BASE_DELIVERY_URL=process.env.REACT_APP_BASE_GHN_URL;
 
 class SendOrderForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      deliveryUnits: [],
       form: {
         deliveryUnitName: "GHN",
         payment_type_id: 1,
         service_type_id: 1,
         required_note: "KHONGCHOXEMHANG"
       },
+      shipFeeLoading: false,
       btnLoading: false,
     };
     SimpleReactValidator.addLocale("vi", {
@@ -27,6 +33,34 @@ class SendOrderForm extends Component {
       ),
     });
   }
+
+  async componentDidMount() {
+    await deliveryService.getDeliveryBoard().then(res => {
+      if (res.data.data) this.setState({
+        deliveryUnits: res.data.data
+      })
+    })
+    
+  }
+
+  loadShipFee = async () => {
+    await axios.post(BASE_DELIVERY_URL + "/shiip/public-api/v2/shipping-order/fee",{
+      headers: {
+        token: this.state.deliveryUnits[0].token,
+        shop_id: this.state.deliveryUnits[0].shopId
+      },
+      data: {
+        service_type_id: this.state.form.service_type_id
+      }
+    })
+  }
+
+  // componentDidUpdate(prevProps) {
+  //   const {orderData} = this.props;
+  //   if (!orderData && preProps.orderData !== orderData) {
+  //     this.setState()
+  //   }
+  // }
 
   handleOk = async () => {
     if (this.validator.allValid()) {
@@ -68,7 +102,7 @@ class SendOrderForm extends Component {
   }
 
   render() {
-    const { btnLoading, form } = this.state;
+    const { btnLoading, form, shipFeeLoading } = this.state;
     const { show } = this.props;
     return (
       <>
@@ -186,6 +220,15 @@ class SendOrderForm extends Component {
                   )}
                 </Form.Group>
               </Row>
+              <div className="d-flex justify-content-between mb-5">
+                <span>
+                  Phí ship:
+                  {shipFeeLoading && (
+                    <span className="spinner-border spinner-border-sm ml-2"></span>
+                  )}
+                </span>
+                <span>0 đ</span>
+              </div>
               <Form.Text className="text-muted">
                 Lưu ý: Trường có dấu <span style={{color: 'red'}}>*</span> là các trường bắt buộc.
               </Form.Text>
